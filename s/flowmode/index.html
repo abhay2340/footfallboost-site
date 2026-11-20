@@ -76,6 +76,35 @@ h2{font-size:clamp(40px,6vw,72px);text-transform:uppercase;margin-bottom:16px}
 .faq p{color:var(--mute);margin-top:10px;max-width:44em}
 footer{padding:30px 0 100px;color:var(--mute);font-size:14px;text-align:center}
 .fab{position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.4);z-index:9}
+.prog{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.prog article{border-top:3px solid var(--lime);background:var(--panel);border-radius:0 0 14px 14px;padding:24px}
+.prog h3{font-size:20px;margin-bottom:6px}.prog p{color:var(--mute);font-size:15px}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.plan{border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.plan.hot{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime)}
+.plan .num{font-size:40px}
+.plan ul{list-style:none;color:var(--mute);font-size:15px;display:grid;gap:4px;flex:1}
+.plan ul li::before{content:"✓ ";color:var(--lime);font-weight:800}
+.plan .btn{justify-content:center;padding:12px}
+.tag{align-self:flex-start;background:var(--lime);color:#06110B;font-weight:800;font-size:12px;border-radius:99px;padding:3px 10px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+.steps div{counter-increment:s}
+.steps div::before{content:"0" counter(s);font-family:Anton,sans-serif;font-size:56px;color:var(--lime);display:block;line-height:1}
+.steps h3{font-size:20px;margin:8px 0 4px}.steps p{color:var(--mute)}
+.bmi{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.calc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc label{display:flex;flex-direction:column;gap:6px;font-weight:600}
+.calc input{font:inherit;padding:13px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text)}
+.out{grid-column:1/-1;border-top:1px solid var(--line);padding-top:16px}
+.out .num{font-size:52px}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rules div{border:1px dashed var(--line);border-radius:12px;padding:20px}
+.rules b{display:block;margin-bottom:4px}.rules p{color:var(--mute);font-size:15px}
+.bar{display:none}
+@media(max-width:860px){.prog,.plans,.rules{grid-template-columns:1fr 1fr}.steps,.bmi{grid-template-columns:1fr}
+.bar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:20;background:#0B1A11;border-top:1px solid var(--line)}
+.bar a{padding:14px 6px;text-align:center;text-decoration:none;font-weight:800;font-size:14px}.bar a:nth-child(2){background:var(--lime);color:#06110B}.fab{display:none}footer{padding-bottom:80px}}
+@media(max-width:520px){.prog,.plans,.rules,.calc{grid-template-columns:1fr}}
 @media(max-width:860px){.links a:not(.btn){display:none}.hero{background:linear-gradient(0deg,rgba(6,17,11,.97) 35%,rgba(6,17,11,.35) 100%),url(/s/flowmode/img/hero.jpg) center/cover}.stats{grid-template-columns:1fr}.stats div{border-right:0;border-bottom:1px solid var(--line)}.why,.tg,.find,.form{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}.gal img:first-child{grid-column:span 2;grid-row:auto}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -86,7 +115,7 @@ footer{padding:30px 0 100px;color:var(--mute);font-size:14px;text-align:center}
 
 <header class="hero"><div class="wrap">
 <nav style="position:absolute;top:0;left:0;right:0;max-width:1160px;margin:0 auto;padding:20px 22px"><div class="logo">FLOW<span>MODE</span></div>
-<div class="links"><a href="#why">Why FlowMode</a><a href="#find">Find us</a><a href="#faq">FAQ</a><a class="btn" href="#trial">Book a visit</a></div></nav>
+<div class="links"><a href="#programs">Programs</a><a href="#plans">Memberships</a><a href="#find">Find us</a><a href="#faq">FAQ</a><a class="btn" href="#trial">Book a visit</a></div></nav>
 <div class="open"><i></i> Open 24/7 · Preet Vihar</div>
 <h1>Train different. <em>Flow better.</em></h1>
 <p>A 24/7 gym on Vikas Marg, Preet Vihar, with advanced machines, expert trainers and a crew that shows up. Train whenever your day allows.</p>
@@ -117,6 +146,35 @@ footer{padding:30px 0 100px;color:var(--mute);font-size:14px;text-align:center}
 </div>
 </div></section>
 
+<section id="programs"><div class="wrap">
+<h2>Train your way</h2>
+<p class="lead">Whatever your goal, there's space, equipment and help for it.</p>
+<div class="prog">
+<article><h3>Strength training</h3><p>Free weights, racks and plate-loaded machines to build real strength.</p></article>
+<article><h3>Fat loss &amp; conditioning</h3><p>Cardio equipment and full-body circuits to burn fat and build stamina.</p></article>
+<article><h3>Personal training</h3><p>One-on-one coaching with a plan built around you. Ask the team for details.</p></article>
+<article><h3>Beginners welcome</h3><p>New to the gym? Trainers help you learn the machines and good form.</p></article>
+</div></div></section>
+
+<section id="plans" class="trial" style="border-top:0"><div class="wrap">
+<h2>Memberships</h2>
+<p class="lead">Choose how long you want to commit. Message the team for current prices and any running offers.</p>
+<div class="plans">
+<div class="plan"><span class="num">Monthly</span><ul><li>24/7 gym access</li><li>All equipment</li><li>Trainer guidance</li></ul><a class="btn ghost" href="https://wa.me/919205320808?text=Hi%20FlowMode%21%20Please%20share%20the%20price%20for%20the%20monthly%20membership." data-umami-event="Sample plan ask" data-umami-event-location="Monthly">Ask price</a></div>
+<div class="plan"><span class="num">Quarterly</span><ul><li>24/7 gym access</li><li>All equipment</li><li>Trainer guidance</li></ul><a class="btn ghost" href="https://wa.me/919205320808?text=Hi%20FlowMode%21%20Please%20share%20the%20price%20for%20the%20quarterly%20membership." data-umami-event="Sample plan ask" data-umami-event-location="Quarterly">Ask price</a></div>
+<div class="plan hot"><span class="tag">Most popular</span><span class="num">Half-yearly</span><ul><li>24/7 gym access</li><li>All equipment</li><li>Trainer guidance</li></ul><a class="btn" href="https://wa.me/919205320808?text=Hi%20FlowMode%21%20Please%20share%20the%20price%20for%20the%20half-yearly%20membership." data-umami-event="Sample plan ask" data-umami-event-location="Half-yearly">Ask price</a></div>
+<div class="plan"><span class="num">Annual</span><ul><li>24/7 gym access</li><li>All equipment</li><li>Trainer guidance</li></ul><a class="btn ghost" href="https://wa.me/919205320808?text=Hi%20FlowMode%21%20Please%20share%20the%20price%20for%20the%20annual%20membership." data-umami-event="Sample plan ask" data-umami-event-location="Annual">Ask price</a></div>
+</div>
+</div></section>
+
+<section id="join"><div class="wrap">
+<h2>Joining is simple</h2>
+<div class="steps" style="margin-top:30px">
+<div><h3>Book a visit</h3><p>Pick a time below. The team confirms on WhatsApp.</p></div>
+<div><h3>Tour the gym</h3><p>See both floors, meet the trainers and talk about your goal.</p></div>
+<div><h3>Start training</h3><p>Choose a membership and get your first session planned.</p></div>
+</div></div></section>
+
 <section id="trial" class="trial"><div class="wrap tg">
 <div>
 <h2>Come see the gym</h2>
@@ -141,6 +199,28 @@ footer{padding:30px 0 100px;color:var(--mute);font-size:14px;text-align:center}
 </form>
 </div></section>
 
+<section id="bmi"><div class="wrap bmi">
+<div><h2>Check your BMI</h2><p class="lead">A quick starting point. Bring the number to your visit and a trainer will help you plan from there.</p>
+<a class="btn" href="#trial">Book a visit</a></div>
+<form class="calc" id="bmiform" onsubmit="return false">
+<label>Height (cm)<input id="h" type="number" min="100" max="230" placeholder="170" inputmode="numeric"></label>
+<label>Weight (kg)<input id="w" type="number" min="25" max="250" placeholder="70" inputmode="numeric"></label>
+<div class="out" aria-live="polite"><span class="num" id="bv">–</span><div id="bt" class="hint">Enter your height and weight.</div></div>
+</form>
+</div></section>
+
+<section id="rules" style="padding-top:0"><div class="wrap">
+<h2>Floor rules</h2>
+<p class="lead">A few habits that keep the gym great for everyone.</p>
+<div class="rules">
+<div><b>Don't drop the weights</b><p>It damages equipment and disturbs others. Lower them with control.</p></div>
+<div><b>Re-rack after use</b><p>Put plates and dumbbells back where you found them.</p></div>
+<div><b>Wipe it down</b><p>Clean the bench or machine once you're done.</p></div>
+<div><b>Share the space</b><p>Let others work in between your sets at busy times.</p></div>
+</div>
+<p class="hint" style="margin-top:22px">See real member reviews, workouts and gym updates on <a href="https://www.instagram.com/flowmode_preetvihar/">@flowmode_preetvihar</a>.</p>
+</div></section>
+
 <section id="find"><div class="wrap find">
 <div>
 <h2>Find us</h2>
@@ -159,9 +239,13 @@ footer{padding:30px 0 100px;color:var(--mute);font-size:14px;text-align:center}
 <details><summary>Where exactly is it?</summary><p>C/54, 2nd &amp; 3rd floor, Vikas Marg Road, Preet Vihar, New Delhi.</p></details>
 </div></section>
 
+<nav class="bar" aria-label="Quick contact"><a href="tel:+919205320808" data-umami-event="Call click" data-umami-event-location="flowmode-bar">Call</a><a href="https://wa.me/919205320808" data-umami-event="Sample order click" data-umami-event-location="bar">WhatsApp</a><a href="https://www.google.com/maps/search/?api=1&amp;query=FlowMode+Fitness+Preet+Vihar+Delhi">Directions</a></nav>
 <footer>© FlowMode Fitness · A Galebal Enterprise · Preet Vihar, Delhi</footer>
 <a class="fab" href="https://wa.me/919205320808" aria-label="WhatsApp FlowMode Fitness" data-umami-event="Sample order click" data-umami-event-location="fab"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.3.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.4 2.5 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
 <script>
+const H=document.getElementById('h'),Wt=document.getElementById('w');function bmi(){const h=+H.value/100,w=+Wt.value;if(!h||!w){return}const b=w/(h*h);document.getElementById('bv').textContent=b.toFixed(1);
+document.getElementById('bt').textContent=b<18.5?'Underweight: a strength and nutrition plan can help you build up.':b<25?'Healthy range: great base to build strength and stamina.':b<30?'Overweight: a mix of strength and conditioning works well.':'Obese range: start steady with guided training.';}
+H.oninput=Wt.oninput=bmi;
 document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.target),g=k=>(d.get(k)||'').toString().trim();
 const dt=g('date')?new Date(g('date')).toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'';
 const L=['Hi FlowMode! I would like to visit the gym.','• Goal: '+g('goal'),'• Date: '+dt+' – '+g('time'),'• Experience: '+g('exp'),'• Interested in: '+g('plan')];
