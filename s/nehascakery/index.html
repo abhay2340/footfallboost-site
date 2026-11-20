@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neha's Cakery · Theme cakes by a home baker in Gaur City, Greater Noida</title>
+<meta name="description" content="Theme cakes, whipped cream cakes and semi-fondant custom cakes by Neha Agarwal, a home baker and cake artist since 2015 in Greater Noida. Order on Instagram.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="4c4d28f9-8821-4f59-9bef-363aca82416a"></script>
+<style>
+:root{--ink:#16213A;--orange:#FF7A1A;--teal:#0F9D8A;--sun:#FFE08A;--cream:#FFF6E6;--mint:#D5F2EC}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:clip}
+h1,h2,h3,.logo{font-family:Unbounded,system-ui,sans-serif;font-weight:700;line-height:1.1;color:var(--ink)}
+a{color:inherit}img{display:block;max-width:100%;height:auto}
+.sample{background:var(--ink);color:#eaf0fb;font-size:14px;padding:10px 16px;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+.sample a{background:#25D366;color:#06351b;font-weight:700;text-decoration:none;padding:6px 14px;border-radius:99px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0}
+.logo{font-size:19px}
+.links{display:flex;gap:22px;align-items:center;font-weight:700;font-size:15px}.links a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--ink);font:700 16px "DM Sans",sans-serif;text-decoration:none;padding:15px 28px;border-radius:99px;border:0;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{background:#ff9140;transform:translateY(-2px)}
+.btn.teal{background:var(--teal);color:#fff}.btn.teal:hover{background:#0b8272}
+.btn.line{background:transparent;box-shadow:inset 0 0 0 2px var(--ink)}.btn.line:hover{background:var(--sun)}
+a:focus-visible,.btn:focus-visible,summary:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.hero{background:linear-gradient(180deg,var(--sun),var(--cream))}
+.hero .wrap.main{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-top:14px;padding-bottom:80px}
+.hero h1{font-size:clamp(32px,4.8vw,58px)}
+.hero p{font-size:19px;margin:18px 0 28px;max-width:27em}
+.pill{display:inline-block;background:#fff;border-radius:99px;padding:6px 16px;font-weight:700;font-size:14px;margin-bottom:16px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.bubbles{position:relative;aspect-ratio:1}
+.bubbles img{position:absolute;object-fit:cover;aspect-ratio:1;border:6px solid #fff;box-shadow:0 14px 30px rgba(22,33,58,.18)}
+.bubbles img:nth-child(1){width:64%;left:0;top:6%;border-radius:50%}
+.bubbles img:nth-child(2){width:46%;right:0;top:0;border-radius:36px}
+.bubbles img:nth-child(3){width:44%;right:4%;bottom:0;border-radius:50%}
+.wave{display:block;width:100%;height:48px}
+section{padding:76px 0}
+h2{font-size:clamp(26px,3.6vw,42px);margin-bottom:14px}
+.lead{font-size:18px;max-width:38em;margin-bottom:32px}
+.mintband{background:var(--mint)}.inkband{background:var(--ink);color:#e5ebf7}.inkband h2,.inkband h3{color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stats div{background:#fff;border-radius:26px;padding:20px;text-align:center;font-weight:700}
+.stats b{display:block;font-family:Unbounded,sans-serif;font-size:26px;color:var(--orange)}
+.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.theme{background:#fff;border-radius:30px;overflow:hidden}
+.theme img{aspect-ratio:1;object-fit:cover;width:100%}
+.theme div{padding:16px 20px 22px}.theme h3{font-size:17px;margin-bottom:4px}.theme p{font-size:15px}
+.quiz{background:#fff;border-radius:34px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.quiz label{font-weight:700;font-size:14px;display:block}
+.quiz .out{background:var(--sun);border-radius:26px;padding:24px;min-height:150px}.quiz .out h3{font-size:20px;margin-bottom:8px}
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.vs{background:#fff;border-radius:30px;padding:28px}.vs h3{font-size:20px;margin-bottom:8px}.vs li{margin-left:18px;padding:3px 0}
+.gallery{columns:3;column-gap:14px}.gallery figure{break-inside:avoid;margin-bottom:14px;border-radius:26px;overflow:hidden}.gallery img{width:100%}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{background:#fff;border-radius:26px;padding:22px;counter-increment:s}
+.step:before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;font-family:Unbounded,sans-serif;margin-bottom:10px}
+.step h3{font-size:16px;margin-bottom:4px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:22px;overflow:hidden}th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--mint)}th{background:var(--ink);color:#fff}.tbl{overflow-x:auto}
+.order{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start}
+form.f{background:#fff;border-radius:30px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label.l{font-weight:700;font-size:14px;display:block}
+select,input[type=text],input[type=date],textarea{width:100%;font:inherit;padding:12px;border:2px solid var(--mint);border-radius:14px;background:var(--cream);margin-top:4px}
+.full{grid-column:1/-1}
+.sum{background:var(--ink);color:#fff;border-radius:30px;padding:26px;position:sticky;top:16px}
+.sum h3{color:var(--sun);margin-bottom:10px;font-size:18px}.sum ul{list-style:none}.sum li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.2);font-size:15px}.sum li span:last-child{font-weight:700;text-align:right}
+.note{font-size:14px;margin-top:10px}
+.faq details{background:#fff;border-radius:22px;padding:16px 22px;margin-bottom:12px}.faq summary{font-weight:700;cursor:pointer}.faq p{margin-top:8px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.box{background:#fff;border-radius:30px;padding:28px}.box h3{font-size:20px;margin-bottom:8px}
+footer{background:var(--teal);color:#fff;padding:60px 0 100px;text-align:center}footer h2{color:#fff}
+@media(max-width:860px){.hero .wrap.main,.order,.two,.quiz,.versus{grid-template-columns:1fr}.themes{grid-template-columns:1fr 1fr}.steps,.stats{grid-template-columns:1fr 1fr}.gallery{columns:2}.links a:not(.btn){display:none}.sum{position:static}form.f{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="sample">This is a free sample website made for Neha's Cakery by Footfall Boost. Photos are stand-ins from Unsplash.
+<a href="https://wa.me/919335694034?text=Hi%20Abhay%2C%20I%20saw%20the%20sample%20website%20for%20Neha%27s%20Cakery" data-umami-event="Sample make-live" data-umami-event-location="nehascakery">Make it live</a></div>
+<header class="hero"><div class="wrap"><nav><span class="logo">Neha's Cakery</span><div class="links"><a href="#themes">Themes</a><a href="#finder">Theme finder</a><a href="#types">Cake types</a><a href="#faq">FAQ</a><a class="btn" href="#order">Order</a></div></nav></div>
+<div class="wrap main"><div><span class="pill">Home baker and cake artist since 2015</span>
+<h1>Theme cakes that look like the picture in your head.</h1>
+<p>Neha Agarwal makes whipped cream and semi-fondant custom cakes in Gaur City, Greater Noida. Tell her the theme and she will design it.</p>
+<div class="cta-row"><a class="btn" href="#order" data-umami-event="Sample order click" data-umami-event-location="hero">Plan my cake</a><a class="btn line" href="#themes">See themes</a></div></div>
+<div class="bubbles"><img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=700&q=70" alt="Fondant celebration cake" loading="lazy" width="700" height="700"><img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?auto=format&fit=crop&w=600&q=70" alt="Chocolate cake with frosting roses" loading="lazy" width="600" height="600"><img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=600&q=70" alt="Pink and white cake" loading="lazy" width="600" height="600"></div></div></header>
+<svg class="wave" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 24 Q150 0 300 24 T600 24 T900 24 T1200 24 V48 H0Z" fill="#FFF6E6"/></svg>
+
+<section style="padding-top:20px"><div class="wrap"><div class="stats"><div><b>2015</b>Baking since</div><div><b>Theme</b>Cakes are the speciality</div><div><b>2 styles</b>Whipped cream and semi-fondant</div><div><b>Greater Noida</b>Gaur City</div></div></div></section>
+
+<section class="mintband" id="themes"><div class="wrap"><h2>Pick a theme</h2><p class="lead">A few of the families Neha designs. If your idea is not here, send a picture.</p>
+<div class="themes"><div class="theme"><img src="https://images.unsplash.com/photo-1774290686682-ac824d987a9e?auto=format&fit=crop&w=800&q=70" alt="Number two candles" loading="lazy" width="800" height="800"><div><h3>First and second birthdays</h3><p>Numbers, animals and soft colours.</p></div></div>
+<div class="theme"><img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=800&q=70" alt="Fondant cake" loading="lazy" width="800" height="800"><div><h3>Characters and hobbies</h3><p>Cartoons, games, sports and the things kids love.</p></div></div>
+<div class="theme"><img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?auto=format&fit=crop&w=800&q=70" alt="Cake with frosting roses" loading="lazy" width="800" height="800"><div><h3>Floral and elegant</h3><p>Piped roses for her and for anniversaries.</p></div></div>
+<div class="theme"><img src="https://images.unsplash.com/photo-1610670444950-0b29430891b4?auto=format&fit=crop&w=800&q=70" alt="Chocolate cake with candles" loading="lazy" width="800" height="800"><div><h3>Chocolate lovers</h3><p>Rich cakes with a clean finish.</p></div></div>
+<div class="theme"><img src="https://images.unsplash.com/photo-1779103281115-517d7e572855?auto=format&fit=crop&w=800&q=70" alt="Cake slice with raspberries" loading="lazy" width="800" height="800"><div><h3>Fresh and fruity</h3><p>Light whipped cream with fruit.</p></div></div>
+<div class="theme"><img src="https://images.unsplash.com/photo-1577998474517-7eeeed4e448a?auto=format&fit=crop&w=800&q=70" alt="Cake with sparkler" loading="lazy" width="800" height="800"><div><h3>Milestones</h3><p>Big birthdays and special days.</p></div></div></div></div></section>
+
+<section id="finder"><div class="wrap"><h2>Not sure what to pick?</h2><p class="lead">Answer two questions and get a starting idea. Neha will refine it with you.</p>
+<div class="quiz"><div><label>Who is the cake for?<select id="q1"><option value="kid">A child</option><option value="teen">A teenager</option><option value="adult">An adult</option><option value="couple">A couple</option></select></label>
+<label style="margin-top:14px">What do they love?<select id="q2"><option value="char">Cartoons and games</option><option value="sport">Sports</option><option value="nature">Animals and nature</option><option value="style">Fashion and style</option></select></label>
+<p class="note">This is only a starting idea. Neha confirms the design with you.</p></div>
+<div class="out" aria-live="polite"><h3 id="qh">Pick answers to see an idea</h3><p id="qp"></p><a class="btn teal" id="qa" href="#order" style="margin-top:14px">Use this idea</a></div></div></div></section>
+
+<section class="mintband" id="types"><div class="wrap"><h2>Whipped cream or semi-fondant?</h2><p class="lead">Neha makes both. Here is how to choose.</p>
+<div class="versus"><div class="vs"><h3>Whipped cream cakes</h3><ul><li>Soft, light and creamy</li><li>Good for painted and piped designs</li><li>Best for quick celebrations at home</li></ul></div><div class="vs"><h3>Semi-fondant cakes</h3><ul><li>Smooth finish with modelled toppers</li><li>Good for characters and 3D themes</li><li>Holds its shape for longer at a party</li></ul></div></div></div></section>
+
+<section class="inkband"><div class="wrap"><h2>Cake moodboard</h2><p class="lead" style="color:#cdd7ea">Stand-in photos. The live site uses Neha's own cakes.</p><div class="gallery"><figure><img src="https://images.unsplash.com/photo-1545696563-af8f6ec2295a?auto=format&fit=crop&w=700&q=70" alt="Hand lighting candles on a cake" loading="lazy" width="700" height="700"></figure><figure><img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=700&q=70" alt="White cake with chocolate" loading="lazy" width="700" height="700"></figure><figure><img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=700&q=70" alt="Pink and white cake" loading="lazy" width="700" height="700"></figure><figure><img src="https://images.unsplash.com/photo-1779103281115-517d7e572855?auto=format&fit=crop&w=700&q=70" alt="Cake with raspberries" loading="lazy" width="700" height="700"></figure><figure><img src="https://images.unsplash.com/photo-1610670444950-0b29430891b4?auto=format&fit=crop&w=700&q=70" alt="Chocolate cake with candles" loading="lazy" width="700" height="700"></figure><figure><img src="https://images.unsplash.com/photo-1577998474517-7eeeed4e448a?auto=format&fit=crop&w=700&q=70" alt="Sparkler cake" loading="lazy" width="700" height="700"></figure></div></div></section>
+
+<section><div class="wrap"><h2>How an order works</h2><p class="lead">Four short steps on Instagram.</p><div class="steps"><div class="step"><h3>Send the idea</h3><p>A theme, a photo or a link.</p></div><div class="step"><h3>Design chat</h3><p>Neha suggests what works for your size and date.</p></div><div class="step"><h3>Custom quote</h3><p>No big upfront payment.</p></div><div class="step"><h3>Collect or deliver</h3><p>Fresh for your celebration.</p></div></div></div></section>
+
+<section class="mintband"><div class="wrap"><h2>Size guide</h2><p class="lead">A rough guide. Neha will suggest the right size.</p><div class="tbl"><table><tr><th>Cake</th><th>Serves about</th><th>Good for</th></tr><tr><td>500 g</td><td>4 to 6</td><td>Small celebration</td></tr><tr><td>1 kg</td><td>10 to 12</td><td>Family birthday</td></tr><tr><td>1.5 kg</td><td>15 to 18</td><td>Kids' party</td></tr><tr><td>2 kg and above</td><td>20+</td><td>Large parties and theme cakes</td></tr></table></div></div></section>
+
+<section id="order"><div class="wrap"><h2>Plan your cake</h2><p class="lead">Fill this in, copy the message and send it to Neha on Instagram.</p>
+<div class="order"><form class="f" id="f"><label class="l">Occasion<select name="occ"><option>Birthday</option><option>First birthday</option><option>Anniversary</option><option>Baby shower</option><option>Other</option></select></label>
+<label class="l">Theme<input type="text" name="theme" id="theme" placeholder="Cartoon, floral, sports..."></label>
+<label class="l">Style<select name="style"><option>Whipped cream</option><option>Semi-fondant</option><option>Not sure</option></select></label><label class="l">Size<select name="size"><option>500 g</option><option selected>1 kg</option><option>1.5 kg</option><option>2 kg</option><option>Not sure</option></select></label>
+<label class="l">Flavour<input type="text" name="fl" placeholder="Chocolate, pineapple..."></label><label class="l">Date needed<input type="date" name="date"></label>
+<label class="l full">Name on the cake<input type="text" name="name" placeholder="Happy Birthday..."></label>
+<div class="full"><button class="btn" type="submit" data-umami-event="Sample order form" data-umami-event-location="nehascakery">Copy message and open Instagram</button><p class="note" id="st" role="status"></p></div></form>
+<aside class="sum"><h3>Your order so far</h3><ul id="sum"></ul></aside></div></div></section>
+
+<section class="mintband faq" id="faq"><div class="wrap"><h2>Questions people ask</h2>
+<details><summary>Can you copy a picture I saw?</summary><p>Neha takes reference pictures and adapts them to your size and date. Share the image in the Instagram chat.</p></details>
+<details><summary>Whipped cream or semi-fondant, which is better?</summary><p>It depends on the design. See the comparison above or ask Neha.</p></details>
+<details><summary>How early should I order?</summary><p>For theme cakes, a few days ahead. For busy dates, book earlier.</p></details>
+<details><summary>Do you deliver?</summary><p>Share your area in Greater Noida and Neha will confirm.</p></details>
+<details><summary>How does pricing work?</summary><p>Every quote is custom for the design, style and size. There is no big upfront payment.</p></details></div></section>
+
+<section><div class="wrap two"><div class="box"><h3>Find Neha</h3><p>Home baker in Gaur City 1, Greater Noida. Message on Instagram to confirm pickup or delivery.</p><p style="margin-top:16px"><a class="btn teal" href="https://ig.me/m/nehas_cakery" data-umami-event="Sample instagram click" data-umami-event-location="where">Message on Instagram</a></p></div><div class="box"><h3>See more cakes</h3><p>Hundreds of designs are on the Instagram page.</p><p style="margin-top:16px"><a class="btn line" href="https://www.instagram.com/nehas_cakery/" data-umami-event="Sample instagram click" data-umami-event-location="about">Open Instagram</a></p></div></div></section>
+
+<footer><div class="wrap"><h2>Tell Neha the theme</h2><p style="margin:10px 0 22px">She will take it from there.</p><a class="btn" href="https://ig.me/m/nehas_cakery" data-umami-event="Sample order click" data-umami-event-location="footer">Message on Instagram</a></div></footer>
+<script>
+const form=document.getElementById('f'),sum=document.getElementById('sum');
+const val=k=>(new FormData(form).get(k)||'').toString().trim();
+const fmt=d=>d?new Date(d).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}):'-';
+function upd(){const r=[['Occasion',val('occ')],['Theme',val('theme')||'-'],['Style',val('style')],['Size',val('size')],['Flavour',val('fl')||'-'],['Date',fmt(val('date'))]];sum.innerHTML=r.map(()=>'<li><span></span><span></span></li>').join('');[...sum.children].forEach((li,i)=>{li.children[0].textContent=r[i][0];li.children[1].textContent=r[i][1];});}
+form.addEventListener('input',upd);upd();
+form.addEventListener('submit',e=>{e.preventDefault();const g=val;const L=["Hi Neha! I'd like to order a cake:",'• Occasion: '+g('occ'),'• Theme: '+(g('theme')||'to discuss'),'• Style: '+g('style'),'• Size: '+g('size')];if(g('fl'))L.push('• Flavour: '+g('fl'));if(g('name'))L.push('• On the cake: '+g('name'));L.push('• Date: '+fmt(g('date')));const msg=L.join('\n');const st=document.getElementById('st');const done=()=>{st.textContent='Message copied. Paste it into the Instagram chat.';window.open('https://ig.me/m/nehas_cakery','_blank');};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(msg).then(done,()=>{st.textContent='Could not copy. Opening Instagram, please type your details.';window.open('https://ig.me/m/nehas_cakery','_blank');});}else{done();}});
+const ideas={'kid|char':['A favourite cartoon cake','Semi-fondant with a modelled character on top.'],'kid|sport':['A mini sports pitch','Whipped cream with a green field and little players.'],'kid|nature':['Jungle or ocean party','Animals, leaves and soft colours in cream or fondant.'],'kid|style':['A dress-up or princess cake','Pastel layers with a pretty topper.'],'teen|char':['A game inspired cake','Bold colours with a controller or logo style topper.'],'teen|sport':['A jersey and ball cake','Team colours with a clean finish.'],'teen|nature':['A scenic painted cake','Hand painted hills, sea or flowers.'],'teen|style':['An aesthetic minimal cake','Soft colours, a quote and a few details.'],'adult|char':['A hobby cake','Gaming, travel or music themed toppers.'],'adult|sport':['A fitness or cricket cake','Fun details around their favourite sport.'],'adult|nature':['A garden cake','Piped flowers and greenery.'],'adult|style':['A classy designer cake','Elegant colours with a gold detail.'],'couple|char':['A movie night cake','A shared favourite film or show in cake form.'],'couple|sport':['A team vs team cake','A fun split design for a mixed fan couple.'],'couple|nature':['A romantic floral cake','Soft roses and pearls.'],'couple|style':['An anniversary heart cake','A heart shape with a simple message.']};
+const q1=document.getElementById('q1'),q2=document.getElementById('q2'),qh=document.getElementById('qh'),qp=document.getElementById('qp'),qa=document.getElementById('qa');
+function qu(){const r=ideas[q1.value+'|'+q2.value];qh.textContent=r[0];qp.textContent=r[1];}
+q1.addEventListener('change',qu);q2.addEventListener('change',qu);qu();
+qa.addEventListener('click',()=>{document.getElementById('theme').value=qh.textContent;upd();});
+</script>
+</body></html>
