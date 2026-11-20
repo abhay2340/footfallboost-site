@@ -76,6 +76,23 @@ h2{font-size:clamp(32px,4vw,46px);color:var(--forest);margin-bottom:12px}
 .end .btn{background:var(--butter);color:var(--forest)}
 footer{padding:30px 0 100px;text-align:center;color:#5F6B63;font-size:14px}
 .fab{position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.2);z-index:9}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.why div{background:#fff;border-radius:18px;padding:22px;box-shadow:0 1px 0 rgba(31,61,43,.12),0 8px 24px rgba(31,61,43,.06)}
+.why h3{font-size:20px;color:var(--forest);margin-bottom:6px}
+.why p{color:#4A564E;font-size:15px}
+.sizes{width:100%;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 24px rgba(31,61,43,.06)}
+.sizes th,.sizes td{text-align:left;padding:14px 18px;border-bottom:1.5px solid #E6ECE7}
+.sizes th{background:var(--forest);color:var(--flour);font-weight:700}
+.sizes tr:last-child td{border-bottom:0}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
+.about .fact{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.about .fact div{background:var(--butter);border-radius:14px;padding:16px}
+.about .fact b{display:block;font-family:"Young Serif",serif;font-weight:400;font-size:22px;color:var(--forest)}
+.wsform{background:var(--flour);border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px;border:1.5px solid var(--forest)}
+.wsform label{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:15px}
+.wsform .full{grid-column:1/-1}
+.wsform input,.wsform select{font:inherit;font-weight:400;padding:12px 14px;border:1.5px solid #C9D3CB;border-radius:10px;background:#fff;color:var(--ink)}
+@media(max-width:860px){.why{grid-template-columns:1fr 1fr}.about,.wsform{grid-template-columns:1fr}.about .fact{grid-template-columns:1fr 1fr}.sizes th,.sizes td{padding:10px 12px;font-size:14px}}
 @media(max-width:860px){.hero .wrap,.ws{grid-template-columns:1fr}.menu{grid-template-columns:1fr 1fr}.links a:not(.btn){display:none}.heroimg .tag{left:12px}.form{grid-template-columns:1fr;padding:22px}}
 @media(max-width:520px){.menu{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -134,6 +151,57 @@ footer{padding:30px 0 100px;text-align:center;color:#5F6B63;font-size:14px}
 <img src="/s/bakenflake/img/3.jpg" alt="Homemade bread taught in Namrata's bread workshop" loading="lazy" width="560" height="560">
 </div></section>
 
+<section><div class="wrap">
+<h2>Why Bake n' Flake</h2>
+<p class="lead">Eggless and Jain-friendly baking, made by hand at home, in small batches.</p>
+<div class="why">
+<div><h3>100% eggless</h3><p>Every cake, bread, cookie and treat is made without eggs.</p></div>
+<div><h3>Made to order</h3><p>Baked for your date, so the cake or loaf is fresh when you collect it.</p></div>
+<div><h3>Custom designs</h3><p>Theme cakes, custom biscuits and festive hampers planned around you.</p></div>
+<div><h3>FSSAI registered</h3><p>A registered food business, with clear ingredient questions answered on WhatsApp.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>Size guide</h2>
+<p class="lead">A quick guide to choosing. Namrata will confirm the right quantity when you message her.</p>
+<table class="sizes">
+<thead><tr><th>Item</th><th>Size</th><th>Good for (approx.)</th></tr></thead>
+<tbody>
+<tr><td>Celebration or theme cake</td><td>½ kg</td><td>4–5 people</td></tr>
+<tr><td>Celebration or theme cake</td><td>1 kg</td><td>8–10 people</td></tr>
+<tr><td>Celebration or theme cake</td><td>1.5 kg – 2 kg</td><td>12–18 people</td></tr>
+<tr><td>Bread or ladi pav</td><td>1 pack / loaf</td><td>A household for a few days</td></tr>
+<tr><td>Hampers and bulk orders</td><td>2–3 packs or party order</td><td>Gifting, office and festive orders</td></tr>
+</tbody></table>
+</div></section>
+
+<section><div class="wrap">
+<div class="about">
+<div>
+<h2>About Namrata</h2>
+<p class="lead" style="margin-bottom:0">Namrata Jain runs Bake n' Flake from home in Delhi. She bakes eggless cakes and breads for families, and teaches certified baking workshops for people who want to learn at home.</p>
+</div>
+<div>
+<p class="lead" style="margin-bottom:0">Every order is planned by hand, and every workshop is hands-on, from your first loaf to a three-tier cake.</p>
+<div class="fact"><div><b>100%</b>eggless</div><div><b>FSSAI</b>registered</div></div>
+</div>
+</div>
+</div></section>
+
+<section class="workshop"><div class="wrap">
+<h2>Book a workshop seat</h2>
+<p class="lead" style="color:#3D3A20">Tell Namrata which workshop you'd like. She'll confirm the dates and seat on WhatsApp.</p>
+<form class="wsform" id="wsform">
+<label>Workshop<select name="ws"><option>Bread masterclass</option><option>Basic to advanced cakes</option><option>Online workshop</option><option>Not sure, suggest one</option></select></label>
+<label>Your experience<select name="level"><option>Complete beginner</option><option>Baked at home a few times</option><option>Experienced home baker</option></select></label>
+<label>Preferred month<input name="month" placeholder="e.g. next month, weekends"></label>
+<label>Number of people<input name="people" type="number" min="1" placeholder="e.g. 1"></label>
+<label class="full">Your name<input name="name" required placeholder="Your name"></label>
+<div class="full"><button class="btn" type="submit" data-umami-event="Sample workshop enquiry" data-umami-event-location="workshop-form">Send enquiry on WhatsApp</button></div>
+</form>
+</div></section>
+
 <section id="order"><div class="wrap">
 <h2>Place your order</h2>
 <p class="lead">Fill in what you need. It opens WhatsApp with your order typed out, ready to send to Namrata. Please order 1–2 days ahead.</p>
@@ -176,6 +244,10 @@ const dt=g('date')?new Date(g('date')).toLocaleDateString('en-IN',{day:'numeric'
 const L=["Hi Namrata! I'd like to order:",'• '+g('item')+' – '+g('qty')];
 if(g('flavour'))L.push('• Flavour/variety: '+g('flavour'));if(g('occasion'))L.push('• Occasion: '+g('occasion'));
 L.push('• Date: '+dt,'• '+g('mode')+(g('area')?' – '+g('area'):''));if(g('notes'))L.push('• Notes: '+g('notes'));L.push('','Name: '+g('name'));
+window.open('https://wa.me/919914438811?text='+encodeURIComponent(L.join('\n')),'_blank');});
+document.getElementById('wsform').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.target),g=k=>(d.get(k)||'').toString().trim();
+const L=["Hi Namrata! I'd like to enquire about a workshop:",'• Workshop: '+g('ws'),'• Experience: '+g('level')];
+if(g('month'))L.push('• Preferred time: '+g('month'));if(g('people'))L.push('• People: '+g('people'));L.push('','Name: '+g('name'));
 window.open('https://wa.me/919914438811?text='+encodeURIComponent(L.join('\n')),'_blank');});
 </script>
 </body>
