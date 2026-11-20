@@ -66,6 +66,27 @@ h2{font-size:clamp(30px,4vw,44px);margin-bottom:14px}
 .cta h2{font-size:clamp(34px,5vw,56px)}
 footer{padding:36px 0 110px;text-align:center;font-size:14px;color:var(--cocoa2)}
 .fab{position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.2);z-index:9}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery figure{border:2px solid var(--cocoa);border-radius:20px;overflow:hidden;background:var(--white);aspect-ratio:1}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block}
+.form{background:var(--white);border:2px solid var(--cocoa);border-radius:28px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form label{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:15px}
+.form .full{grid-column:1/-1}
+.form input,.form select,.form textarea{font:inherit;font-weight:400;padding:12px 14px;border:2px solid var(--cocoa2);border-radius:14px;background:#fff;color:var(--cocoa)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:3px solid var(--rasp);outline-offset:1px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0}
+.chips span{display:inline-block;padding:9px 16px;border:2px solid var(--cocoa);border-radius:99px;font-weight:700;cursor:pointer;background:#fff}
+.chips input:checked+span{background:var(--rasp);color:#fff;border-color:var(--rasp)}
+.chips input:focus-visible+span{outline:3px solid var(--cocoa);outline-offset:2px}
+.form button{border:0;cursor:pointer;font:inherit;justify-self:start}
+.hint{font-size:14px;color:var(--cocoa2)}
+.faq details{background:var(--white);border:2px solid var(--cocoa);border-radius:18px;padding:18px 22px;margin-bottom:12px}
+.faq summary{font:600 19px Fredoka,sans-serif;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";color:var(--rasp);font-size:24px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:10px;color:var(--cocoa2)}
+@media(max-width:820px){.gallery{grid-template-columns:1fr 1fr}.form{grid-template-columns:1fr;padding:22px}}
 @media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:10px}.cake{height:340px;transform:scale(.9)}.steps,.deliver{grid-template-columns:1fr}.big{grid-column:auto}.order{padding:40px 24px;border-radius:26px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -82,12 +103,23 @@ footer{padding:36px 0 110px;text-align:center;font-size:14px;color:var(--cocoa2)
 <div>
 <h1>Custom cakes, completely egg-free.</h1>
 <p>Delhi/NCR's home of customisation. Payal bakes every cake fresh at home: birthday cakes, cheesecakes, bento cakes, cupcakes, chocolates and festive hampers.</p>
-<a class="btn" href="https://wa.me/919999317504?text=Hi%20Payal%2C%20I%27d%20like%20to%20order%20a%20custom%20cake" data-umami-event="Sample order click" data-umami-event-location="hero">Plan my cake on WhatsApp</a>
+<a class="btn" href="#order" data-umami-event="Sample order click" data-umami-event-location="hero">Design my cake</a>
 <ul class="facts"><li>300+ cakes baked</li><li>100% egg-free</li><li>Delivery across Delhi/NCR</li><li>Pickup available</li></ul>
 </div>
 <div class="cake" aria-hidden="true"><div class="stamp">100%<br>egg<br>free</div><div class="plate"></div><div class="tier t1"></div><div class="tier t2"></div><div class="tier t3"></div><div class="cherry"></div></div>
 </header>
 </div>
+
+<section id="bakes"><div class="wrap">
+<h2>Fresh from Payal's kitchen</h2>
+<p class="lead">Real cakes from Payal's kitchen. There are 1,000+ more on <a href="https://www.instagram.com/cakebitesbypayal/">Instagram</a>.</p>
+<div class="gallery"><figure><img src="img/6.jpg" alt="Tiered wedding cake with red roses" loading="lazy" width="560" height="560"></figure>
+<figure><img src="img/1.jpg" alt="Custom birthday theme cake" loading="lazy" width="560" height="560"></figure>
+<figure><img src="img/7.jpg" alt="Floral Women's Day cake" loading="lazy" width="560" height="560"></figure>
+<figure><img src="img/4.jpg" alt="Mini chocolate cake with gold hearts" loading="lazy" width="560" height="560"></figure>
+<figure><img src="img/3.jpg" alt="Baked cheesecake" loading="lazy" width="560" height="560"></figure>
+<figure><img src="img/5.jpg" alt="Mixing cocoa batter in Payal's kitchen" loading="lazy" width="560" height="560"></figure></div>
+</div></section>
 
 <section><div class="wrap">
 <h2>What Payal bakes</h2>
@@ -120,6 +152,49 @@ footer{padding:36px 0 110px;text-align:center;font-size:14px;color:var(--cocoa2)
 <div class="box"><h3>Follow the bakes</h3><p><a href="https://www.instagram.com/cakebitesbypayal/">@cakebitesbypayal</a> on Instagram, with 1,000+ posts of real cakes.</p></div>
 </div></section>
 
+<section id="order"><div class="wrap">
+<h2>Design your cake</h2>
+<p class="lead">Pick the details below. Your choices go to Payal as a ready-made WhatsApp message, and she replies with the design and price.</p>
+<form class="form" id="cakeform">
+<div class="full"><b>What would you like?</b>
+<div class="chips" style="margin-top:8px">
+<label><input type="radio" name="item" value="Custom cake" checked><span>Custom cake</span></label>
+<label><input type="radio" name="item" value="Cheesecake"><span>Cheesecake</span></label>
+<label><input type="radio" name="item" value="Bento cake"><span>Bento cake</span></label>
+<label><input type="radio" name="item" value="Cupcakes"><span>Cupcakes</span></label>
+<label><input type="radio" name="item" value="Chocolates / hamper"><span>Chocolates / hamper</span></label>
+<label><input type="radio" name="item" value="Wedding cake"><span>Wedding cake</span></label>
+</div></div>
+<label>Occasion<select name="occasion"><option>Birthday</option><option>Kid's birthday</option><option>Anniversary</option><option>Wedding / engagement</option><option>Baby shower</option><option>Festival / gifting</option><option>Corporate</option><option>Just because</option></select></label>
+<label>Size / weight<select name="size"><option>Bento (~250 g)</option><option>0.5 kg</option><option selected>1 kg</option><option>1.5 kg</option><option>2 kg</option><option>3 kg</option><option>4 kg+ / tiered</option><option>Not sure, guide me</option></select></label>
+<label>Flavour<select name="flavour"><option>Chocolate truffle</option><option>Belgian chocolate</option><option>Red velvet</option><option>Pineapple</option><option>Butterscotch</option><option>Black forest</option><option>Blueberry</option><option>Fresh fruit</option><option>Rasmalai</option><option>Other (I'll mention)</option></select></label>
+<label>Number of guests<input name="guests" type="number" min="1" placeholder="e.g. 15"></label>
+<label>Date needed<input name="date" type="date" required></label>
+<label>Time<input name="time" type="time"></label>
+<div class="full"><b>Delivery or pickup?</b>
+<div class="chips" style="margin-top:8px">
+<label><input type="radio" name="mode" value="Delivery" checked><span>Delivery</span></label>
+<label><input type="radio" name="mode" value="Pickup"><span>Pickup</span></label>
+</div></div>
+<label>Area / locality<input name="area" placeholder="e.g. Mayur Vihar, Noida 62"></label>
+<label>Your name<input name="name" required placeholder="Your name"></label>
+<label class="full">Message on the cake<input name="msg" placeholder="e.g. Happy 5th Birthday Aarav"></label>
+<label class="full">Theme or design idea<textarea name="theme" rows="3" placeholder="Colours, theme, characters… You can send a reference picture on WhatsApp next."></textarea></label>
+<button class="btn" type="submit" data-umami-event="Sample order form" data-umami-event-location="form">Send to Payal on WhatsApp</button>
+<p class="hint full">Opens WhatsApp with your details filled in. Nothing is sent until you tap send.</p>
+</form>
+</div></section>
+
+<section class="faq"><div class="wrap">
+<h2>Questions people ask</h2>
+<details><summary>Are all the cakes really egg-free?</summary><p>Yes. Every cake and dessert Payal bakes is 100% egg-free.</p></details>
+<details><summary>How early should I order?</summary><p>For custom designs, message a few days ahead so there is time to plan the design. For something urgent, ask on WhatsApp and Payal will tell you what's possible.</p></details>
+<details><summary>Can you copy a cake from a picture?</summary><p>Yes. Send a reference picture on WhatsApp and Payal will confirm the design, size and price.</p></details>
+<details><summary>How much cake do I need?</summary><p>A 1 kg cake usually serves around 8–10 people. Tell Payal your guest count and she'll suggest the right size.</p></details>
+<details><summary>Where do you deliver?</summary><p>Across Delhi and NCR. Pickup is also available.</p></details>
+<details><summary>Do you make hampers for Diwali, Christmas or corporate gifting?</summary><p>Yes: festive hampers with chocolates, cupcakes and treats. Message with the quantity and your budget.</p></details>
+</div></section>
+
 <section class="cta"><div class="wrap">
 <h2>Got a celebration coming up?</h2>
 <p class="lead" style="margin:14px auto 28px">Message Payal a few days ahead so your cake can be designed just right.</p>
@@ -128,5 +203,13 @@ footer{padding:36px 0 110px;text-align:center;font-size:14px;color:var(--cocoa2)
 
 <footer>© Cake Bites by Payal · Home bakery, Delhi/NCR</footer>
 <a class="fab" href="https://wa.me/919999317504" aria-label="Order on WhatsApp" data-umami-event="Sample order click" data-umami-event-location="fab"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.3.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.4 2.5 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+<script>
+document.getElementById('cakeform').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target),g=k=>(f.get(k)||'').toString().trim();
+const d=g('date')?new Date(g('date')).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}):'';
+const lines=['Hi Payal! I would like to order:','• Item: '+g('item'),'• Occasion: '+g('occasion'),'• Size: '+g('size'),'• Flavour: '+g('flavour')];
+if(g('guests'))lines.push('• Guests: '+g('guests'));lines.push('• Date: '+d+(g('time')?' at '+g('time'):''));lines.push('• '+g('mode')+(g('area')?' – '+g('area'):''));
+if(g('msg'))lines.push('• Message on cake: '+g('msg'));if(g('theme'))lines.push('• Design idea: '+g('theme'));lines.push('','Name: '+g('name'));
+window.open('https://wa.me/919999317504?text='+encodeURIComponent(lines.join('\n')),'_blank');});
+</script>
 </body>
 </html>
