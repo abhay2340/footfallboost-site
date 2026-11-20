@@ -29,3 +29,21 @@ def run(slug,widths=(360,390)):
             b.close()
     finally: srv.terminate()
     return res
+
+def run_many(slugs,widths=(360,390)):
+    s=socket.socket();s.bind(('',0));port=s.getsockname()[1];s.close()
+    srv=subprocess.Popen(['python3','-m','http.server',str(port)],cwd=ROOT,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL);time.sleep(1)
+    res={}
+    try:
+        with sync_playwright() as p:
+            b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
+            for slug in slugs:
+                res[slug]=[]
+                for w in widths:
+                    pg=b.new_page(viewport={'width':w,'height':800})
+                    pg.goto(f'http://localhost:{port}/s/{slug}/',wait_until='domcontentloaded');pg.add_style_tag(content='*{animation:none!important;transition:none!important;scroll-behavior:auto!important}');pg.wait_for_timeout(1000)
+                    res[slug]+=[f'{w}px {x}' for x in pg.evaluate(JS)]
+                    pg.close()
+            b.close()
+    finally: srv.terminate()
+    return res

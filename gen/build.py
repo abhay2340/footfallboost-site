@@ -37,9 +37,7 @@ def img(slug,x):
     if x.startswith('http'): return x
     if re.fullmatch(r'[0-9]{10,}-[0-9a-f-]+',x): return uns(x)
     return f"/s/{slug}/img/{x}"
-def main():
-    a=[x for x in sys.argv[1:] if not x.startswith('--')]
-    cfg=json.loads(Path(a[0]).read_text())
+def build(cfg):
     c={**DEFAULTS,**cfg}
     slug=c['slug']
     styles=json.loads((GEN/'styles.json').read_text()); pals=json.loads((GEN/'palettes.json').read_text()); fonts=json.loads((GEN/'fonts.json').read_text())
@@ -77,15 +75,42 @@ def main():
     d=ROOT/'s'/slug; d.mkdir(parents=True,exist_ok=True)
     (d/'index.html').write_text(out)
     print('built',slug,len(out),'bytes | style',c['style'],'| palette',c.get('palette') or st['pal'],'| hero',hero,'|',hf,'+',bf,'\n  sections:',' '.join(order))
-    if '--check' in sys.argv or '--push' in sys.argv:
+    return slug,c['name']
+def load(paths):
+    out=[]
+    for p in paths:
+        p=Path(p)
+        files=sorted(p.glob('*.json')) if p.is_dir() else [p]
+        for f in files:
+            if f.name.startswith('_'): continue
+            d=json.loads(f.read_text())
+            out+= d if isinstance(d,list) else [d]
+    return out
+def main():
+    paths=[x for x in sys.argv[1:] if not x.startswith('--')]
+    cfgs=load(paths)
+    if not cfgs: sys.exit('no configs found')
+    done=[];failed=[]
+    for cfg in cfgs:
+        try: done.append(build(cfg))
+        except Exception as e: failed.append((cfg.get('slug','?'),repr(e)))
+    print(f'\nbuilt {len(done)} / {len(cfgs)}')
+    for s,e in failed: print('  FAILED',s,e)
+    if ('--check' in sys.argv or '--push' in sys.argv) and done:
         sys.path.insert(0,str(GEN)); import audit
-        bad=audit.run(slug)
-        print('mobile audit:','CLEAN' if not bad else bad)
-        if bad and '--push' in sys.argv: sys.exit('fix audit issues before push')
+        res=audit.run_many([s for s,_ in done])
+        clean=[s for s,_ in done if not res.get(s)]
+        for s,_ in done: print('  ',s,'CLEAN' if not res.get(s) else res[s])
+    else: clean=[s for s,_ in done]
     if '--push' in sys.argv:
+        ok=[(s,n) for s,n in done if s in clean]
+        if not ok: sys.exit('nothing clean to push')
         r=lambda *x:subprocess.run(x,cwd=ROOT,check=True)
-        r('git','add','s/'+slug,'gen')
-        subprocess.run(['git','commit','-q','-m',f"Add sample site: {c['name']}\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01LTWcP5BKDAuoPy6f3ymbkm"],cwd=ROOT)
+        for s,_ in ok: r('git','add','s/'+s)
+        r('git','add','gen')
+        names=', '.join(n for _,n in ok)
+        subprocess.run(['git','commit','-q','-m',f"Add {len(ok)} sample sites: {names}\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01LTWcP5BKDAuoPy6f3ymbkm"],cwd=ROOT)
         r('git','push','-q','origin','HEAD:main')
-        print('LINK',f"{BASE}/v/{slug}")
+        print('\nPUSHED. Links (live in ~1 min):')
+        for s,n in ok: print(f'  {n}: {BASE}/v/{s}')
 main()

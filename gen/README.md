@@ -1,6 +1,12 @@
 # Sample site generator
 
-New business = one JSON in `gen/sites/` (copy `_example.json`), then:
+Many businesses at once: put them in ONE JSON file as a list `[ {...}, {...} ]` (or one file each in a folder), then:
+
+    python3 gen/build.py gen/batch/today.json --push   # builds all, audits all, ONE commit, prints every link
+
+A broken config is reported and skipped; only sites that pass the mobile audit get pushed. Files starting with `_` are ignored.
+
+Single business: one JSON in `gen/sites/` (copy `_example.json`), then:
 
     python3 gen/build.py gen/sites/<slug>.json --check   # build + 360/390px mobile audit
     python3 gen/build.py gen/sites/<slug>.json --push    # build, audit, commit, push -> prints /v/<slug> link
