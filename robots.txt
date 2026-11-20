@@ -1,3 +1,12 @@
+# Let link-preview bots read the private sample pages so DM previews show.
+# The pages themselves are noindex, so search engines still skip them.
+User-agent: facebookexternalhit
+User-agent: meta-externalagent
+User-agent: Facebot
+User-agent: WhatsApp
+User-agent: Twitterbot
+Allow: /s/
+
 User-agent: *
 Allow: /
 
