@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bake n' Flake · Eggless Jain bakery in Delhi by Namrata Jain</title>
+<meta name="description" content="100% eggless Jain home bakery in Delhi. Artisan cakes, breads, cookies and hampers by Namrata Jain, plus hands-on baking workshops. FSSAI registered.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="4c4d28f9-8821-4f59-9bef-363aca82416a"></script>
+<style>
+:root{--forest:#1F3D2B;--forest2:#2E5A40;--butter:#F6D365;--flour:#FBF8F1;--crust:#B9783F;--ink:#1B241E}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,sans-serif;background:var(--flour);color:var(--ink);line-height:1.6;overflow-x:clip}
+h1,h2,h3,.logo{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.12}
+a{color:inherit}
+img{display:block;max-width:100%}
+.sample{background:var(--butter);color:var(--forest);font-size:14px;padding:10px 16px;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center;font-weight:600}
+.sample a{background:var(--forest);color:#fff;text-decoration:none;padding:6px 14px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:16px}
+.logo{font-size:26px;color:var(--forest)}
+.links{display:flex;gap:22px;align-items:center;font-weight:600;font-size:15px}
+.links a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:#fff;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:10px;border:0;cursor:pointer;font:inherit;font-weight:700;transition:background .2s}
+.btn:hover{background:var(--forest2)}
+.btn.alt{background:transparent;color:var(--forest);box-shadow:inset 0 0 0 2px var(--forest)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--crust);outline-offset:3px}
+.hero{background:var(--forest);color:var(--flour)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding-top:56px;padding-bottom:56px}
+.hero h1{font-size:clamp(40px,5.6vw,68px)}
+.hero p{font-size:19px;color:#D9E4DB;margin:18px 0 26px;max-width:30em}
+.hero .btn{background:var(--butter);color:var(--forest)}
+.hero .btn.alt{background:transparent;color:var(--flour);box-shadow:inset 0 0 0 2px var(--flour)}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.badges span{border:1.5px solid var(--butter);color:var(--butter);border-radius:99px;padding:5px 13px;font-size:14px;font-weight:700}
+.heroimg{position:relative}
+.heroimg img{border-radius:24px;aspect-ratio:1;object-fit:cover;width:100%}
+.heroimg .tag{position:absolute;left:-18px;bottom:28px;background:var(--butter);color:var(--forest);padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:80px 0}
+h2{font-size:clamp(32px,4vw,46px);color:var(--forest);margin-bottom:12px}
+.lead{font-size:18px;color:#4A564E;max-width:38em;margin-bottom:34px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tabs button{font:inherit;font-weight:700;padding:10px 18px;border-radius:99px;border:2px solid var(--forest);background:transparent;color:var(--forest);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--forest);color:#fff}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 1px 0 rgba(31,61,43,.12),0 8px 24px rgba(31,61,43,.06)}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.card div{padding:18px 20px 22px}
+.card h3{font-size:22px;color:var(--forest)}
+.card p{color:#4A564E;font-size:15px;margin-top:4px}
+.card[hidden]{display:none}
+.workshop{background:var(--butter)}
+.ws{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.ws ul{list-style:none;display:grid;gap:14px;margin:22px 0 28px}
+.ws li{background:var(--flour);border-radius:14px;padding:16px 18px}
+.ws li b{display:block;font-family:"Young Serif",serif;font-weight:400;font-size:20px;color:var(--forest)}
+.ws img{border-radius:20px;aspect-ratio:1;object-fit:cover}
+.form{background:#fff;border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px;box-shadow:0 8px 30px rgba(31,61,43,.08)}
+.form label{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:15px}
+.form .full{grid-column:1/-1}
+.form input,.form select,.form textarea{font:inherit;font-weight:400;padding:12px 14px;border:1.5px solid #C9D3CB;border-radius:10px;background:var(--flour);color:var(--ink)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:3px solid var(--butter);border-color:var(--forest)}
+.hint{font-size:14px;color:#5F6B63}
+.faq details{border-bottom:1.5px solid #D7DED8;padding:20px 0}
+.faq summary{font-family:"Young Serif",serif;font-size:21px;color:var(--forest);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font-family:Figtree,sans-serif;font-weight:700}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:10px;color:#4A564E;max-width:44em}
+.end{background:var(--forest);color:var(--flour);text-align:center;border-radius:28px;padding:60px 24px}
+.end h2{color:var(--flour)}
+.end p{color:#D9E4DB;margin:12px 0 26px}
+.end .btn{background:var(--butter);color:var(--forest)}
+footer{padding:30px 0 100px;text-align:center;color:#5F6B63;font-size:14px}
+.fab{position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.2);z-index:9}
+@media(max-width:860px){.hero .wrap,.ws{grid-template-columns:1fr}.menu{grid-template-columns:1fr 1fr}.links a:not(.btn){display:none}.heroimg .tag{left:12px}.form{grid-template-columns:1fr;padding:22px}}
+@media(max-width:520px){.menu{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="sample">This is a free sample website made for Bake n' Flake by Footfall Boost.
+<a href="https://wa.me/919335694034?text=Hi%20Abhay%2C%20I%20saw%20the%20sample%20website%20for%20Bake%20n%27%20Flake" data-umami-event="Sample make-live" data-umami-event-location="bakenflake">Make it live</a></div>
+
+<header class="hero">
+<div class="wrap">
+<nav style="grid-column:1/-1;padding:0"><div class="logo" style="color:var(--butter)">Bake n' Flake</div>
+<div class="links"><a href="#menu">Menu</a><a href="#workshops">Workshops</a><a href="#faq">FAQ</a><a class="btn" href="#order">Order now</a></div></nav>
+<div>
+<div class="badges"><span>100% eggless</span><span>Jain bakery</span><span>FSSAI registered</span></div>
+<h1>Bakery-fresh bread and cakes, baked at home in Delhi.</h1>
+<p>Namrata Jain bakes artisan cakes, soft breads, ladi pav, cookies and festive hampers, all completely eggless. Order 1–2 days ahead.</p>
+<div class="cta-row"><a class="btn" href="#order" data-umami-event="Sample order click" data-umami-event-location="hero">Place an order</a><a class="btn alt" href="#workshops">Join a workshop</a></div>
+</div>
+<div class="heroimg"><img src="/s/bakenflake/img/1.jpg" alt="Tray of freshly baked eggless ladi pav" width="560" height="560"><div class="tag">Fresh ladi pav, made at home</div></div>
+</div>
+</header>
+
+<section id="menu"><div class="wrap">
+<h2>What's baking</h2>
+<p class="lead">Everything is 100% eggless. Tell Namrata what you need and she'll confirm the details on WhatsApp.</p>
+<div class="tabs" role="tablist">
+<button role="tab" aria-selected="true" data-f="all">All</button>
+<button role="tab" aria-selected="false" data-f="cakes">Cakes</button>
+<button role="tab" aria-selected="false" data-f="breads">Breads &amp; savoury</button>
+<button role="tab" aria-selected="false" data-f="treats">Treats &amp; hampers</button>
+</div>
+<div class="menu">
+<article class="card" data-c="cakes"><img src="/s/bakenflake/img/2.jpg" alt="Black forest birthday cake" loading="lazy" width="560" height="560"><div><h3>Celebration cakes</h3><p>Black forest, truffle and more, for birthdays and every occasion.</p></div></article>
+<article class="card" data-c="cakes"><img src="/s/bakenflake/img/8.jpg" alt="Pink baby-welcome theme cake" loading="lazy" width="560" height="560"><div><h3>Theme cakes</h3><p>Baby welcomes, birthdays and custom designs.</p></div></article>
+<article class="card" data-c="cakes"><img src="/s/bakenflake/img/7.jpg" alt="Lotus Biscoff cake with chocolate drip" loading="lazy" width="560" height="560"><div><h3>Signature cakes</h3><p>Lotus Biscoff, drip cakes and artisan finishes.</p></div></article>
+<article class="card" data-c="cakes"><img src="/s/bakenflake/img/6.jpg" alt="Lemon cheesecake with lime slices" loading="lazy" width="560" height="560"><div><h3>Cheesecakes</h3><p>Creamy, eggless and topped fresh.</p></div></article>
+<article class="card" data-c="breads"><img src="/s/bakenflake/img/3.jpg" alt="Sliced soft white bread loaf" loading="lazy" width="560" height="560"><div><h3>Breads &amp; ladi pav</h3><p>Soft, market-style white bread and pillowy ladi pav, with no eggs or preservatives.</p></div></article>
+<article class="card" data-c="breads"><img src="/s/bakenflake/img/4.jpg" alt="Spinach and corn quiche" loading="lazy" width="560" height="560"><div><h3>Quiche &amp; savoury bakes</h3><p>Spinach and corn quiche: creamy, cheesy and new on the menu.</p></div></article>
+<article class="card" data-c="treats"><img src="/s/bakenflake/img/5.jpg" alt="Filled donuts with chocolate and nuts" loading="lazy" width="560" height="560"><div><h3>Donuts &amp; treats</h3><p>Filled donuts, brownies, cookies and chocolates.</p></div></article>
+<article class="card" data-c="treats"><img src="/s/bakenflake/img/9.jpg" alt="Bake n' Flake gift jars and treats" loading="lazy" width="560" height="560"><div><h3>Festive hampers</h3><p>Rakhi, Bhai Dooj and Diwali hampers with custom biscuits.</p></div></article>
+</div>
+</div></section>
+
+<section id="workshops" class="workshop"><div class="wrap ws">
+<div>
+<h2>Learn to bake with Namrata</h2>
+<p class="lead" style="color:#3D3A20;margin-bottom:0">Hands-on, certified workshops for home bakers, from your first loaf to a three-tier cake.</p>
+<ul>
+<li><b>Bread masterclass</b>White and brown bread, focaccia, dinner rolls, burger buns and more.</li>
+<li><b>Basic to advanced cakes</b>Sponges, frostings, drip cakes, piping and decoration.</li>
+<li><b>Online workshops</b>Learn from home and bake along live.</li>
+</ul>
+<a class="btn" href="https://wa.me/919914438811?text=Hi%20Namrata%2C%20please%20share%20the%20next%20workshop%20dates" data-umami-event="Sample order click" data-umami-event-location="workshop">Ask for the next dates</a>
+</div>
+<img src="/s/bakenflake/img/3.jpg" alt="Homemade bread taught in Namrata's bread workshop" loading="lazy" width="560" height="560">
+</div></section>
+
+<section id="order"><div class="wrap">
+<h2>Place your order</h2>
+<p class="lead">Fill in what you need. It opens WhatsApp with your order typed out, ready to send to Namrata. Please order 1–2 days ahead.</p>
+<form class="form" id="f">
+<label>What would you like?<select name="item"><option>Celebration cake</option><option>Theme cake</option><option>Cheesecake</option><option>Bread / ladi pav</option><option>Quiche / savoury</option><option>Donuts / cookies / brownies</option><option>Festive hamper</option><option>Something else</option></select></label>
+<label>Quantity / weight<select name="qty"><option>½ kg</option><option selected>1 kg</option><option>1.5 kg</option><option>2 kg+</option><option>1 pack / loaf</option><option>2–3 packs</option><option>Bulk / party order</option><option>Not sure, guide me</option></select></label>
+<label>Flavour or variety<input name="flavour" placeholder="e.g. Black forest, brown bread"></label>
+<label>Occasion<input name="occasion" placeholder="e.g. Birthday, Diwali gifting"></label>
+<label>Date needed<input name="date" type="date" required></label>
+<label>Pickup or delivery?<select name="mode"><option>Pickup</option><option>Delivery (share area)</option></select></label>
+<label>Area<input name="area" placeholder="Your area in Delhi"></label>
+<label>Your name<input name="name" required placeholder="Your name"></label>
+<label class="full">Notes<textarea name="notes" rows="3" placeholder="Message on cake, theme, Jain preferences…"></textarea></label>
+<div class="full" style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><button class="btn" type="submit" data-umami-event="Sample order form" data-umami-event-location="bakenflake">Send order on WhatsApp</button><span class="hint">Nothing is sent until you tap send in WhatsApp.</span></div>
+</form>
+</div></section>
+
+<section id="faq" class="faq"><div class="wrap">
+<h2>Good to know</h2>
+<details><summary>Is everything really eggless?</summary><p>Yes. Every cake, bread, cookie and treat at Bake n' Flake is 100% eggless.</p></details>
+<details><summary>Do you make Jain food?</summary><p>Bake n' Flake is a Jain bakery. Mention any specific Jain preferences in your order notes and Namrata will confirm.</p></details>
+<details><summary>How early should I order?</summary><p>Please order 1–2 days in advance. For big or custom orders, message earlier.</p></details>
+<details><summary>Is the bakery registered?</summary><p>Yes. Bake n' Flake is FSSAI registered.</p></details>
+<details><summary>Do you deliver?</summary><p>Bake n' Flake is in Delhi. Share your area on WhatsApp and Namrata will confirm pickup or delivery.</p></details>
+<details><summary>How do I join a workshop?</summary><p>Message on WhatsApp for upcoming bread, cake and online workshop dates.</p></details>
+</div></section>
+
+<div class="wrap"><div class="end">
+<h2>Fresh, eggless, made with love.</h2>
+<p>Order your next cake or loaf, or book a workshop seat.</p>
+<a class="btn" href="https://wa.me/919914438811" data-umami-event="Sample order click" data-umami-event-location="footer">WhatsApp 99144 38811</a>
+</div></div>
+
+<footer>© Bake n' Flake · Namrata Jain · Home bakery, Delhi · <a href="https://www.instagram.com/bakenflakewithnamrata/">Instagram</a></footer>
+<a class="fab" href="https://wa.me/919914438811" aria-label="WhatsApp Bake n' Flake" data-umami-event="Sample order click" data-umami-event-location="fab"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.3.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.4 2.5 1.5.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+<script>
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));const f=b.dataset.f;document.querySelectorAll('.card').forEach(c=>c.hidden=f!=='all'&&c.dataset.c!==f);});
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.target),g=k=>(d.get(k)||'').toString().trim();
+const dt=g('date')?new Date(g('date')).toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'';
+const L=["Hi Namrata! I'd like to order:",'• '+g('item')+' – '+g('qty')];
+if(g('flavour'))L.push('• Flavour/variety: '+g('flavour'));if(g('occasion'))L.push('• Occasion: '+g('occasion'));
+L.push('• Date: '+dt,'• '+g('mode')+(g('area')?' – '+g('area'):''));if(g('notes'))L.push('• Notes: '+g('notes'));L.push('','Name: '+g('name'));
+window.open('https://wa.me/919914438811?text='+encodeURIComponent(L.join('\n')),'_blank');});
+</script>
+</body>
+</html>
