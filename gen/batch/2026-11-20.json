@@ -1,0 +1,389 @@
+[
+ {
+  "slug": "sweetspoonbynandini",
+  "category": "bakery",
+  "name": "Sweetspoon by Nandini",
+  "title_tail": "Vegan, egg-free home baker in Gurugram",
+  "style": "organic",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "Vegan",
+   "100% egg-free",
+   "Refined sugar-free"
+  ],
+  "headline": "Healthy, handmade treats that taste like a celebration.",
+  "sub": "Guilt-free cakes, cookies and hampers from a Gurugram home kitchen. Vegan, egg-free and refined sugar-free, baked fresh to order.",
+  "desc": "Home baker in Gurugram. Vegan, 100% egg-free, refined sugar-free custom cakes, bento cakes, cookies and hampers.",
+  "images": [
+   "1558301211-0d8c8ddee6ec",
+   "1588195538326-c5b1e9f80a1b",
+   "1606983340126-99ab4feaa64a",
+   "1571115177098-24ec42ed204d",
+   "1606890737304-57a1ca8a5b62",
+   "1610670444950-0b29430891b4",
+   "1621303837174-89787a7d4729"
+  ],
+  "ig": "sweetspoon_by_nandini",
+  "wa": "",
+  "address": "Gurugram. Message on Instagram for pickup and delivery details.",
+  "stats": [
+   {
+    "n": "2024",
+    "label": "Baking since"
+   },
+   {
+    "n": "100%",
+    "label": "Egg-free"
+   },
+   {
+    "n": "Vegan",
+    "label": "Options available"
+   },
+   {
+    "n": "Fresh",
+    "label": "Handmade to order"
+   }
+  ],
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Custom cakes",
+      "desc": "Designed around your theme, vegan and egg-free.",
+      "tags": [
+       "Vegan",
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Bento cakes",
+      "desc": "Small cakes for a quiet celebration.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Tiered cakes",
+      "desc": "For bigger occasions and bigger tables.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Treats",
+    "items": [
+     {
+      "name": "Cookies",
+      "desc": "Handmade cookies and the cookie tin.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Brownies",
+      "desc": "Rich and refined sugar-free.",
+      "tags": [
+       "Refined sugar-free"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Gifting",
+    "items": [
+     {
+      "name": "Hampers",
+      "desc": "Boxed treats put together for gifting.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Cakes made to match the person."
+   },
+   {
+    "title": "Sending love",
+    "desc": "Gifts and hampers for someone far away."
+   },
+   {
+    "title": "Guilt-free treats",
+    "desc": "Everyday sweets you can feel good about."
+   }
+  ],
+  "moods": [
+   {
+    "label": "Birthday",
+    "pick": "A custom cake",
+    "desc": "Tell us the theme and age and we design around it."
+   },
+   {
+    "label": "Gift for someone",
+    "pick": "A hamper",
+    "desc": "Boxed treats made for gifting."
+   },
+   {
+    "label": "Healthy craving",
+    "pick": "Refined sugar-free brownies",
+    "desc": "A sweet fix that stays light."
+   }
+  ],
+  "flavours": [
+   "Chocolate",
+   "Vanilla",
+   "Fruit",
+   "Biscoff",
+   "Surprise me"
+  ],
+  "about_title": "Baked with care in Gurugram",
+  "about": [
+   "Nandini bakes from her home in Gurugram. Everything is fresh, handmade, vegan or egg-free, and made without refined sugar."
+  ]
+ },
+ {
+  "slug": "cocoabrownpatisserie",
+  "category": "bakery",
+  "name": "Cocoa Brown",
+  "title_tail": "Customised cakes and premium desserts in Gurgaon",
+  "style": "premium",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "Custom cakes",
+   "Premium desserts",
+   "Gurgaon"
+  ],
+  "headline": "Customised cakes and premium desserts, made in Gurgaon.",
+  "sub": "Tiramisu, tres leches, cookies, chocolates and cakes designed around your celebration. Order by DM or WhatsApp.",
+  "desc": "Customised cakes and premium desserts in Gurgaon. Tiramisu, cookies, tres leches, chocolates, bento and kids cakes.",
+  "images": [
+   "1577998474517-7eeeed4e448a",
+   "1606890737304-57a1ca8a5b62",
+   "1558301211-0d8c8ddee6ec",
+   "1610670444950-0b29430891b4",
+   "1545696563-af8f6ec2295a",
+   "1571115177098-24ec42ed204d",
+   "1602351447937-745cb720612f"
+  ],
+  "ig": "cocoabrownpatisserie",
+  "wa": "919818182248",
+  "phone": "+919818182248",
+  "address": "Gurgaon. Order by DM or WhatsApp.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Customised cakes",
+      "desc": "Designed around your theme, name and colours."
+     },
+     {
+      "name": "Bento cakes",
+      "desc": "Small, pretty cakes for gifting."
+     },
+     {
+      "name": "Kids and 1st birthday",
+      "desc": "Playful designs for little celebrations."
+     },
+     {
+      "name": "Baby shower",
+      "desc": "Soft, elegant cakes for the day."
+     }
+    ]
+   },
+   {
+    "cat": "Desserts",
+    "items": [
+     {
+      "name": "Tiramisu",
+      "desc": "Premium dessert, made fresh."
+     },
+     {
+      "name": "Tres leches",
+      "desc": "Milky, soft and cold."
+     },
+     {
+      "name": "Cookies",
+      "desc": "Baked in small batches."
+     },
+     {
+      "name": "Chocolates",
+      "desc": "Gift-ready chocolates."
+     }
+    ]
+   },
+   {
+    "cat": "Cupcakes and gifting",
+    "items": [
+     {
+      "name": "Cupcakes",
+      "desc": "For parties and office tables."
+     },
+     {
+      "name": "Gifting",
+      "desc": "Boxes and gifts for every occasion."
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Custom designs for every age."
+   },
+   {
+    "title": "Baby showers",
+    "desc": "Delicate designs and flavours."
+   },
+   {
+    "title": "Diwali and festive",
+    "desc": "Gifting boxes and desserts for the season."
+   }
+  ],
+  "festivals": [
+   {
+    "name": "Diwali",
+    "when": "Order early",
+    "tip": "Gifting boxes and desserts for the festive season."
+   }
+  ],
+  "flavours": [
+   "Chocolate",
+   "Vanilla",
+   "Tiramisu",
+   "Tres leches",
+   "Red velvet"
+  ],
+  "about_title": "Made for the moments you remember",
+  "about": [
+   "Cocoa Brown makes customised cakes and premium desserts in Gurgaon. Share your idea over DM or WhatsApp and the design is built around it."
+  ]
+ },
+ {
+  "slug": "indowesternflavours",
+  "category": "bakery",
+  "name": "Indo Western Flavours",
+  "title_tail": "Premium eggless home bakery in Noida",
+  "style": "pop",
+  "palette": "cherry",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "Premium eggless",
+   "Noida",
+   "Bulk gifting"
+  ],
+  "headline": "Premium eggless cakes, made for every celebration in Noida.",
+  "sub": "Custom cakes, hampers and desserts from a Noida home bakery. Eggless always. Bulk gifting available.",
+  "desc": "Premium eggless home bakery in Noida. Custom cakes, floral and butterfly cakes, mini cakes, hampers and bulk gifting.",
+  "images": [
+   "1621303837174-89787a7d4729",
+   "1606983340126-99ab4feaa64a",
+   "1571115177098-24ec42ed204d",
+   "1558301211-0d8c8ddee6ec",
+   "1588195538326-c5b1e9f80a1b",
+   "1602351447937-745cb720612f",
+   "1577998474517-7eeeed4e448a"
+  ],
+  "ig": "indowesternflavours",
+  "wa": "919810888638",
+  "phone": "+919810888638",
+  "address": "Noida. Call or WhatsApp for custom cakes and bulk gifting.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Custom cakes",
+      "desc": "Designed to your idea. Always eggless.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Floral cakes",
+      "desc": "Soft, pretty flowers in cream.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Butterfly cakes",
+      "desc": "A delicate favourite for birthdays.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Mini cakes",
+      "desc": "Small cakes for small celebrations.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Hampers",
+    "items": [
+     {
+      "name": "Gift hampers",
+      "desc": "Boxed treats for family and friends.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Bulk gifting",
+      "desc": "Orders for weddings, offices and festivals.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Desserts",
+    "items": [
+     {
+      "name": "Desserts",
+      "desc": "Sweet treats made to order.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "For wife, husband",
+    "desc": "Anniversary and surprise cakes."
+   },
+   {
+    "title": "For mother, daughter",
+    "desc": "Thoughtful cakes for the people at home."
+   },
+   {
+    "title": "Baby boy, baby girl",
+    "desc": "Cakes for new arrivals and first birthdays."
+   }
+  ],
+  "flavours": [
+   "Chocolate",
+   "Vanilla",
+   "Pineapple",
+   "Butterscotch",
+   "Red velvet"
+  ],
+  "about_title": "Eggless, every time",
+  "about": [
+   "Indo Western Flavours is a premium eggless home bakery in Noida. Tell us the occasion and the person, and we make a cake that fits."
+  ]
+ }
+]

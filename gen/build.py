@@ -26,7 +26,7 @@ DEFAULTS=dict(
  flavours=["Chocolate","Vanilla","Butterscotch","Red velvet","Fruit"],
  steps=[{"title":"Tell us the idea","desc":"Occasion, theme and date."},{"title":"Pick flavour and size","desc":"We suggest what works best."},{"title":"We confirm details","desc":"Design, delivery slot and advance."},{"title":"Baked fresh for you","desc":"Pickup or delivery on the day."}],
  faqs=[{"q":"How early should I order?","a":"2 to 3 days early is ideal. Message us for urgent dates."},{"q":"Can I customize the design?","a":"Yes. Share a picture or theme and we will match it as closely as possible."},{"q":"Do you deliver?","a":"We deliver nearby. Tell us your area when you order."}],
- hours=[["Mon","10 am – 8 pm"],["Tue","10 am – 8 pm"],["Wed","10 am – 8 pm"],["Thu","10 am – 8 pm"],["Fri","10 am – 8 pm"],["Sat","10 am – 8 pm"],["Sun","10 am – 8 pm"]],
+ hours=[],
  style='cute',lead_days=2,dock=True,features={},
  mood_title='Not sure what to order?',mood_lead='Pick a mood and we will suggest something.',
  gift_title='Gifting and hampers',gift_lead='Boxes and hampers made for gifting.',
@@ -39,6 +39,8 @@ def img(slug,x):
     return f"/s/{slug}/img/{x}"
 def build(cfg):
     c={**DEFAULTS,**cfg}
+    if not re.sub(r'\D','',c.get('wa','') or ''):
+        c.setdefault('order_lead','') ; c['order_lead']=cfg.get('order_lead') or 'Fill this in, copy it, and send it to us on Instagram.'; c['send_label']=cfg.get('send_label') or 'Copy and open Instagram'
     slug=c['slug']
     styles=json.loads((GEN/'styles.json').read_text()); pals=json.loads((GEN/'palettes.json').read_text()); fonts=json.loads((GEN/'fonts.json').read_text())
     st={**styles[c['style']],**c.get('tweaks',{})}
