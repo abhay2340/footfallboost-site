@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ title }}</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Footfall Boost">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ og_image }}">
+<meta name="description" content="{{ desc }}">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family={{ t.h }}&family={{ t.b }}&display=swap" rel="stylesheet">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="4c4d28f9-8821-4f59-9bef-363aca82416a"></script>
+<style>
+:root{--bg:{{t.bg}};--ink:{{t.ink}};--mute:{{t.mute}};--p:{{t.p}};--pd:{{t.pd}};--a:{{t.a}};--as:{{t.as}};--card:{{t.card}};--line:{{t.line}};--dark:{{t.dark}};--ondark:{{t.ondark}};--r:{{t.r}};--bd:{{t.bd}};--sh:{{t.sh}}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"{{t.bf}}",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:clip}
+h1,h2,h3,.logo{font-family:"{{t.hf}}",serif;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit}img{display:block;max-width:100%;height:auto}
+.sample{background:var(--ink);color:var(--bg);font-size:13px;padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+.sample a{background:#25D366;color:#06351b;font-weight:700;text-decoration:none;padding:6px 14px;border-radius:99px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0}
+.logo{font-size:22px;font-weight:800;color:var(--pd);text-decoration:none}
+.navmob{padding:10px 18px;min-height:42px}.links{display:none;gap:22px;align-items:center;font-weight:700;font-size:15px}.links a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--p);color:#fff;font:700 16px "{{t.bf}}",sans-serif;text-decoration:none;padding:13px 22px;border-radius:calc(var(--r)*.8);border:0;cursor:pointer;min-height:46px}
+.btn.alt{background:transparent;color:var(--pd);box-shadow:inset 0 0 0 2px var(--pd)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap}
+.hero{background:var(--as)}
+.hero .wrap{display:grid;gap:22px;padding-top:6px;padding-bottom:36px}
+.hero h1{font-size:clamp(34px,9vw,60px);font-weight:800;color:var(--ink)}
+.hero p{font-size:17px;margin:14px 0 22px;color:var(--mute);max-width:32em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tags span{background:var(--card);border:var(--bd);border-radius:99px;padding:5px 13px;font-weight:700;font-size:13px}
+.media img{width:100%;object-fit:cover;border-radius:var(--r);box-shadow:var(--sh)}
+.media.stack{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:10px;aspect-ratio:1/1}
+.media.stack img{height:100%}.media.stack img:first-child{grid-row:1/3}
+.media.split img{aspect-ratio:4/5;border-radius:var(--r) var(--r) 120px var(--r)}
+.media.banner img{aspect-ratio:16/10}
+section{padding:46px 0}
+h2{font-size:clamp(28px,6.5vw,46px);font-weight:800;color:var(--pd);margin-bottom:10px}
+.lead{font-size:17px;color:var(--mute);max-width:38em;margin-bottom:24px}
+.board{background:var(--dark);color:#fff;border-radius:calc(var(--r)*1.4);padding:26px 18px}
+.board h2{color:var(--a)}.board .lead{color:var(--ondark)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tabs button{font:700 15px "{{t.bf}}",sans-serif;padding:9px 16px;border-radius:99px;border:2px solid var(--a);background:transparent;color:var(--a);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--a);color:var(--ink)}
+.menu{display:grid;gap:12px}
+.item{background:rgba(255,255,255,.09);border-radius:calc(var(--r)*.8);padding:18px}
+.item[hidden]{display:none}
+.item h3{font-size:19px;color:#fff;margin-bottom:4px}.item p{font-size:15px;color:var(--ondark)}
+.cards{display:grid;gap:12px}
+.card{background:var(--card);border:var(--bd);box-shadow:var(--sh);border-radius:var(--r);padding:22px}
+.card h3{font-size:20px;margin-bottom:6px;color:var(--pd)}.card p{color:var(--mute);font-size:15px}
+.gallery{columns:2;column-gap:10px}
+.gallery figure{break-inside:avoid;margin-bottom:10px;border-radius:var(--r);overflow:hidden;background:var(--card);box-shadow:var(--sh)}
+.builder{display:grid;gap:18px}
+.form{background:var(--card);border:var(--bd);box-shadow:var(--sh);border-radius:calc(var(--r)*1.3);padding:20px;display:grid;gap:14px}
+.form label,.form .lbl{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:15px}
+.form input,.form select,.form textarea{font:inherit;font-weight:400;padding:12px 13px;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;flex-direction:row}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-block;padding:9px 15px;border:2px solid var(--pd);border-radius:99px;font-weight:700;cursor:pointer;background:var(--card)}
+.chips input:checked+span{background:var(--p);color:#fff}
+.chips input:focus-visible+span{outline:3px solid var(--ink);outline-offset:2px}
+.sum{background:var(--a);border:var(--bd);border-radius:calc(var(--r)*1.3);padding:22px;color:var(--ink)}
+.sum h3{font-size:21px;margin-bottom:10px}
+.sum dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.sum dt{font-weight:700}.sum dd{overflow-wrap:anywhere}
+.sum p{font-size:14px;margin-top:12px}
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--a);font:800 17px "{{t.hf}}";margin-bottom:8px;color:var(--ink)}
+.reviews{display:grid;gap:12px}
+.reviews blockquote{background:var(--card);border-radius:var(--r);padding:22px;border-left:7px solid var(--a);box-shadow:var(--sh);font-size:16px}
+.reviews cite{display:block;margin-top:10px;font-style:normal;font-weight:700;font-size:14px;color:var(--p)}
+.split2{display:grid;gap:20px}
+.split2 img{border-radius:var(--r);aspect-ratio:1;object-fit:cover;width:100%}
+.visit{display:grid;gap:14px}
+.hours{list-style:none}.hours li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line)}
+.hours li.today{font-weight:800;color:var(--p)}
+.faq details{background:var(--card);border:var(--bd);border-radius:calc(var(--r)*.8);padding:16px 18px;margin-bottom:10px}
+.faq summary{font:700 18px "{{t.hf}}",serif;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";font-size:24px;line-height:1;color:var(--p)}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:10px;color:var(--mute)}
+.end{background:var(--dark);color:#fff;border-radius:calc(var(--r)*1.4);padding:44px 20px;text-align:center}
+.end h2{color:var(--a)}.end p{color:var(--ondark);margin:10px auto 22px;max-width:32em}
+.end .cta-row{justify-content:center}
+footer{padding:26px 0 100px;text-align:center;font-size:14px;color:var(--mute)}
+.fab{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:9}
+@media(min-width:760px){
+.wrap{padding:0 24px}.links{display:flex}.navmob{display:none}
+section{padding:72px 0}.board{padding:44px}
+.hero .wrap{padding-bottom:64px}
+.menu{grid-template-columns:repeat(3,1fr)}.cards.c3{grid-template-columns:repeat(3,1fr)}.cards.c2{grid-template-columns:1fr 1fr}
+.gallery{columns:3;column-gap:14px}.gallery figure{margin-bottom:14px}
+.steps{grid-template-columns:repeat(4,1fr)}.reviews{grid-template-columns:repeat(3,1fr)}
+.builder{grid-template-columns:1.2fr .8fr;align-items:start}.form{grid-template-columns:1fr 1fr;padding:28px}.form .full{grid-column:1/-1}
+.sum{position:sticky;top:20px}.split2{grid-template-columns:1fr 1fr;align-items:center;gap:44px}.visit{grid-template-columns:1fr 1fr}
+.hero.stack .wrap,.hero.split .wrap{grid-template-columns:1.05fr .95fr;align-items:center;gap:44px}
+.hero nav{grid-column:1/-1}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body data-wa="{{ wa }}" data-ig="{{ ig }}" data-slug="{{ slug }}" data-name="{{ name }}">
+<div class="sample">This is a free sample website made for {{ name }} by Footfall Boost.
+<a href="https://wa.me/919335694034?text={{ live_text }}" data-umami-event="Sample make-live" data-umami-event-location="{{ slug }}">Make it live</a></div>
+
+<header class="hero {{ hero }}">
+<div class="wrap">
+<nav><a class="logo" href="#top">{{ name }}</a>
+<div class="links"><a href="#menu">Menu</a><a href="#bakes">Gallery</a><a href="#order">Order</a><a href="#faq">FAQ</a><a class="btn" href="#order">Order now</a></div>
+<a class="btn navmob" href="#order">Order</a></nav>
+<div id="top">
+{% if tags %}<div class="tags">{% for x in tags %}<span>{{ x }}</span>{% endfor %}</div>{% endif %}
+<h1>{{ headline }}</h1>
+<p>{{ sub }}</p>
+<div class="cta-row"><a class="btn" href="#order" data-umami-event="Sample hero order">{{ cta1 }}</a><a class="btn alt" href="#menu">{{ cta2 }}</a></div>
+</div>
+<div class="media {{ hero }}">
+{% if hero=='stack' %}{% for i in imgs[:3] %}<img src="{{ i }}" alt="{{ name }} cake {{ loop.index }}" {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>{% endfor %}
+{% else %}<img src="{{ imgs[0] }}" alt="{{ name }}" fetchpriority="high">{% endif %}
+</div>
+</div>
+</header>
+
+{% for key in order %}
+{% if key=='menu' and menu %}
+<section id="menu"><div class="wrap"><div class="board">
+<h2>{{ menu_title }}</h2><p class="lead">{{ menu_lead }}</p>
+<div class="tabs" role="tablist"><button aria-selected="true" data-f="all">All</button>{% for c in menu %}<button aria-selected="false" data-f="{{ loop.index }}">{{ c.cat }}</button>{% endfor %}</div>
+<div class="menu">{% for c in menu %}{% set ci=loop.index %}{% for it in c['items'] %}<div class="item" data-c="{{ ci }}"><h3>{{ it.name }}</h3><p>{{ it.desc }}</p></div>{% endfor %}{% endfor %}</div>
+</div></div></section>
+{% elif key=='occasions' and occasions %}
+<section id="occasions" style="background:var(--as)"><div class="wrap"><h2>{{ occ_title }}</h2><p class="lead">{{ occ_lead }}</p>
+<div class="cards c3">{% for o in occasions %}<div class="card"><h3>{{ o.title }}</h3><p>{{ o.desc }}</p></div>{% endfor %}</div></div></section>
+{% elif key=='builder' %}
+<section id="order"><div class="wrap"><h2>{{ order_title }}</h2><p class="lead">{{ order_lead }}</p>
+<div class="builder"><form class="form" id="of" autocomplete="off">
+<label>Occasion<select name="occasion">{% for o in occasions %}<option>{{ o.title }}</option>{% endfor %}<option>Something else</option></select></label>
+<label>What do you want<select name="item">{% for c in menu %}<option>{{ c.cat }}</option>{% endfor %}</select></label>
+<label>Size or quantity<select name="size">{% for s in sizes %}<option>{{ s }}</option>{% endfor %}</select></label>
+<label>Date you need it<input type="date" name="date"></label>
+<div class="lbl full">Flavour<div class="chips">{% for f in flavours %}<label><input type="radio" name="flavour" value="{{ f }}" {% if loop.first %}checked{% endif %}><span>{{ f }}</span></label>{% endfor %}</div></div>
+<label>Your name<input name="name" placeholder="Your name"></label>
+<label>Area<input name="area" placeholder="Where to deliver"></label>
+<label class="full">Message on the cake or notes<textarea name="note" rows="3" placeholder="Name, age, theme, allergies"></textarea></label>
+<button class="btn full" type="submit" data-umami-event="Sample order send">{{ send_label }}</button>
+</form>
+<aside class="sum"><h3>Your order</h3><dl id="sum"></dl><p>{{ order_note }}</p></aside></div></div></section>
+{% elif key=='gallery' and imgs|length>3 %}
+<section id="bakes"><div class="wrap"><h2>{{ gal_title }}</h2><p class="lead">{{ gal_lead }}</p>
+<div class="gallery">{% for i in imgs[3:] %}<figure><img src="{{ i }}" alt="{{ name }} work {{ loop.index }}" loading="lazy"></figure>{% endfor %}</div></div></section>
+{% elif key=='steps' and steps %}
+<section id="how" style="background:var(--as)"><div class="wrap"><h2>How ordering works</h2><p class="lead">Simple and clear, from the first message to delivery.</p>
+<div class="steps">{% for s in steps %}<div class="card step"><h3>{{ s.title }}</h3><p>{{ s.desc }}</p></div>{% endfor %}</div></div></section>
+{% elif key=='reviews' and reviews %}
+<section id="love"><div class="wrap"><h2>{{ rev_title }}</h2><p class="lead">{{ rev_lead }}</p>
+<div class="reviews">{% for r in reviews %}<blockquote>{{ r.text }}<cite>{{ r.who }}</cite></blockquote>{% endfor %}</div></div></section>
+{% elif key=='about' and about %}
+<section id="about"><div class="wrap split2"><div><h2>{{ about_title }}</h2>{% for p in about %}<p class="lead">{{ p }}</p>{% endfor %}
+<div class="cta-row"><a class="btn alt" href="{{ ig_url }}" target="_blank" rel="noopener" data-umami-event="Sample instagram click">See us on Instagram</a></div></div>
+<img src="{{ imgs[1] if imgs|length>1 else imgs[0] }}" alt="{{ name }}" loading="lazy"></div></section>
+{% elif key=='visit' %}
+<section id="visit" style="background:var(--as)"><div class="wrap"><h2>Find us</h2><p class="lead">{{ visit_lead }}</p>
+<div class="visit"><div class="card"><h3>Hours</h3><ul class="hours" id="hours">{% for d,h in hours %}<li><span>{{ d }}</span><span>{{ h }}</span></li>{% endfor %}</ul></div>
+<div class="card"><h3>Reach us</h3><p>{{ address }}</p><p style="margin-top:10px">Instagram: <a href="{{ ig_url }}" target="_blank" rel="noopener">@{{ ig }}</a></p>
+<div class="cta-row" style="margin-top:16px"><a class="btn" href="{{ order_link }}" target="_blank" rel="noopener" data-umami-event="Sample contact click">{{ 'Message on WhatsApp' if wa else 'Message on Instagram' }}</a></div></div></div></div></section>
+{% elif key=='faq' and faqs %}
+<section id="faq"><div class="wrap"><h2>Questions people ask</h2><div class="faq">{% for f in faqs %}<details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}</div></div></section>
+{% elif key=='end' %}
+<section><div class="wrap"><div class="end"><h2>{{ end_title }}</h2><p>{{ end_text }}</p><div class="cta-row"><a class="btn" href="#order" style="background:var(--a);color:var(--ink)">{{ cta1 }}</a></div></div></div></section>
+{% endif %}
+{% endfor %}
+
+<footer><div class="wrap">Sample website for {{ name }} · Made by <a href="https://footfallboost.com">Footfall Boost</a></div></footer>
+<a class="fab" href="{{ order_link }}" target="_blank" rel="noopener" aria-label="{{ 'WhatsApp' if wa else 'Instagram' }}" data-umami-event="Sample fab click"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></a>
+<script>
+const B=document.body,WA=B.dataset.wa,IG=B.dataset.ig;
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));const f=b.dataset.f;document.querySelectorAll('.item').forEach(c=>c.hidden=f!=='all'&&c.dataset.c!==f)});
+const of=document.getElementById('of');
+if(of){const sum=document.getElementById('sum');
+const rows=()=>{const d=new FormData(of);return[['Occasion',d.get('occasion')],['For',d.get('item')],['Size',d.get('size')],['Flavour',d.get('flavour')],['Date',d.get('date')||'Not chosen'],['Name',d.get('name')||'-'],['Area',d.get('area')||'-']]};
+const draw=()=>{sum.innerHTML=rows().map(r=>'<dt>'+r[0]+'</dt><dd></dd>').join('');[...sum.querySelectorAll('dd')].forEach((e,i)=>e.textContent=rows()[i][1])};
+of.addEventListener('input',draw);draw();
+of.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(of);const t='Hi '+B.dataset.name+', I would like to order.\n'+rows().map(r=>r[0]+': '+r[1]).join('\n')+(d.get('note')?'\nNote: '+d.get('note'):'');
+if(WA){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank')}else{navigator.clipboard&&navigator.clipboard.writeText(t);window.open('https://ig.me/m/'+IG,'_blank')}})}
+const hl=document.querySelectorAll('#hours li');if(hl.length===7){const n=(new Date().getDay()+6)%7;hl[n].classList.add('today')}
+</script>
+</body>
+</html>

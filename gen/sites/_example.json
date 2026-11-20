@@ -1,0 +1,16 @@
+{"slug":"examplebakery","category":"bakery","name":"Puja's Home Bakes","title_tail":"Cakes, breads and pizza from a Dwarka home kitchen",
+"theme":"sunny","hero":"stack",
+"tags":["FSSAI registered","Dwarka, Delhi","Home kitchen"],
+"headline":"Baked fresh in Dwarka, made around your celebration.",
+"sub":"Theme cakes, brownies, tiramisu, sourdough, garlic bread and pizza, all made to order by Puja in her home kitchen.",
+"desc":"FSSAI registered home bakery in Dwarka, Delhi. Theme cakes, brownies, tiramisu, sourdough and pizza. Order on WhatsApp.",
+"images":["4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],
+"wa":"","ig":"pujas_home_bakes","address":"Dwarka, New Delhi. Pickup and nearby delivery.",
+"menu":[
+ {"cat":"Cakes","items":[{"name":"Theme cakes","desc":"Birthday, kids and anniversary designs made to your idea."},{"name":"Tiramisu","desc":"Soft, coffee-rich and made in small batches."}]},
+ {"cat":"Bakes","items":[{"name":"Brownies","desc":"Fudgy squares and gift boxes."},{"name":"Sourdough","desc":"Slow-fermented loaves baked fresh."}]},
+ {"cat":"Savoury","items":[{"name":"Garlic bread","desc":"Buttery and crisp at the edges."},{"name":"Pizza","desc":"Hand-stretched base with fresh toppings."}]}],
+"occasions":[{"title":"Birthdays","desc":"From first birthdays to milestone ones."},{"title":"Anniversaries","desc":"Elegant and simple designs."},{"title":"Festive gifting","desc":"Brownie boxes and bakes for Diwali and more."}],
+"reviews":[{"text":"The cake looked exactly like the picture I sent and tasted even better.","who":"Customer review"},{"text":"Fresh, not overly sweet and delivered on time.","who":"Customer review"},{"text":"The sourdough is the best I have had at home.","who":"Customer review"}],
+"about":["Puja bakes from her home kitchen in Dwarka. Every order is made fresh, with FSSAI-registered hygiene and a small-batch approach."],
+"about_title":"A home kitchen you can trust"}
