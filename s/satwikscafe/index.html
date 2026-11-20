@@ -81,7 +81,7 @@ h2{font-size:clamp(32px,5vw,58px);margin-bottom:12px}
 .book select,.book input[type=text],.book input[type=date],.book input[type=time],.book input[type=number]{width:100%;font:inherit;padding:11px;border:2px solid var(--ink);background:var(--paper);margin-top:4px}
 .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .gal img{aspect-ratio:1;object-fit:cover;width:100%;border:3px solid #fff}
-.gal img:nth-child(1),.gal img:nth-child(6){grid-column:span 2;grid-row:span 2;aspect-ratio:auto;height:100%}
+.gal img:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto;height:100%}.gal img:nth-child(6){grid-column:1/-1;aspect-ratio:16/6}
 .say{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .say blockquote{background:#fff;border:3px solid var(--ink);padding:22px;font-size:17px}.say cite{display:block;margin-top:10px;font-size:14px;font-style:normal;font-weight:700}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
