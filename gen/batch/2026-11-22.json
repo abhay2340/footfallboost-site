@@ -1,0 +1,1499 @@
+[
+ {
+  "slug": "bomasbakery",
+  "category": "bakery",
+  "name": "Boma's Bakery",
+  "title_tail": "Eggless home bakery in Delhi",
+  "style": "retro",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "100% eggless",
+   "FSSAI registered",
+   "Bulk orders"
+  ],
+  "headline": "Eggless desserts, baked fresh in Delhi.",
+  "sub": "Cream cakes, truffles and hampers from a home bakery. FSSAI and GST registered. Bulk orders welcome.",
+  "desc": "Boma's Bakery: Eggless home bakery in Delhi. Cream cakes, truffles and hampers from a home bakery. FSSAI and GST registered. Bulk orders welcome.",
+  "images": [
+   "1558301211-0d8c8ddee6ec",
+   "1606313564200-e75d5e30476c",
+   "1495147466023-ac5c588e2e94",
+   "1545696563-af8f6ec2295a",
+   "1606313564573-104197cf8f91",
+   "1606983340126-99ab4feaa64a",
+   "1612845575953-f4b1e3d63160"
+  ],
+  "ig": "bomasbakery",
+  "wa": "",
+  "phone": "",
+  "address": "Delhi. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Cream cakes",
+      "desc": "Soft, fresh cakes in your flavour.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Truffle cakes",
+      "desc": "Rich chocolate truffle for chocolate lovers.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Hampers",
+    "items": [
+     {
+      "name": "Festive hampers",
+      "desc": "Boxes for Diwali, Rakhi and more.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Bulk hampers",
+      "desc": "Orders for offices and events.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Desserts",
+    "items": [
+     {
+      "name": "Desserts",
+      "desc": "Eggless sweet treats made to order.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Cakes for every age."
+   },
+   {
+    "title": "Festivals",
+    "desc": "Hampers for Diwali and Rakhi."
+   },
+   {
+    "title": "Corporate gifting",
+    "desc": "Bulk hampers and orders."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "Boma's Bakery is a Delhi home bakery serving eggless desserts. FSSAI and GST registered, with bulk orders and hampers."
+  ],
+  "flavours": [
+   "Chocolate",
+   "Truffle",
+   "Vanilla",
+   "Pineapple",
+   "Butterscotch"
+  ]
+ },
+ {
+  "slug": "sneados",
+  "category": "bakery",
+  "name": "Sneado's",
+  "title_tail": "Canned cheesecakes and gooey cookies, Delhi",
+  "style": "cute",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "Cheesecakes",
+   "Gooey cookies",
+   "Same-day delivery"
+  ],
+  "headline": "Canned cheesecakes and gooey cookies, baked with love.",
+  "sub": "Same-day delivery in Delhi. Cheesecakes in a can, cookies and limited editions.",
+  "desc": "Sneado's: Canned cheesecakes and gooey cookies, Delhi. Same-day delivery in Delhi. Cheesecakes in a can, cookies and limited editions.",
+  "images": [
+   "1567171466295-4afa63d45416",
+   "1612845575953-f4b1e3d63160",
+   "1524351199678-941a58a3df50",
+   "1557089706-68d02dbda277",
+   "1676300185983-d5f242babe34",
+   "1607975218250-7faaf3e36bbf",
+   "1558301211-0d8c8ddee6ec"
+  ],
+  "ig": "sneado.s",
+  "wa": "918766308782",
+  "phone": "",
+  "address": "Delhi. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cheesecakes",
+    "items": [
+     {
+      "name": "Canned cheesecakes",
+      "desc": "Creamy cheesecake in a can, ready to share."
+     },
+     {
+      "name": "Limited editions",
+      "desc": "Seasonal flavours that sell out."
+     }
+    ]
+   },
+   {
+    "cat": "Cookies",
+    "items": [
+     {
+      "name": "Gooey cookies",
+      "desc": "Soft centres, baked fresh."
+     }
+    ]
+   },
+   {
+    "cat": "Custom",
+    "items": [
+     {
+      "name": "Bake your idea",
+      "desc": "Tell us what you imagine and we will make it."
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Gifting",
+    "desc": "Cheesecake cans and cookie boxes."
+   },
+   {
+    "title": "Cravings",
+    "desc": "Same-day delivery in Delhi."
+   },
+   {
+    "title": "Parties",
+    "desc": "Order for the group."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "Sneado's makes canned cheesecakes and gooey cookies in Delhi. Baked with love, shared with joy."
+  ],
+  "palette": "pastel",
+  "flavours": [
+   "Biscoff",
+   "Chocolate",
+   "Blueberry",
+   "Oreo",
+   "Mango"
+  ]
+ },
+ {
+  "slug": "thecakefairybysk",
+  "category": "bakery",
+  "name": "The Cake Fairy",
+  "title_tail": "Eggless homemade bakes in New Delhi",
+  "style": "elegant",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "Eggless",
+   "Homemade",
+   "Order 2 to 3 days early"
+  ],
+  "headline": "Eggless homemade goodness from New Delhi.",
+  "sub": "Bento cakes, brownies, cookies, cheesecakes and hampers. Please order 2 to 3 days ahead.",
+  "desc": "The Cake Fairy: Eggless homemade bakes in New Delhi. Bento cakes, brownies, cookies, cheesecakes and hampers. Please order 2 to 3 days ahead.",
+  "images": [
+   "1588195538326-c5b1e9f80a1b",
+   "1624353365286-3f8d62daad51",
+   "1530751127259-074b0cdc0469",
+   "1708175313856-8573b2bf8a3a",
+   "1614707267537-b85aaf00c4b7",
+   "1513546493312-0066d7de3fd2",
+   "1621303837174-89787a7d4729"
+  ],
+  "ig": "thecakefairy_bysk",
+  "wa": "",
+  "phone": "",
+  "address": "New Delhi. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Bento cakes",
+      "desc": "Small, pretty cakes for gifting.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cakes",
+      "desc": "Custom cakes for every celebration.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Dry cake",
+      "desc": "Tea-time slices.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Bakes",
+    "items": [
+     {
+      "name": "Brownies",
+      "desc": "Fudgy and fresh.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cookies",
+      "desc": "Baked in small batches.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cupcakes",
+      "desc": "For parties and gifting.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Gifting",
+    "items": [
+     {
+      "name": "Hampers",
+      "desc": "Boxes for festivals and special days.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cheesecake",
+      "desc": "Creamy and chilled.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Bento and custom cakes."
+   },
+   {
+    "title": "Rakhi and festivals",
+    "desc": "Hampers made for gifting."
+   },
+   {
+    "title": "Treat yourself",
+    "desc": "Brownies, cookies and cheesecake."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "The Cake Fairy bakes eggless, homemade goodness in New Delhi, by Sukhprit Kaur."
+  ],
+  "palette": "rose"
+ },
+ {
+  "slug": "djbakers12",
+  "category": "bakery",
+  "name": "DJ Bakers",
+  "title_tail": "100% eggless bakery with delivery",
+  "style": "aggressive",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "100% eggless",
+   "Delivery available",
+   "Cookie tins"
+  ],
+  "headline": "100% eggless. Big on taste.",
+  "sub": "Cakes, dry cakes, brownies, desserts, donuts and cookie tins. Delivery available.",
+  "desc": "DJ Bakers: 100% eggless bakery with delivery. Cakes, dry cakes, brownies, desserts, donuts and cookie tins. Delivery available.",
+  "images": [
+   "1606983340126-99ab4feaa64a",
+   "1533910534207-90f31029a78e",
+   "1605190557072-1fe6a230ee65",
+   "1607975218250-7faaf3e36bbf",
+   "1571115177098-24ec42ed204d",
+   "1551024601-bec78aea704b",
+   "1563729784474-d77dbb933a9e"
+  ],
+  "ig": "djbakers12",
+  "wa": "",
+  "phone": "",
+  "address": "Delhi. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Cakes",
+      "desc": "Custom cakes for any occasion.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Dry cake",
+      "desc": "Tea-time cake that keeps.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Treats",
+    "items": [
+     {
+      "name": "Brownies",
+      "desc": "Rich and chewy.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Donuts",
+      "desc": "Soft and glazed.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cookie tin",
+      "desc": "Cookies in a gift tin.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Tiramisu",
+      "desc": "A classic dessert.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Gifting",
+    "items": [
+     {
+      "name": "Hampers",
+      "desc": "Boxes for Diwali, Rakhi and more.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Cakes made for the day."
+   },
+   {
+    "title": "Festivals",
+    "desc": "Hampers for Diwali and Rakhi."
+   },
+   {
+    "title": "Everyday cravings",
+    "desc": "Brownies, donuts and cookies."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "DJ Bakers bakes 100% eggless cakes, brownies, desserts and donuts, with delivery available."
+  ]
+ },
+ {
+  "slug": "momsblessingsbydeeptti",
+  "category": "bakery",
+  "name": "Moms Blessings by Deepti",
+  "title_tail": "Eggless designer cakes in Krishna Nagar",
+  "style": "elegant",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "Eggless",
+   "FSSAI",
+   "Baking classes"
+  ],
+  "headline": "Eggless designer cakes in East Delhi.",
+  "sub": "Freshly made, premium designs from Krishna Nagar. FSSAI registered, with baking classes.",
+  "desc": "Moms Blessings by Deepti: Eggless designer cakes in Krishna Nagar. Freshly made, premium designs from Krishna Nagar. FSSAI registered, with baking classes.",
+  "images": [
+   "1545696563-af8f6ec2295a",
+   "1621303837174-89787a7d4729",
+   "1513546493312-0066d7de3fd2",
+   "1558301211-0d8c8ddee6ec",
+   "1577998474517-7eeeed4e448a",
+   "1606983340126-99ab4feaa64a",
+   "1588195538326-c5b1e9f80a1b"
+  ],
+  "ig": "momsblessingsbydeeptti",
+  "wa": "",
+  "phone": "",
+  "address": "Krishna Nagar, East Delhi. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Designer cakes",
+      "desc": "Premium designs made around your idea.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Theme cakes",
+      "desc": "Birthdays, anniversaries and more.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Classes",
+    "items": [
+     {
+      "name": "Baking classes",
+      "desc": "Learn to bake from Deepti.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Designs for every age."
+   },
+   {
+    "title": "Anniversaries",
+    "desc": "Elegant celebration cakes."
+   },
+   {
+    "title": "Special days",
+    "desc": "Made to your theme."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "Deepti Sharma is a cake artist in Krishna Nagar, East Delhi. Eggless designer cakes, freshly made, and baking classes."
+  ],
+  "palette": "lavender"
+ },
+ {
+  "slug": "bhartibakehouse",
+  "category": "bakery",
+  "name": "Bharti Bakehouse",
+  "title_tail": "Pure, premium, 100% eggless in Delhi",
+  "style": "organic",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "100% eggless",
+   "Dilshad Garden",
+   "Indirapuram"
+  ],
+  "headline": "Pure, premium and 100% eggless.",
+  "sub": "Brownies, cheesecakes, tea cakes, theme cakes, cookies and hampers from Dilshad Garden and Indirapuram.",
+  "desc": "Bharti Bakehouse: Pure, premium, 100% eggless in Delhi. Brownies, cheesecakes, tea cakes, theme cakes, cookies and hampers from Dilshad Garden and Indirapuram.",
+  "images": [
+   "1513546493312-0066d7de3fd2",
+   "1606313564200-e75d5e30476c",
+   "1524351199678-941a58a3df50",
+   "1557089706-68d02dbda277",
+   "1495147466023-ac5c588e2e94",
+   "1618411640018-972400a01458",
+   "1588195538326-c5b1e9f80a1b"
+  ],
+  "ig": "bhartibakehouse_12",
+  "wa": "",
+  "phone": "",
+  "address": "Dilshad Garden, New Delhi and Indirapuram. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Theme cakes",
+      "desc": "Made around the celebration.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Semi-fondant cakes",
+      "desc": "A clean, polished finish.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Bakes",
+    "items": [
+     {
+      "name": "Brownies",
+      "desc": "Rich and fudgy.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cheesecakes",
+      "desc": "Creamy and chilled.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Tea cakes",
+      "desc": "Perfect with chai.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cookies and donuts",
+      "desc": "Baked fresh.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Muffins and cupcakes",
+      "desc": "For small celebrations.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Gifting",
+    "items": [
+     {
+      "name": "Rakhi hampers",
+      "desc": "Festive boxes for siblings.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Theme cakes for all ages."
+   },
+   {
+    "title": "Festivals",
+    "desc": "Hampers for Rakhi and more."
+   },
+   {
+    "title": "Workshops",
+    "desc": "Learn baking with Bharti."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "Bharti Bakehouse is a home bakery in Dilshad Garden, New Delhi, with another spot in Indirapuram. Pure, premium and 100% eggless."
+  ]
+ },
+ {
+  "slug": "baketake",
+  "category": "bakery",
+  "name": "Bake n' Take",
+  "title_tail": "Fresh eggless home cakes in Paharganj, Delhi",
+  "style": "minimal",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "Eggless",
+   "Paharganj",
+   "Delivery across NCR"
+  ],
+  "headline": "Fresh, eggless homemade cakes in Delhi.",
+  "sub": "Custom cakes, pastries and desserts with delivery across Delhi NCR.",
+  "desc": "Bake n' Take: Fresh eggless home cakes in Paharganj, Delhi. Custom cakes, pastries and desserts with delivery across Delhi NCR.",
+  "images": [
+   "1621303837174-89787a7d4729",
+   "1614707267537-b85aaf00c4b7",
+   "1606313564573-104197cf8f91",
+   "1545696563-af8f6ec2295a",
+   "1577998474517-7eeeed4e448a",
+   "1612845575953-f4b1e3d63160",
+   "1558301211-0d8c8ddee6ec"
+  ],
+  "ig": "bake_n_take2021",
+  "wa": "",
+  "phone": "",
+  "address": "Paharganj, Delhi. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Custom cakes",
+      "desc": "Designed around your celebration.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Theme cakes",
+      "desc": "Kids, couples and milestones.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Pastries",
+    "items": [
+     {
+      "name": "Pastries",
+      "desc": "Fresh slices to share.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Desserts",
+    "items": [
+     {
+      "name": "Desserts",
+      "desc": "Sweet treats made to order.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Custom cakes for every age."
+   },
+   {
+    "title": "Celebrations",
+    "desc": "Anniversaries and milestones."
+   },
+   {
+    "title": "Everyday",
+    "desc": "Pastries and desserts."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "Bake n' Take makes fresh, eggless homemade cakes in Paharganj, Delhi, delivering across Delhi NCR."
+  ],
+  "palette": "mono"
+ },
+ {
+  "slug": "thecrumblingtooth",
+  "category": "bakery",
+  "name": "The Crumbling Tooth",
+  "title_tail": "Egg-free designer cakes in Delhi",
+  "style": "premium",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "Egg-free",
+   "FSSAI registered",
+   "Delhi"
+  ],
+  "headline": "Delhi's egg-free designer cakes.",
+  "sub": "By Sonali Garg. Designer, theme, tier and lily cakes, hampers and baby shower cakes. FSSAI registered.",
+  "desc": "The Crumbling Tooth: Egg-free designer cakes in Delhi. By Sonali Garg. Designer, theme, tier and lily cakes, hampers and baby shower cakes. FSSAI registered.",
+  "images": [
+   "1571115177098-24ec42ed204d",
+   "1545696563-af8f6ec2295a",
+   "1606983340126-99ab4feaa64a",
+   "1588195538326-c5b1e9f80a1b",
+   "1577998474517-7eeeed4e448a",
+   "1513546493312-0066d7de3fd2",
+   "1563729784474-d77dbb933a9e"
+  ],
+  "ig": "the_crumbling_tooth",
+  "wa": "918851615108",
+  "phone": "+918851615108",
+  "address": "Delhi. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Designer cakes",
+      "desc": "Elegant, detailed and made to order."
+     },
+     {
+      "name": "Theme cakes",
+      "desc": "Matched to your idea."
+     },
+     {
+      "name": "Tier cakes",
+      "desc": "For bigger celebrations."
+     },
+     {
+      "name": "Lily cakes",
+      "desc": "A delicate floral favourite."
+     },
+     {
+      "name": "Bento cakes",
+      "desc": "Small and pretty."
+     }
+    ]
+   },
+   {
+    "cat": "Occasions",
+    "items": [
+     {
+      "name": "Baby shower cakes",
+      "desc": "Soft designs for the day."
+     },
+     {
+      "name": "Engagement cakes",
+      "desc": "Elegant and celebratory."
+     }
+    ]
+   },
+   {
+    "cat": "Gifting",
+    "items": [
+     {
+      "name": "Hampers",
+      "desc": "Boxes for gifting."
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Kids and adult celebrations."
+   },
+   {
+    "title": "Engagements",
+    "desc": "Elegant tiers."
+   },
+   {
+    "title": "Baby showers",
+    "desc": "Soft, pretty designs."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "The Crumbling Tooth by Sonali Garg is a Delhi home baker making egg-free, FSSAI registered cakes."
+  ],
+  "palette": "noir"
+ },
+ {
+  "slug": "thepastryproject",
+  "category": "bakery",
+  "name": "The Pastry Project",
+  "title_tail": "100% eggless desserts in Gurgaon",
+  "style": "pop",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "100% eggless",
+   "Gurgaon",
+   "B2B available"
+  ],
+  "headline": "Eggless desserts and cakes in Gurgaon.",
+  "sub": "Cakes, hampers, cookies, brownies and healthy bakes. 100% eggless. Please order 2 to 3 days ahead.",
+  "desc": "The Pastry Project: 100% eggless desserts in Gurgaon. Cakes, hampers, cookies, brownies and healthy bakes. 100% eggless. Please order 2 to 3 days ahead.",
+  "images": [
+   "1558301211-0d8c8ddee6ec",
+   "1605190557072-1fe6a230ee65",
+   "1612845575953-f4b1e3d63160",
+   "1495147466023-ac5c588e2e94",
+   "1567171466295-4afa63d45416",
+   "1621303837174-89787a7d4729",
+   "1557089706-68d02dbda277"
+  ],
+  "ig": "the.pastryproject_",
+  "wa": "919354127160",
+  "phone": "+919354127160",
+  "address": "Gurgaon. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Bento cakes",
+      "desc": "Small cakes for gifting.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cakes",
+      "desc": "For every celebration.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Tea cakes",
+      "desc": "Light and simple.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cupcakes",
+      "desc": "For parties and gifting.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Treats",
+    "items": [
+     {
+      "name": "Brownies",
+      "desc": "Fudgy and fresh.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cookies",
+      "desc": "Baked in small batches.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Cookie tin",
+      "desc": "Cookies in a gift tin.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Healthy bakes",
+      "desc": "Lighter treats.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Gifting and B2B",
+    "items": [
+     {
+      "name": "Gift hampers",
+      "desc": "Boxes for festivals.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "B2B orders",
+      "desc": "For offices and cafes.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Bento and custom cakes."
+   },
+   {
+    "title": "Festivals",
+    "desc": "Diwali and Rakhi hampers."
+   },
+   {
+    "title": "Corporate",
+    "desc": "B2B gifting and orders."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "The Pastry Project is a Gurgaon dessert shop. 100% eggless, with cakes, hampers and B2B orders."
+  ],
+  "palette": "sunny"
+ },
+ {
+  "slug": "bakersdelicia",
+  "category": "bakery",
+  "name": "Baker's Delicia",
+  "title_tail": "Custom designer cakes in Gurgaon",
+  "style": "elegant",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "Home baker",
+   "Gurgaon",
+   "Bulk orders"
+  ],
+  "headline": "Custom designer cakes, made in Gurgaon.",
+  "sub": "By Shailja Mathur. Customised designer cakes, wedding cakes, tiered cakes, cookies and festive bakes.",
+  "desc": "Baker's Delicia: Custom designer cakes in Gurgaon. By Shailja Mathur. Customised designer cakes, wedding cakes, tiered cakes, cookies and festive bakes.",
+  "images": [
+   "1577998474517-7eeeed4e448a",
+   "1545696563-af8f6ec2295a",
+   "1588195538326-c5b1e9f80a1b",
+   "1607975218250-7faaf3e36bbf",
+   "1571115177098-24ec42ed204d",
+   "1513546493312-0066d7de3fd2",
+   "1563729784474-d77dbb933a9e"
+  ],
+  "ig": "shailjaa_mathur",
+  "wa": "",
+  "phone": "",
+  "address": "Gurgaon. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Custom cakes",
+      "desc": "Designed around your idea."
+     },
+     {
+      "name": "Theme cakes",
+      "desc": "Birthdays and milestones."
+     },
+     {
+      "name": "Tiered cakes",
+      "desc": "For weddings and big days."
+     }
+    ]
+   },
+   {
+    "cat": "Bakes",
+    "items": [
+     {
+      "name": "Marble cookies",
+      "desc": "Baked fresh."
+     },
+     {
+      "name": "Plum cake",
+      "desc": "A festive favourite."
+     }
+    ]
+   },
+   {
+    "cat": "Bulk",
+    "items": [
+     {
+      "name": "Bulk orders",
+      "desc": "For events and gifting."
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Weddings",
+    "desc": "Tiered and designer cakes."
+   },
+   {
+    "title": "Anniversaries",
+    "desc": "Milestone celebrations."
+   },
+   {
+    "title": "Festive",
+    "desc": "Plum cake and seasonal bakes."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "Baker's Delicia by Shailja Mathur is a Gurgaon home baker specialising in customised designer and wedding cakes."
+  ],
+  "palette": "lavender"
+ },
+ {
+  "slug": "thefusioncakestudio",
+  "category": "bakery",
+  "name": "The Fusion Cake Studio",
+  "title_tail": "100% eggless bespoke cakes in Noida",
+  "style": "cute",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "100% eggless",
+   "FSSAI registered",
+   "Baking classes"
+  ],
+  "headline": "Bespoke eggless cakes, made in Noida.",
+  "sub": "By Rinky Gupta. FSSAI registered, with hampers, baking classes and cakes for every milestone.",
+  "desc": "The Fusion Cake Studio: 100% eggless bespoke cakes in Noida. By Rinky Gupta. FSSAI registered, with hampers, baking classes and cakes for every milestone.",
+  "images": [
+   "1588195538326-c5b1e9f80a1b",
+   "1606983340126-99ab4feaa64a",
+   "1558301211-0d8c8ddee6ec",
+   "1621303837174-89787a7d4729",
+   "1614707267537-b85aaf00c4b7",
+   "1530751127259-074b0cdc0469",
+   "1577998474517-7eeeed4e448a"
+  ],
+  "ig": "thefusioncakestudio",
+  "wa": "",
+  "phone": "",
+  "address": "Noida and Delhi NCR. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Bespoke cakes",
+      "desc": "Made around your idea.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Princess cakes",
+      "desc": "For little queens.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Superhero cakes",
+      "desc": "For little heroes.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Jungle themed cakes",
+      "desc": "A playful favourite.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Occasions",
+    "items": [
+     {
+      "name": "1st birthday",
+      "desc": "A first cake to remember.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Mother's Day",
+      "desc": "A thoughtful gift.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Gifting",
+    "items": [
+     {
+      "name": "Diwali and Rakhi hampers",
+      "desc": "Boxes for the season.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "1st birthdays",
+    "desc": "Sweet, gentle designs."
+   },
+   {
+    "title": "Birthdays",
+    "desc": "For kids and adults."
+   },
+   {
+    "title": "Festive gifting",
+    "desc": "Diwali and Rakhi hampers."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "The Fusion Cake Studio is Rinky Gupta's FSSAI registered, 100% eggless bakery in Noida, selected as a top home baker in Delhi NCR."
+  ],
+  "palette": "cherry"
+ },
+ {
+  "slug": "cherryontopnoida",
+  "category": "bakery",
+  "name": "Cherry on Top",
+  "title_tail": "Custom cakes from a Noida home baker",
+  "style": "retro",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "Custom cakes",
+   "Noida",
+   "Home baker"
+  ],
+  "headline": "Custom cakes, made by hand in Noida.",
+  "sub": "Indrani Baruah makes customised cakes. DM for details and bookings.",
+  "desc": "Cherry on Top: Custom cakes from a Noida home baker. Indrani Baruah makes customised cakes. DM for details and bookings.",
+  "images": [
+   "1545696563-af8f6ec2295a",
+   "1621303837174-89787a7d4729",
+   "1495147466023-ac5c588e2e94",
+   "1606983340126-99ab4feaa64a",
+   "1571115177098-24ec42ed204d",
+   "1558301211-0d8c8ddee6ec",
+   "1577998474517-7eeeed4e448a"
+  ],
+  "ig": "cherry_on_top_noida",
+  "wa": "",
+  "phone": "",
+  "address": "Noida. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Customised cakes",
+      "desc": "Made to your theme and size."
+     },
+     {
+      "name": "Celebration cakes",
+      "desc": "For birthdays and anniversaries."
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Custom designs."
+   },
+   {
+    "title": "Anniversaries",
+    "desc": "Cakes made for two."
+   },
+   {
+    "title": "Special days",
+    "desc": "Tell us the theme."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "Cherry on Top is run by Indrani Baruah, a home baker and cake artist in Noida making customised cakes."
+  ],
+  "palette": "cherry",
+  "features": {
+   "ticker": false
+  }
+ },
+ {
+  "slug": "crumblecherry",
+  "category": "bakery",
+  "name": "Cherry Crumble",
+  "title_tail": "FSSAI registered cakes delivering in Noida, Delhi and Ghaziabad",
+  "style": "premium",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "FSSAI registered",
+   "Delivers in Noida, Delhi, Ghaziabad",
+   "Hampers"
+  ],
+  "headline": "Cakes and hampers, delivered across Noida and Delhi.",
+  "sub": "By Chef Anshika. FSSAI registered, delivering in Noida, Delhi and Ghaziabad.",
+  "desc": "Cherry Crumble: FSSAI registered cakes delivering in Noida, Delhi and Ghaziabad. By Chef Anshika. FSSAI registered, delivering in Noida, Delhi and Ghaziabad.",
+  "images": [
+   "1513546493312-0066d7de3fd2",
+   "1606313564200-e75d5e30476c",
+   "1571115177098-24ec42ed204d",
+   "1612845575953-f4b1e3d63160",
+   "1606983340126-99ab4feaa64a",
+   "1495147466023-ac5c588e2e94",
+   "1588195538326-c5b1e9f80a1b"
+  ],
+  "ig": "crumble.cherry",
+  "wa": "919289855180",
+  "phone": "+919289855180",
+  "address": "Noida. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Trending cakes",
+      "desc": "The designs people ask for most."
+     },
+     {
+      "name": "Custom cakes",
+      "desc": "Made around your idea."
+     }
+    ]
+   },
+   {
+    "cat": "Gifting",
+    "items": [
+     {
+      "name": "Hampers",
+      "desc": "Boxes for Diwali and more."
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Trending and custom cakes."
+   },
+   {
+    "title": "Festive",
+    "desc": "Diwali hampers."
+   },
+   {
+    "title": "Gifting",
+    "desc": "Boxes for the people you love."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "Cherry Crumble is a Noida bakery by Chef Anshika. FSSAI registered, delivering in Noida, Delhi and Ghaziabad."
+  ],
+  "palette": "cocoa"
+ },
+ {
+  "slug": "sukhijagunjan",
+  "category": "bakery",
+  "name": "Euphoric by Gunjan",
+  "title_tail": "100% eggless home baker in Indirapuram",
+  "style": "minimal",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "100% eggless",
+   "Indirapuram",
+   "Custom cakes"
+  ],
+  "headline": "100% eggless cakes from Indirapuram.",
+  "sub": "Customised cakes for every occasion. DM or call to order.",
+  "desc": "Euphoric by Gunjan: 100% eggless home baker in Indirapuram. Customised cakes for every occasion. DM or call to order.",
+  "images": [
+   "1558301211-0d8c8ddee6ec",
+   "1614707267537-b85aaf00c4b7",
+   "1545696563-af8f6ec2295a",
+   "1621303837174-89787a7d4729",
+   "1577998474517-7eeeed4e448a",
+   "1606983340126-99ab4feaa64a",
+   "1513546493312-0066d7de3fd2"
+  ],
+  "ig": "sukhijagunjan",
+  "wa": "919818233077",
+  "phone": "+919818233077",
+  "address": "Aditya Mega City, Indirapuram, Ghaziabad. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Half kg cakes",
+      "desc": "A small cake for a small celebration.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Girls cakes",
+      "desc": "Pretty designs for girls.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Boys cakes",
+      "desc": "Fun designs for boys.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Tier designs",
+      "desc": "For bigger days.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Pinata cakes",
+      "desc": "A surprise inside.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Occasions",
+    "items": [
+     {
+      "name": "Anniversary cakes",
+      "desc": "Made for two.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Father's and Mother's Day",
+      "desc": "A thoughtful gift.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Treats",
+    "items": [
+     {
+      "name": "Cupcakes",
+      "desc": "For parties.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Cakes for girls, boys and adults."
+   },
+   {
+    "title": "Half-way to one",
+    "desc": "A cake for the half birthday."
+   },
+   {
+    "title": "Anniversaries",
+    "desc": "Elegant celebration cakes."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "Euphoric by Gunjan is a 100% eggless home bakery in Aditya Mega City, Indirapuram, Ghaziabad."
+  ],
+  "palette": "rose"
+ },
+ {
+  "slug": "goldenwhisk",
+  "category": "bakery",
+  "name": "Golden Whisk",
+  "title_tail": "100% eggless home bakery in Noida",
+  "style": "cute",
+  "banner_note": "Photos are stand-ins from Unsplash.",
+  "tags": [
+   "100% eggless",
+   "Noida 107",
+   "Customised"
+  ],
+  "headline": "100% eggless cakes and cupcakes in Noida.",
+  "sub": "Freshly baked cakes and cupcakes, customised for every occasion.",
+  "desc": "Golden Whisk: 100% eggless home bakery in Noida. Freshly baked cakes and cupcakes, customised for every occasion.",
+  "images": [
+   "1606983340126-99ab4feaa64a",
+   "1495147466023-ac5c588e2e94",
+   "1588195538326-c5b1e9f80a1b",
+   "1563729784474-d77dbb933a9e",
+   "1545696563-af8f6ec2295a",
+   "1571115177098-24ec42ed204d",
+   "1621303837174-89787a7d4729"
+  ],
+  "ig": "goldenwhisk_83",
+  "wa": "",
+  "phone": "",
+  "address": "Noida Sector 107. Message us to confirm pickup and delivery.",
+  "menu": [
+   {
+    "cat": "Cakes",
+    "items": [
+     {
+      "name": "Customised cakes",
+      "desc": "Made for your occasion.",
+      "tags": [
+       "Eggless"
+      ]
+     },
+     {
+      "name": "Celebration cakes",
+      "desc": "Fresh and made with love.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   },
+   {
+    "cat": "Cupcakes",
+    "items": [
+     {
+      "name": "Cupcakes",
+      "desc": "Freshly baked for parties and gifting.",
+      "tags": [
+       "Eggless"
+      ]
+     }
+    ]
+   }
+  ],
+  "occasions": [
+   {
+    "title": "Birthdays",
+    "desc": "Custom cakes."
+   },
+   {
+    "title": "Parties",
+    "desc": "Cupcakes for everyone."
+   },
+   {
+    "title": "Gifting",
+    "desc": "Small treats for someone special."
+   }
+  ],
+  "about_title": "About us",
+  "about": [
+   "Golden Whisk is a home bakery in Noida Sector 107. 100% eggless, freshly baked and made with love."
+  ],
+  "palette": "sunny"
+ }
+]
