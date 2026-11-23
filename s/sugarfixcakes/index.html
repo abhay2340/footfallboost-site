@@ -166,4 +166,5 @@ function ub(){const c=[...pick.querySelectorAll('input:checked')].map(x=>x.value
 pick.addEventListener('change',ub);ub();
 (function(){const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];const p=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Kolkata',weekday:'long',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());const g=t=>p.find(x=>x.type===t).value;const day=g('weekday');const mins=(+g('hour')%24)*60+(+g('minute'));const on=mins>=600&&mins<1200;const el=document.getElementById('open');el.classList.toggle('on',on);document.getElementById('opentxt').textContent=on?'Open now · until 8 pm':'Closed now · opens 10 am';document.getElementById('hours').innerHTML=days.map(d=>'<li'+(d===day?' class="today"':'')+'><span>'+d+'</span><span>10 am – 8 pm</span></li>').join('');})();
 </script>
+<script defer src="/assets/sample-cta.js"></script>
 </body></html>

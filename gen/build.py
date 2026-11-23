@@ -114,5 +114,7 @@ def main():
         subprocess.run(['git','commit','-q','-m',f"Add {len(ok)} sample sites: {names}\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01LTWcP5BKDAuoPy6f3ymbkm"],cwd=ROOT)
         r('git','push','-q','origin','HEAD:main')
         print('\nPUSHED. Links (live in ~1 min):')
-        for s,n in ok: print(f'  {n}: {BASE}/v/{s}')
+        camp=next((x.split('=',1)[1] for x in sys.argv if x.startswith('--campaign=')),'delhi-dm')
+        src=next((x.split('=',1)[1] for x in sys.argv if x.startswith('--source=')),'instagram')
+        for s,n in ok: print(f'  {n}: {BASE}/v/{s}?utm_source={src}&utm_campaign={camp}')
 main()

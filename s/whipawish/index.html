@@ -151,4 +151,5 @@ items.forEach(n=>{const l=document.createElement('label');l.innerHTML='<input ty
 function uh(){const c=[...pick.querySelectorAll('input:checked')].map(x=>x.value);hl.innerHTML='';(c.length?c:['Nothing picked yet']).forEach(t=>{const li=document.createElement('li');li.textContent=t;hl.appendChild(li);});hwa.href='https://wa.me/'+P+'?text='+encodeURIComponent("Hi Whip A Wish! I'd like a gift hamper ("+hq.value+"):\n"+(c.length?c.map(x=>'• '+x).join('\n'):'(I will share the items on chat)'));}
 pick.addEventListener('change',uh);hq.addEventListener('change',uh);uh();
 </script>
+<script defer src="/assets/sample-cta.js"></script>
 </body></html>

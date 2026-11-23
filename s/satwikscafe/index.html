@@ -177,4 +177,5 @@ $('bf').addEventListener('submit',e=>{e.preventDefault();const f=new FormData($(
 const P={Hungry:'A burger with peri peri fries and a thick cold coffee.',Chilling:'White sauce pasta and a dates shake.',Cravings:'Kurkure paneer momos with chilli potato.','Need caffeine':'Thick cold coffee, extra thick.'};
 Object.keys(P).forEach((k,i)=>{const l=document.createElement('label'),r=document.createElement('input'),s=document.createElement('span');r.type='radio';r.name='mood';s.textContent=k;r.addEventListener('change',()=>{$('pick').textContent=P[k]});l.append(r,s);$('mood').append(l)});
 </script>
+<script defer src="/assets/sample-cta.js"></script>
 </body></html>

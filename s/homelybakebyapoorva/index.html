@@ -166,4 +166,5 @@ form.addEventListener('input',upd);upd();
 form.addEventListener('submit',e=>{e.preventDefault();const g=val;const L=["Hi Apoorva! I'd like to order a cake:",'• For: '+g('occ'),'• Theme: '+(g('theme')||'to discuss'),'• Size: '+g('size')];if(g('fl'))L.push('• Flavour: '+g('fl'));L.push('• Date: '+fmt(g('date')),'• '+g('mode'));if(g('name'))L.push('• On the cake: '+g('name'));if(g('notes'))L.push('• Notes: '+g('notes'));window.open('https://wa.me/918130656652?text='+encodeURIComponent(L.join('\n')),'_blank');});
 document.getElementById('rf').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const m=['Hi Apoorva! Please remind me before a birthday:','• Name: '+f.get('rn'),'• Date: '+fmt(f.get('rd')),'• Relation: '+f.get('rr')];window.open('https://wa.me/918130656652?text='+encodeURIComponent(m.join('\n')),'_blank');});
 </script>
+<script defer src="/assets/sample-cta.js"></script>
 </body></html>

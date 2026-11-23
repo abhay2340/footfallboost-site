@@ -297,5 +297,6 @@ document.getElementById('send').onclick=()=>{const it=upd();window.open(WA+encod
 document.getElementById('rf').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.target);const dt=new Date(d.get('day')).toLocaleDateString('en-IN',{day:'numeric',month:'long'});
 window.open(WA+encodeURIComponent('Hi Priya! Please remind me a few days before '+d.get('who')+"'s birthday on "+dt+' so I can order a cake.\nName: '+d.get('name')),'_blank');});
 </script>
+<script defer src="/assets/sample-cta.js"></script>
 </body>
 </html>

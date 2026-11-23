@@ -6,10 +6,11 @@ JS=r'''()=>{const out=[];const vw=innerWidth;
 const els=[...document.querySelectorAll('a,button,input,select,summary,label,textarea')].filter(e=>{const r=e.getBoundingClientRect();return r.width>8&&r.height>8});
 for(const e of els){const cs=getComputedStyle(e);if(cs.visibility==='hidden'||cs.display==='none')continue;
  if(e.matches('input[type=radio],input[type=checkbox]'))continue;
+ if(e.closest('#ffb-cta'))continue;
  e.scrollIntoView({block:'center'});const r=e.getBoundingClientRect();
  const x=Math.min(Math.max(r.left+r.width/2,1),vw-1),y=Math.min(Math.max(r.top+r.height/2,1),innerHeight-1);
  const t=document.elementFromPoint(x,y);
- if(t&&t!==e&&!e.contains(t)&&!t.contains(e)&&!t.closest('.fab,.sample')){out.push('COVERED '+(e.innerText||e.tagName).trim().split(String.fromCharCode(10)).join(' ').slice(0,30)+' by '+t.tagName+'.'+(t.className||''))}
+ if(t&&t!==e&&!e.contains(t)&&!t.contains(e)&&!t.closest('.fab,.sample,#ffb-cta')){out.push('COVERED '+(e.innerText||e.tagName).trim().split(String.fromCharCode(10)).join(' ').slice(0,30)+' by '+t.tagName+'.'+(t.className||''))}
  if(r.right>vw+1||r.left<-1)out.push('OFFSCREEN '+(e.innerText||e.tagName).trim().slice(0,30))}
 if(document.documentElement.scrollWidth>vw+1)out.push('H-SCROLL '+document.documentElement.scrollWidth);
 return [...new Set(out)]}'''

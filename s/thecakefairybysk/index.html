@@ -235,7 +235,7 @@ section{padding:calc(72px*var(--pad)) 0}.board{padding:44px}
 <section id="visit" style="background:var(--as)"><div class="wrap"><h2>Find us</h2><p class="lead">Order by chat, pick up or get it delivered nearby.</p>
 <div class="visit">
 <div class="card"><h3>Reach us</h3><p>New Delhi. Message us to confirm pickup and delivery.</p><p style="margin-top:10px">Instagram: <a href="https://www.instagram.com/thecakefairy_bysk/" target="_blank" rel="noopener">@thecakefairy_bysk</a></p>
-<div class="cta-row" style="margin-top:16px"><a class="btn" href="https://ig.me/m/thecakefairy_bysk" target="_blank" rel="noopener" data-umami-event="Sample contact click">Message on Instagram</a></div></div></div></div></section>
+<div class="cta-row" style="margin-top:16px"><a class="btn" href="https://ig.me/m/thecakefairy_bysk" target="_blank" rel="noopener" data-umami-event="Sample contact click" data-umami-event-location="thecakefairybysk">Message on Instagram</a></div></div></div></div></section>
 
 
 
@@ -264,5 +264,6 @@ of.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(of);con
 if(WA){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank')}else{navigator.clipboard&&navigator.clipboard.writeText(t);window.open('https://ig.me/m/'+IG,'_blank')}})}
 const hl=document.querySelectorAll('#hours li');if(hl.length===7){const n=(new Date().getDay()+6)%7;hl[n].classList.add('today')}
 </script>
+<script defer src="/assets/sample-cta.js"></script>
 </body>
 </html>
