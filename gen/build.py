@@ -32,6 +32,11 @@ DEFAULTS=dict(
  gift_title='Gifting and hampers',gift_lead='Boxes and hampers made for gifting.',
  fest_title='Festive and special dates',fest_lead='Order early for these busy days.',areas_lead='Tell us your area and we will confirm delivery.',
 )
+LB=dict(menu='Menu',order='Order',order_now='Order now',order_this='Order this',
+ tools_lead='Check if your date works, or let us remind you before the next celebration.',date_q='Pick the day you need the order.',date='Date you need it',
+ areas='Where we deliver',insta_lead='Fresh bakes and behind the scenes at',f_occ='Occasion',f_item='What do you want',f_size='Size or quantity',f_chip='Flavour',
+ area_ph='Where to deliver',note='Message on the cake or notes',note_ph='Name, age, theme, allergies',sum='Your order',
+ steps='How ordering works',steps_lead='Simple and clear, from the first message to delivery.',rows=['Occasion','For','Size','Flavour','Date'],msg='I would like to order.')
 def uns(i,w=900): return f"https://images.unsplash.com/photo-{i}?auto=format&fit=crop&w={w}&q=70"
 def img(slug,x):
     if x.startswith('http'): return x
@@ -70,7 +75,8 @@ def build(cfg):
     ctx=dict(c,t=t,st=st,hf=hf,bf=bf,font_link=font_link,hero=hero,imgs=imgs,og_image=og,wa=wa,ig=ig,ig_url=ig_url,order_link=order_link,order=order,about=about,title=title,
         desc=c.get('desc') or c.get('sub',''),tags=c.get('tags',[]),diet_tags=diet,hampers=hampers,ticker=ticker,stats=c.get('stats',[]),moods=c.get('moods',[]),festivals=c.get('festivals',[]),areas=c.get('areas',[]),
         phone=re.sub(r'[^\d+]','',c.get('phone','') or ''),announce=c.get('announce','') if feats.get('announce',True) else '',dock=bool(c['dock']) and feats.get('dock',True),
-        live_text=urllib.parse.quote(f"Hi Abhay, I saw the sample website for {c['name']}"),
+        live_text=urllib.parse.quote(f"Hi Abhay, I saw your {c.get('kind','business')} demo website ({c['name']}) and I'd like one for my business." if c.get('demo') else f"Hi Abhay, I saw the sample website for {c['name']}"),
+        lb={**LB,**c.get('labels',{})},demo=bool(c.get('demo')),
         menu=menu,occasions=c.get('occasions',[]),reviews=c.get('reviews',[]),address=c.get('address',''))
     env=Environment(loader=FileSystemLoader(GEN/'templates'),autoescape=select_autoescape(['j2','html']))
     out=env.get_template(f"{c.get('category','bakery')}.html.j2").render(**ctx)

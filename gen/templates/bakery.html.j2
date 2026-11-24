@@ -142,16 +142,18 @@ section{padding:calc(72px*var(--pad)) 0}.board{padding:44px}
 @media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:18px}*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
-<body data-wa="{{ wa }}" data-ig="{{ ig }}" data-slug="{{ slug }}" data-name="{{ name }}">
-<div class="sample">This is a free sample website made for {{ name }} by Footfall Boost.{% if banner_note %} {{ banner_note }}{% endif %}
-<a href="https://wa.me/919335694034?text={{ live_text }}" data-umami-event="Sample make-live" data-umami-event-location="{{ slug }}">Make it live</a></div>
+<body{% if demo %} data-demo="1"{% endif %} data-wa="{{ wa }}" data-ig="{{ ig }}" data-slug="{{ slug }}" data-name="{{ name }}">
+{% if demo %}<div class="sample">Demo website by Footfall Boost. {{ name }} is a made-up business{% if banner_note %}. {{ banner_note }}{% else %}.{% endif %}
+<a href="https://wa.me/919335694034?text={{ live_text }}" data-umami-event="Sample make-live" data-umami-event-location="{{ slug }}">Get one like this</a></div>
+{% else %}<div class="sample">This is a free sample website made for {{ name }} by Footfall Boost.{% if banner_note %} {{ banner_note }}{% endif %}
+<a href="https://wa.me/919335694034?text={{ live_text }}" data-umami-event="Sample make-live" data-umami-event-location="{{ slug }}">Make it live</a></div>{% endif %}
 
 {% if announce %}<div class="ann">{{ announce }}</div>{% endif %}
 <header class="hero {{ hero }}">
 <div class="wrap">
 <nav><a class="logo" href="#top">{{ name }}</a>
-<div class="links"><a href="#menu">Menu</a><a href="#bakes">Gallery</a><a href="#order">Order</a><a href="#faq">FAQ</a><a class="btn" href="#order">Order now</a></div>
-<a class="btn navmob" href="#order">Order</a></nav>
+<div class="links"><a href="#menu">{{ lb.menu }}</a><a href="#bakes">Gallery</a><a href="#order">{{ lb.order }}</a><a href="#faq">FAQ</a><a class="btn" href="#order">{{ lb.order_now }}</a></div>
+<a class="btn navmob" href="#order">{{ lb.order }}</a></nav>
 <div id="top">
 {% if tags %}<div class="tags">{% for x in tags %}<span>{{ x }}</span>{% endfor %}</div>{% endif %}
 <h1>{{ headline }}</h1>
@@ -159,7 +161,7 @@ section{padding:calc(72px*var(--pad)) 0}.board{padding:44px}
 <div class="cta-row"><a class="btn" href="#order" data-umami-event="Sample hero order">{{ cta1 }}</a><a class="btn alt" href="#menu">{{ cta2 }}</a></div>
 </div>
 <div class="media {{ hero }}">
-{% if hero=='stack' %}{% for i in imgs[:3] %}<img src="{{ i }}" alt="{{ name }} cake {{ loop.index }}" {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>{% endfor %}
+{% if hero=='stack' %}{% for i in imgs[:3] %}<img src="{{ i }}" alt="{{ name }} photo {{ loop.index }}" {% if loop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>{% endfor %}
 {% else %}<img src="{{ imgs[0] }}" alt="{{ name }}" fetchpriority="high">{% endif %}
 </div>
 </div>
@@ -181,13 +183,13 @@ section{padding:calc(72px*var(--pad)) 0}.board{padding:44px}
 <section id="festive" style="background:var(--as)"><div class="wrap"><h2>{{ fest_title }}</h2><p class="lead">{{ fest_lead }}</p>
 <div class="fest">{% for f in festivals %}<div class="card"><b>{{ f.when }}</b><h3>{{ f.name }}</h3><p>{{ f.tip }}</p></div>{% endfor %}</div></div></section>
 {% elif key=='tools' %}
-<section id="tools"><div class="wrap"><h2>Quick tools</h2><p class="lead">Check if your date works, or let us remind you before the next celebration.</p>
-<div class="tools"><div class="card"><h3>Is my date okay?</h3><p>Pick the day you need the order.</p><input type="date" id="ltd" aria-label="Date you need it"><div id="lt" aria-live="polite"></div></div>
+<section id="tools"><div class="wrap"><h2>Quick tools</h2><p class="lead">{{ lb.tools_lead }}</p>
+<div class="tools"><div class="card"><h3>Is my date okay?</h3><p>{{ lb.date_q }}</p><input type="date" id="ltd" aria-label="{{ lb.date }}"><div id="lt" aria-live="polite"></div></div>
 <form class="card" id="rem"><h3>Remind me next time</h3><p>We will message you before the date.</p><input name="n" placeholder="Name of the person" aria-label="Name of the person"><input type="date" name="d" aria-label="Date"><button class="btn" type="submit" data-umami-event="Sample reminder">Set reminder on chat</button></form></div></div></section>
 {% elif key=='areas' %}
-<section id="areas"><div class="wrap"><h2>Where we deliver</h2><p class="lead">{{ areas_lead }}</p><div class="chipsrow">{% for a in areas %}<span>{{ a }}</span>{% endfor %}</div></div></section>
+<section id="areas"><div class="wrap"><h2>{{ lb.areas }}</h2><p class="lead">{{ areas_lead }}</p><div class="chipsrow">{% for a in areas %}<span>{{ a }}</span>{% endfor %}</div></div></section>
 {% elif key=='insta' %}
-<section id="insta"><div class="wrap"><h2>On Instagram</h2><p class="lead">Fresh bakes and behind the scenes at @{{ ig }}.</p>
+<section id="insta"><div class="wrap"><h2>On Instagram</h2><p class="lead">{{ lb.insta_lead }} @{{ ig }}.</p>
 <div class="insta">{% for i in imgs[:6] %}<a href="{{ ig_url }}" target="_blank" rel="noopener"><img src="{{ i }}" alt="{{ name }} on Instagram" loading="lazy"></a>{% endfor %}</div>
 <a class="btn alt" href="{{ ig_url }}" target="_blank" rel="noopener" data-umami-event="Sample instagram click">Follow on Instagram</a></div></section>
 {% elif key=='menu' %}
@@ -203,34 +205,34 @@ section{padding:calc(72px*var(--pad)) 0}.board{padding:44px}
 {% elif key=='builder' %}
 <section id="order"><div class="wrap"><h2>{{ order_title }}</h2><p class="lead">{{ order_lead }}</p>
 <div class="builder"><form class="form" id="of" autocomplete="off">
-<label>Occasion<select name="occasion">{% for o in occasions %}<option>{{ o.title }}</option>{% endfor %}<option>Something else</option></select></label>
-<label>What do you want<select name="item">{% for c in menu %}<option>{{ c.cat }}</option>{% endfor %}</select></label>
-<label>Size or quantity<select name="size">{% for s in sizes %}<option>{{ s }}</option>{% endfor %}</select></label>
-<label>Date you need it<input type="date" name="date"></label>
-<div class="lbl full">Flavour<div class="chips">{% for f in flavours %}<label><input type="radio" name="flavour" value="{{ f }}" {% if loop.first %}checked{% endif %}><span>{{ f }}</span></label>{% endfor %}</div></div>
+<label>{{ lb.f_occ }}<select name="occasion">{% for o in occasions %}<option>{{ o.title }}</option>{% endfor %}<option>Something else</option></select></label>
+<label>{{ lb.f_item }}<select name="item">{% for c in menu %}<option>{{ c.cat }}</option>{% endfor %}</select></label>
+<label>{{ lb.f_size }}<select name="size">{% for s in sizes %}<option>{{ s }}</option>{% endfor %}</select></label>
+<label>{{ lb.date }}<input type="date" name="date"></label>
+<div class="lbl full">{{ lb.f_chip }}<div class="chips">{% for f in flavours %}<label><input type="radio" name="flavour" value="{{ f }}" {% if loop.first %}checked{% endif %}><span>{{ f }}</span></label>{% endfor %}</div></div>
 <label>Your name<input name="name" placeholder="Your name"></label>
-<label>Area<input name="area" placeholder="Where to deliver"></label>
-<label class="full">Message on the cake or notes<textarea name="note" rows="3" placeholder="Name, age, theme, allergies"></textarea></label>
+<label>Area<input name="area" placeholder="{{ lb.area_ph }}"></label>
+<label class="full">{{ lb.note }}<textarea name="note" rows="3" placeholder="{{ lb.note_ph }}"></textarea></label>
 <button class="btn full" type="submit" data-umami-event="Sample order send">{{ send_label }}</button>
 </form>
-<aside class="sum"><h3>Your order</h3><dl id="sum"></dl><p>{{ order_note }}</p></aside></div></div></section>
+<aside class="sum"><h3>{{ lb.sum }}</h3><dl id="sum"></dl><p>{{ order_note }}</p></aside></div></div></section>
 {% elif key=='gallery' and imgs|length>3 %}
 <section id="bakes"><div class="wrap"><h2>{{ gal_title }}</h2><p class="lead">{{ gal_lead }}</p>
 <div class="gallery">{% for i in imgs[3:] %}<figure><img src="{{ i }}" alt="{{ name }} work {{ loop.index }}" loading="lazy"></figure>{% endfor %}</div></div></section>
 {% elif key=='steps' and steps %}
-<section id="how" style="background:var(--as)"><div class="wrap"><h2>How ordering works</h2><p class="lead">Simple and clear, from the first message to delivery.</p>
+<section id="how" style="background:var(--as)"><div class="wrap"><h2>{{ lb.steps }}</h2><p class="lead">{{ lb.steps_lead }}</p>
 <div class="steps">{% for s in steps %}<div class="card step"><h3>{{ s.title }}</h3><p>{{ s.desc }}</p></div>{% endfor %}</div></div></section>
 {% elif key=='reviews' and reviews %}
 <section id="love"><div class="wrap"><h2>{{ rev_title }}</h2><p class="lead">{{ rev_lead }}</p>
 <div class="reviews">{% for r in reviews %}<blockquote>{{ r.text }}<cite>{{ r.who }}</cite></blockquote>{% endfor %}</div></div></section>
 {% elif key=='about' and about %}
 <section id="about"><div class="wrap split2"><div><h2>{{ about_title }}</h2>{% for p in about %}<p class="lead">{{ p }}</p>{% endfor %}
-<div class="cta-row"><a class="btn alt" href="{{ ig_url }}" target="_blank" rel="noopener" data-umami-event="Sample instagram click">See us on Instagram</a></div></div>
+{% if ig %}<div class="cta-row"><a class="btn alt" href="{{ ig_url }}" target="_blank" rel="noopener" data-umami-event="Sample instagram click">See us on Instagram</a></div>{% endif %}</div>
 <img src="{{ imgs[1] if imgs|length>1 else imgs[0] }}" alt="{{ name }}" loading="lazy"></div></section>
 {% elif key=='visit' %}
 <section id="visit" style="background:var(--as)"><div class="wrap"><h2>Find us</h2><p class="lead">{{ visit_lead }}</p>
 <div class="visit">{% if hours %}<div class="card"><h3>Hours</h3><ul class="hours" id="hours">{% for d,h in hours %}<li><span>{{ d }}</span><span>{{ h }}</span></li>{% endfor %}</ul></div>{% endif %}
-<div class="card"><h3>Reach us</h3><p>{{ address }}</p><p style="margin-top:10px">Instagram: <a href="{{ ig_url }}" target="_blank" rel="noopener">@{{ ig }}</a></p>
+<div class="card"><h3>Reach us</h3><p>{{ address }}</p>{% if ig %}<p style="margin-top:10px">Instagram: <a href="{{ ig_url }}" target="_blank" rel="noopener">@{{ ig }}</a></p>{% endif %}
 <div class="cta-row" style="margin-top:16px"><a class="btn" href="{{ order_link }}" target="_blank" rel="noopener" data-umami-event="Sample contact click" data-umami-event-location="{{ slug }}">{{ 'Message on WhatsApp' if wa else 'Message on Instagram' }}</a></div></div></div></div></section>
 {% elif key=='faq' and faqs %}
 <section id="faq"><div class="wrap"><h2>Questions people ask</h2><div class="faq">{% for f in faqs %}<details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>{% endfor %}</div></div></section>
@@ -239,24 +241,24 @@ section{padding:calc(72px*var(--pad)) 0}.board{padding:44px}
 {% endif %}
 {% endfor %}
 
-<footer><div class="wrap">Sample website for {{ name }} · Made by <a href="https://footfallboost.com">Footfall Boost</a></div></footer>
+<footer><div class="wrap">{% if demo %}Demo website · {{ name }} is fictional · Made by{% else %}Sample website for {{ name }} · Made by{% endif %} <a href="https://footfallboost.com">Footfall Boost</a></div></footer>
 {% if not dock %}<a class="fab" href="{{ order_link }}" target="_blank" rel="noopener" aria-label="{{ 'WhatsApp' if wa else 'Instagram' }}" data-umami-event="Sample fab click"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></a>{% endif %}
-{% if dock %}<nav class="dock" aria-label="Quick actions"><a class="main" href="#order" data-umami-event="Sample dock order">Order</a><a href="{{ order_link }}" target="_blank" rel="noopener" data-umami-event="Sample dock chat">{{ 'WhatsApp' if wa else 'Instagram' }}</a>{% if phone %}<a href="tel:{{ phone }}" data-umami-event="Sample dock call">Call</a>{% endif %}</nav>{% endif %}
+{% if dock %}<nav class="dock" aria-label="Quick actions"><a class="main" href="#order" data-umami-event="Sample dock order">{{ lb.order }}</a><a href="{{ order_link }}" target="_blank" rel="noopener" data-umami-event="Sample dock chat">{{ 'WhatsApp' if wa else 'Instagram' }}</a>{% if phone %}<a href="tel:{{ phone }}" data-umami-event="Sample dock call">Call</a>{% endif %}</nav>{% endif %}
 <script>
 const B=document.body,WA=B.dataset.wa,IG=B.dataset.ig;
 let cf='all',df=null;const apply=()=>document.querySelectorAll('.item').forEach(c=>c.hidden=(cf!=='all'&&c.dataset.c!==cf)||(df&&!(c.dataset.t||'').split('|').includes(df)));
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));cf=b.dataset.f;apply()});
 document.querySelectorAll('.filter button').forEach(b=>b.onclick=()=>{const on=b.getAttribute('aria-pressed')==='true';document.querySelectorAll('.filter button').forEach(x=>x.setAttribute('aria-pressed','false'));if(!on){b.setAttribute('aria-pressed','true');df=b.dataset.d}else df=null;apply()});
 const MOODS={{ moods|tojson }};const LEAD={{ lead_days }};
-document.querySelectorAll('.moods button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.moods button').forEach(x=>x.setAttribute('aria-pressed',x===b));const m=MOODS[b.dataset.i];const o=document.getElementById('mout');o.innerHTML='';const h=document.createElement('h3');h.textContent=m.pick;const p=document.createElement('p');p.textContent=m.desc;const a=document.createElement('a');a.className='btn';a.href='#order';a.textContent='Order this';a.style.marginTop='12px';a.onclick=()=>{const n=document.querySelector('[name=note]');if(n)n.value='Idea: '+m.pick};o.append(h,p,a)});
+document.querySelectorAll('.moods button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.moods button').forEach(x=>x.setAttribute('aria-pressed',x===b));const m=MOODS[b.dataset.i];const o=document.getElementById('mout');o.innerHTML='';const h=document.createElement('h3');h.textContent=m.pick;const p=document.createElement('p');p.textContent=m.desc;const a=document.createElement('a');a.className='btn';a.href='#order';a.textContent={{ lb.order_this|tojson }};a.style.marginTop='12px';a.onclick=()=>{const n=document.querySelector('[name=note]');if(n)n.value='Idea: '+m.pick};o.append(h,p,a)});
 const ltd=document.getElementById('ltd');if(ltd){ltd.min=new Date().toISOString().slice(0,10);ltd.onchange=()=>{const d=Math.ceil((new Date(ltd.value)-new Date(new Date().toDateString()))/864e5);document.getElementById('lt').textContent=isNaN(d)?'':d<0?'That date has passed.':d<LEAD?'Rush order. Message us first and we will confirm.':'Good, there is enough time for this date.'}}
 const rem=document.getElementById('rem');if(rem)rem.onsubmit=e=>{e.preventDefault();const d=new FormData(rem);const t='Hi '+B.dataset.name+', please remind me before '+(d.get('n')||'a special day')+' on '+(d.get('d')||'(date)')+'.';if(WA)window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');else{navigator.clipboard&&navigator.clipboard.writeText(t);window.open('https://ig.me/m/'+IG,'_blank')}};
 const of=document.getElementById('of');
 if(of){const sum=document.getElementById('sum');
-const rows=()=>{const d=new FormData(of);return[['Occasion',d.get('occasion')],['For',d.get('item')],['Size',d.get('size')],['Flavour',d.get('flavour')],['Date',d.get('date')||'Not chosen'],['Name',d.get('name')||'-'],['Area',d.get('area')||'-']]};
+const RL={{ lb.rows|tojson }};const rows=()=>{const d=new FormData(of);return[[RL[0],d.get('occasion')],[RL[1],d.get('item')],[RL[2],d.get('size')],[RL[3],d.get('flavour')],[RL[4],d.get('date')||'Not chosen'],['Name',d.get('name')||'-'],['Area',d.get('area')||'-']]};
 const draw=()=>{sum.innerHTML=rows().map(r=>'<dt>'+r[0]+'</dt><dd></dd>').join('');[...sum.querySelectorAll('dd')].forEach((e,i)=>e.textContent=rows()[i][1])};
 of.addEventListener('input',draw);draw();
-of.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(of);const t='Hi '+B.dataset.name+', I would like to order.\n'+rows().map(r=>r[0]+': '+r[1]).join('\n')+(d.get('note')?'\nNote: '+d.get('note'):'');
+of.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(of);const t=(B.dataset.demo?'Hi Abhay, I tried the form on the '+B.dataset.name+' demo website.\n':'Hi '+B.dataset.name+', {{ lb.msg }}\n')+rows().map(r=>r[0]+': '+r[1]).join('\n')+(d.get('note')?'\nNote: '+d.get('note'):'');
 if(WA){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank')}else{navigator.clipboard&&navigator.clipboard.writeText(t);window.open('https://ig.me/m/'+IG,'_blank')}})}
 const hl=document.querySelectorAll('#hours li');if(hl.length===7){const n=(new Date().getDay()+6)%7;hl[n].classList.add('today')}
 </script>

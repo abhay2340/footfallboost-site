@@ -31,18 +31,25 @@
     '@media (prefers-reduced-motion:reduce){#ffb-cta{transition:none}}';
   var st = d.createElement('style'); st.textContent = css; d.head.appendChild(st);
 
-  var text = encodeURIComponent('Hi Abhay, I saw the sample website for ' + name + '. I would like to make it live.');
+  var demo = !!(b.dataset && b.dataset.demo);
+  var text = encodeURIComponent(demo
+    ? 'Hi Abhay, I saw your demo website (' + name + ') and I would like one for my business.'
+    : 'Hi Abhay, I saw the sample website for ' + name + '. I would like to make it live.');
   var el = d.createElement('div');
   el.id = 'ffb-cta';
   el.setAttribute('role', 'complementary');
   el.innerHTML = '<p></p><a target="_blank" rel="noopener" data-umami-event="Sample make-live" data-umami-event-place="card"></a>' +
     '<button type="button" aria-label="Close">×</button>';
-  el.querySelector('p').innerHTML = 'Like this website for <span></span>?<small>Made by Footfall Boost. We customise it and make it live for you, just message Abhay on WhatsApp.</small>';
-  el.querySelector('p span').textContent = name;
+  if (demo) {
+    el.querySelector('p').innerHTML = 'Want a website like this for your business?<small>This is a demo by Footfall Boost. We build one around your photos, services and offers.</small>';
+  } else {
+    el.querySelector('p').innerHTML = 'Like this website for <span></span>?<small>Made by Footfall Boost. We customise it and make it live for you, just message Abhay on WhatsApp.</small>';
+    el.querySelector('p span').textContent = name;
+  }
   var a = el.querySelector('a');
   a.href = 'https://wa.me/' + WA + '?text=' + text;
   a.setAttribute('data-umami-event-location', slug);
-  a.textContent = 'Make this my website →';
+  a.textContent = demo ? 'Get a website like this →' : 'Make this my website →';
   b.appendChild(el);
 
   // keep the sample's own bottom bar / WhatsApp bubble visible above the card
