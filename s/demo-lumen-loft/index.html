@@ -295,6 +295,44 @@ footer a{color:var(--mute)}
     </div>
   </section>
 
+  <section class="walk" id="walk" aria-label="Video walkthrough of a finished home">
+    <style>
+      .walk{position:relative;z-index:2;height:380vh;background:var(--bg)}
+      .walk-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#0c0a07}
+      .walk canvas{position:absolute;inset:0;width:100%;height:100%;display:block;filter:contrast(1.05) saturate(1.06) sepia(.1) brightness(.96)}
+      .walk-fx{position:absolute;inset:0;pointer-events:none;
+        background:radial-gradient(120% 90% at 50% 45%,transparent 50%,rgba(8,6,4,.62)),linear-gradient(180deg,rgba(12,10,7,.55),transparent 24%,transparent 62%,rgba(12,10,7,.78))}
+      .walk-grain{position:absolute;inset:-50%;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+        background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+        animation:walkgrain .9s steps(6) infinite}
+      @keyframes walkgrain{0%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-5%)}60%{transform:translate(-6%,-2%)}80%{transform:translate(5%,4%)}100%{transform:translate(0,0)}}
+      .walk-top{position:absolute;left:0;right:0;top:calc(64px + 18px)}
+      .walk-caps{position:absolute;left:0;right:0;bottom:24vh}
+      .cap{position:absolute;left:0;right:0;bottom:0;padding-inline:20px;opacity:0;will-change:opacity,transform;transition:none}
+      .cap h3{font-family:var(--display);font-weight:400;font-size:clamp(32px,5vw,64px);line-height:1.05;margin:10px 0 8px;max-width:16ch;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+      .cap h3 em{color:var(--brass);font-style:italic}
+      .cap p{max-width:44ch;color:var(--mute);font-size:clamp(14px,1.6vw,17px);text-shadow:0 1px 14px rgba(0,0,0,.6)}
+      .walk-bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(243,237,228,.12)}
+      .walk-bar i{display:block;height:100%;background:var(--brass);transform:scaleX(0);transform-origin:left}
+      .walk-hint{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(24vh + 4px);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+      @media (max-width:759px){.walk{height:320vh}.walk-hint{display:none}.walk-caps{bottom:25vh}.cap p{display:none}}
+      @media (prefers-reduced-motion:reduce){.walk{height:auto}.walk-stage{height:80vh}.walk-grain{animation:none}.cap:first-child{opacity:1!important;transform:none!important}}
+      body.in-walk .rail{opacity:0;pointer-events:none}
+    </style>
+    <div class="walk-stage">
+      <canvas aria-hidden="true"></canvas>
+      <div class="walk-fx" aria-hidden="true"></div>
+      <div class="walk-grain" aria-hidden="true"></div>
+      <div class="walk-top"><div class="wrap"><span class="eyebrow">Walk through a finished home</span></div></div>
+      <div class="walk-caps"><div class="wrap">
+        <div class="cap"><span class="eyebrow">01 · Living &amp; dining</span><h3>Light that <em>moves</em> with the day.</h3><p>Warm oak, a long glass table and layered lighting, planned before a single wall is touched.</p></div>
+        <div class="cap"><span class="eyebrow">02 · Kitchen</span><h3>Made to be <em>lived in</em>.</h3><p>Stone counters, concealed storage and a layout planned around how your family really cooks.</p></div>
+        <div class="cap"><span class="eyebrow">03 · Handover</span><h3>Ready for <em>your</em> keys.</h3><p>One team, one timeline, from design to the final styling. This is what we hand over.</p></div>
+      </div><span class="walk-hint" aria-hidden="true">Keep scrolling</span></div>
+      <div class="walk-bar" aria-hidden="true"><i></i></div>
+    </div>
+  </section>
+
   <section class="band" id="services" data-k="5" aria-labelledby="services-title">
     <div class="wrap">
       <span class="eyebrow reveal">What we do</span>
@@ -400,6 +438,7 @@ footer a{color:var(--mute)}
 
 <script type="importmap">{"imports":{"three":"/assets/vendor/three/three.module.min.js"}}</script>
 <script type="module" src="/s/demo-lumen-loft/tour.js"></script>
+<script defer src="/s/demo-lumen-loft/scrub.js"></script>
 <script>
 // Page behaviour that does not need 3D: reveals, rail, form.
 (function(){
