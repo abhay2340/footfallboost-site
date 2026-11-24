@@ -94,7 +94,7 @@ function start() {
     floor: std('#efe4d6', Object.assign(pbr('wood_floor', 7, 4.3), { roughness: 1, envMapIntensity: .7 })),
     sofa: std('#d9d1c4', (({ normalMap, roughnessMap }) => ({ normalMap, roughnessMap, roughness: 1, normalScale: new THREE.Vector2(1.4, 1.4) }))(pbr('wool_boucle', 3, 3))),
     accent: std('#6f7d5c', { roughness: .95 }),
-    wood: std('#5b4636', { roughness: .55 }),
+    wood: std('#5b4636', (({ map, roughnessMap }) => ({ map, roughnessMap, roughness: .9 }))(pbr('wood_floor', 1, 1))),
     metal: std('#1f1d1b', { roughness: .35, metalness: .85, envMapIntensity: 1 }),
     fluted: std('#c9a27a', { roughness: .6 }),
     cabinet: std('#cdb89a', { roughness: .55 }),
@@ -110,7 +110,12 @@ function start() {
     pot: std('#b4876a', { roughness: .9 }),
     black: std('#151311', { roughness: .5 }),
     rug: std('#e8dccb', Object.assign(pbr('poly_wool_herringbone', 3, 2.2), { roughness: 1 })),
-    glass: new THREE.MeshBasicMaterial({ color: '#f6e7cc', side: THREE.DoubleSide }),
+    glass: new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, map: canvasTex(256, 256, (g, W, H) => {
+      const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#9fc0dc'); gr.addColorStop(.62, '#e9eef0'); gr.addColorStop(.7, '#f7e6cc'); gr.addColorStop(1, '#d9c6a8');
+      g.fillStyle = gr; g.fillRect(0, 0, W, H);
+      g.fillStyle = 'rgba(120,130,140,.35)'; for (let x = 0; x < W; x += 18) { const h = 20 + Math.random() * 50; g.fillRect(x, H * .7 - h, 14, h); }
+      const sg = g.createRadialGradient(W * .7, H * .3, 0, W * .7, H * .3, 70); sg.addColorStop(0, 'rgba(255,250,235,.9)'); sg.addColorStop(1, 'rgba(255,250,235,0)'); g.fillStyle = sg; g.fillRect(0, 0, W, H);
+    }) }),
   };
   const STYLES = {
     japandi: { wall: '#f4efe6', floor: '#efe4d6', sofa: '#d9d1c4', accent: '#6f7d5c', wood: '#5b4636', metal: '#1f1d1b', fluted: '#c9a27a', cabinet: '#cdb89a', bedding: '#ddd3c4' },
@@ -218,6 +223,48 @@ function start() {
   wall('z', -5.5, 2.6, 9.1, [{ a0: -3.6, a1: -1.2, y0: .9, y1: 2.45 }]);
   wall('z', -5.5, -1.4, -2.5);
   wall('z', -5.5, -.4, 3.5);
+  // --- easy realism wins: curtains, false ceiling with cove LED, soft corner shading ---
+  const sheer = std('#f6f1e8', { transparent: true, opacity: .62, side: THREE.DoubleSide, roughness: 1, depthWrite: false });
+  function curtain(axis, at, a, w) {
+    const g = new THREE.PlaneGeometry(w, 2.8, 48, 1), pa = g.attributes.position;
+    for (let i = 0; i < pa.count; i++) pa.setZ(i, Math.sin(pa.getX(i) / w * 26) * .045);
+    g.computeVertexNormals();
+    const m = new THREE.Mesh(g, sheer); m.position.y = 1.45; m.castShadow = false;
+    if (axis === 'z') { m.rotation.y = Math.PI / 2; m.position.x = at; m.position.z = a; } else { m.position.z = at; m.position.x = a; }
+    walls.add(m);
+  }
+  curtain('z', -8.92, -4.35, .75); curtain('z', -8.92, -.45, .75);
+  curtain('z', 8.92, -3.75, .65); curtain('z', 8.92, -1.05, .65);
+  const glowTex = canvasTex(8, 128, (g, W, H) => { const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, 'rgba(255,214,150,1)'); gr.addColorStop(1, 'rgba(255,214,150,0)'); g.fillStyle = gr; g.fillRect(0, 0, W, H); });
+  glowTex.wrapS = glowTex.wrapT = THREE.ClampToEdgeWrapping;
+  const coveGlow = new THREE.MeshBasicMaterial({ map: glowTex, transparent: true, opacity: .45, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false });
+  const led = new THREE.MeshBasicMaterial({ color: '#ffe2b0', toneMapped: false });
+  const aoTex = canvasTex(8, 128, (g, W, H) => { const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,1)'); g.fillStyle = gr; g.fillRect(0, 0, W, H); });
+  aoTex.wrapS = aoTex.wrapT = THREE.ClampToEdgeWrapping;
+  const aoMat = new THREE.MeshBasicMaterial({ map: aoTex, transparent: true, opacity: .32, depthWrite: false, color: '#000', side: THREE.DoubleSide });
+  // runs along a wall face: axis x => wall along X at z (face normal nz), axis z => along Z at x (normal nx)
+  function cove(axis, at, a0, a1, n) {
+    const len = a1 - a0, mid = (a0 + a1) / 2;
+    const ledge = axis === 'x' ? box(len, .12, .42, M.wall, mid, 2.86, at + n * .21, walls) : box(.42, .12, len, M.wall, at + n * .21, 2.86, mid, walls);
+    ledge.castShadow = false;
+    axis === 'x' ? box(len, .015, .02, led, mid, 2.795, at + n * .4, walls) : box(.02, .015, len, led, at + n * .4, 2.795, mid, walls);
+    const wash = new THREE.Mesh(new THREE.PlaneGeometry(len, .7), coveGlow); wash.position.y = 2.45; wash.renderOrder = 2;
+    const wall2 = new THREE.Mesh(new THREE.PlaneGeometry(len, .55), aoMat); wall2.position.y = .275; wall2.rotation.x = Math.PI; wall2.renderOrder = 1;
+    const fl = new THREE.Mesh(new THREE.PlaneGeometry(len, .5), aoMat); fl.renderOrder = 1;
+    if (axis === 'x') { wash.position.z = wall2.position.z = at + n * .005; if (n < 0) wash.rotation.y = wall2.rotation.y = Math.PI; fl.rotation.x = -Math.PI / 2; fl.rotation.z = n > 0 ? Math.PI : 0; fl.position.set(mid, .018, at + n * .25); wash.position.x = wall2.position.x = mid; }
+    else { wash.position.x = wall2.position.x = at + n * .005; wash.rotation.y = wall2.rotation.y = n > 0 ? Math.PI / 2 : -Math.PI / 2; fl.rotation.x = -Math.PI / 2; fl.rotation.z = n > 0 ? -Math.PI / 2 : Math.PI / 2; fl.position.set(at + n * .25, .018, mid); wash.position.z = wall2.position.z = mid; }
+    walls.add(wash, wall2); home.add(fl);
+  }
+  cove('x', -5.41, -9.0, 9.0, 1);
+  cove('z', -9.01, -5.4, 2.6, 1);
+  cove('z', 9.01, -5.4, 2.6, -1);
+  // corner shading on both faces of the partitions
+  [[-2.5, -5.4, -1.4], [3.5, -5.4, -.4]].forEach(([x, z0, z1]) => [-1, 1].forEach(n => {
+    const len = z1 - z0, mid = (z0 + z1) / 2;
+    const w2 = new THREE.Mesh(new THREE.PlaneGeometry(len, .55), aoMat); w2.rotation.set(Math.PI, n > 0 ? Math.PI / 2 : -Math.PI / 2, 0); w2.position.set(x + n * .095, .275, mid); walls.add(w2);
+    const f2 = new THREE.Mesh(new THREE.PlaneGeometry(len, .4), aoMat); f2.rotation.x = -Math.PI / 2; f2.rotation.z = n > 0 ? -Math.PI / 2 : Math.PI / 2; f2.position.set(x + n * .29, .018, mid); home.add(f2);
+  }));
+
   // skirting line on the back wall
   box(18.2, .08, .04, M.wood, 0, .04, -5.39, walls);
 
@@ -265,9 +312,11 @@ function start() {
   // KITCHEN (x -2.5 .. 3.5)
   p = piece(2, 0, -5.08);
   rbox(4.8, .86, .62, M.cabinet, .1, .45, 0, p, .02);
+  for (let i = 1; i < 8; i++) box(.008, .8, .01, FIX.black, -2.3 + i * .6, .45, .315, p);
   box(4.86, .05, .68, FIX.stone, .1, .9, .02, p);
   box(4.8, .62, .02, FIX.stoneDark, .1, 1.24, -.3, p);
   rbox(3.0, .72, .36, M.cabinet, -.8, 2.15, -.12, p, .02);
+  for (let i = 1; i < 4; i++) box(.008, .66, .01, FIX.black, -2.3 + i * .75, 2.15, .065, p);
   for (let i = 0; i < 4; i++) box(.02, .3, .02, M.metal, -2.0 + i * 0.78 + .35, 1.95, .07, p);
   for (let i = 0; i < 6; i++) box(.02, .02, .3, M.metal, -2.05 + i * .8 + .38, .74, .32, p);
   box(1.4, .03, .3, M.wood, 1.65, 1.85, -.14, p); box(1.4, .03, .3, M.wood, 1.65, 2.3, -.14, p);
@@ -443,7 +492,7 @@ function start() {
     pendants.forEach((p, i) => { const v = clamp(kOn * 1.5 - i * .25); p.L.intensity = v * lerp(3, 6, dusk); p.mats.forEach(m => m.emissiveIntensity = v * 2.2); });
     const bOn = clamp((s - 2.35) / .5);
     bedside.forEach(b => { b.L.intensity = bOn * lerp(2.5, 5, dusk); b.sh.material.emissiveIntensity = bOn * 1.3; });
-    fill.intensity = dusk * 6;
+    fill.intensity = dusk * 6; coveGlow.opacity = lerp(.3, .75, dusk);
 
     // style colours ease towards their target
     const kc = 1 - Math.exp(-dt * 5);
