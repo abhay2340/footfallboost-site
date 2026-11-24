@@ -869,6 +869,8 @@ footer{background:#07090D;border-top-color:#1A1F29}
 .demo-note a{color:var(--link)}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (min-width:760px){.demos{grid-template-columns:1fr 1fr}}
+.demo-feature{box-shadow:0 0 0 1px rgba(207,174,119,.35),0 30px 60px -34px rgba(0,0,0,.7)}
+@media (min-width:760px){.demo-feature{grid-column:1/-1;flex-direction:row}.demo-feature .demo-shot{flex:0 0 61%}.demo-feature .demo-cap{justify-content:center;padding:28px 30px}.demo-feature .demo-cap h3{font-size:26px}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="4c4d28f9-8821-4f59-9bef-363aca82416a"></script>
 </head>
@@ -1129,8 +1131,20 @@ footer{background:#07090D;border-top-color:#1A1F29}
     <div class="work-glow" aria-hidden="true"></div>
     <div class="wrap center">
       <h2 id="work-title" class="headline reveal">See what yours could look like.</h2>
-      <p class="sub reveal">Demo websites for a gym, a salon, a cake studio and a bakery. The businesses are made up, the features are real. Open one on your phone and try the booking form.</p>
+      <p class="sub reveal">Demo websites for an interior designer, a gym, a salon, a cake studio and a bakery. The businesses are made up, the features are real. Open one on your phone and try the booking form.</p>
       <div class="demos">
+        <article class="demo demo-feature reveal">
+          <a class="demo-shot" href="/v/demo-lumen-loft" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-lumen-loft" aria-label="Open the interior designer demo website in a new tab">
+            <span class="demo-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="/assets/work/interior-640.webp" srcset="/assets/work/interior-640.webp 640w, /assets/work/interior-1200.webp 1200w" sizes="(min-width:760px) 560px, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Homepage of the Lumen &amp; Loft interior design demo, showing a 3D model of a furnished home">
+          </a>
+          <div class="demo-cap">
+            <span class="demo-kind">Interior designer · 3D home tour</span>
+            <h3>Lumen &amp; Loft Interiors</h3>
+            <p>A 3D home builds itself as the page loads, then walks visitors through the living room, kitchen and bedroom as they scroll. One tap restyles the whole home.</p>
+            <a class="pill demo-btn" href="/v/demo-lumen-loft" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-lumen-loft">Open demo<span aria-hidden="true"> ↗</span><span class="vh"> (opens in a new tab)</span></a>
+          </div>
+        </article>
         <article class="demo reveal">
           <a class="demo-shot" href="/v/demo-forge24-fitness" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-forge24-fitness" aria-label="Open the gym demo website in a new tab">
             <span class="demo-bar" aria-hidden="true"><i></i><i></i><i></i></span>
