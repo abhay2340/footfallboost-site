@@ -14,7 +14,7 @@
 <meta name="description" content="The Crumbling Tooth: Egg-free designer cakes in Delhi. By Sonali Garg. Designer, theme, tier and lily cakes, hampers and baby shower cakes. FSSAI registered.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?&lt;link href=&#34;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Montserrat:wght@400;500;700;800&amp;display=swap&#34; rel=&#34;stylesheet&#34;&gt;" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="4c4d28f9-8821-4f59-9bef-363aca82416a"></script>
 <style>
 :root{--hf:"Cormorant Garamond";--bf:"Montserrat";--htt:none;--hw:600;--hls:0;--btnr:0;--btnsh:none;--btntt:uppercase;--btnls:.14em;--pad:1.25;--bg:#121110;--ink:#F3EBDD;--mute:#b9ad9a;--p:#C9A24B;--pd:#E2C06E;--a:#C9A24B;--as:#1B1917;--card:#1E1C19;--line:#3a352d;--dark:#0A0908;--ondark:#d9ccb6;--r:2px;--bd:1px solid var(--line);--sh:none}
@@ -252,15 +252,15 @@ let cf='all',df=null;const apply=()=>document.querySelectorAll('.item').forEach(
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));cf=b.dataset.f;apply()});
 document.querySelectorAll('.filter button').forEach(b=>b.onclick=()=>{const on=b.getAttribute('aria-pressed')==='true';document.querySelectorAll('.filter button').forEach(x=>x.setAttribute('aria-pressed','false'));if(!on){b.setAttribute('aria-pressed','true');df=b.dataset.d}else df=null;apply()});
 const MOODS=[];const LEAD=2;
-document.querySelectorAll('.moods button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.moods button').forEach(x=>x.setAttribute('aria-pressed',x===b));const m=MOODS[b.dataset.i];const o=document.getElementById('mout');o.innerHTML='';const h=document.createElement('h3');h.textContent=m.pick;const p=document.createElement('p');p.textContent=m.desc;const a=document.createElement('a');a.className='btn';a.href='#order';a.textContent='Order this';a.style.marginTop='12px';a.onclick=()=>{const n=document.querySelector('[name=note]');if(n)n.value='Idea: '+m.pick};o.append(h,p,a)});
+document.querySelectorAll('.moods button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.moods button').forEach(x=>x.setAttribute('aria-pressed',x===b));const m=MOODS[b.dataset.i];const o=document.getElementById('mout');o.innerHTML='';const h=document.createElement('h3');h.textContent=m.pick;const p=document.createElement('p');p.textContent=m.desc;const a=document.createElement('a');a.className='btn';a.href='#order';a.textContent="Order this";a.style.marginTop='12px';a.onclick=()=>{const n=document.querySelector('[name=note]');if(n)n.value='Idea: '+m.pick};o.append(h,p,a)});
 const ltd=document.getElementById('ltd');if(ltd){ltd.min=new Date().toISOString().slice(0,10);ltd.onchange=()=>{const d=Math.ceil((new Date(ltd.value)-new Date(new Date().toDateString()))/864e5);document.getElementById('lt').textContent=isNaN(d)?'':d<0?'That date has passed.':d<LEAD?'Rush order. Message us first and we will confirm.':'Good, there is enough time for this date.'}}
 const rem=document.getElementById('rem');if(rem)rem.onsubmit=e=>{e.preventDefault();const d=new FormData(rem);const t='Hi '+B.dataset.name+', please remind me before '+(d.get('n')||'a special day')+' on '+(d.get('d')||'(date)')+'.';if(WA)window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');else{navigator.clipboard&&navigator.clipboard.writeText(t);window.open('https://ig.me/m/'+IG,'_blank')}};
 const of=document.getElementById('of');
 if(of){const sum=document.getElementById('sum');
-const rows=()=>{const d=new FormData(of);return[['Occasion',d.get('occasion')],['For',d.get('item')],['Size',d.get('size')],['Flavour',d.get('flavour')],['Date',d.get('date')||'Not chosen'],['Name',d.get('name')||'-'],['Area',d.get('area')||'-']]};
+const RL=["Occasion", "For", "Size", "Flavour", "Date"];const rows=()=>{const d=new FormData(of);return[[RL[0],d.get('occasion')],[RL[1],d.get('item')],[RL[2],d.get('size')],[RL[3],d.get('flavour')],[RL[4],d.get('date')||'Not chosen'],['Name',d.get('name')||'-'],['Area',d.get('area')||'-']]};
 const draw=()=>{sum.innerHTML=rows().map(r=>'<dt>'+r[0]+'</dt><dd></dd>').join('');[...sum.querySelectorAll('dd')].forEach((e,i)=>e.textContent=rows()[i][1])};
 of.addEventListener('input',draw);draw();
-of.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(of);const t='Hi '+B.dataset.name+', I would like to order.\n'+rows().map(r=>r[0]+': '+r[1]).join('\n')+(d.get('note')?'\nNote: '+d.get('note'):'');
+of.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(of);const t=(B.dataset.demo?'Hi Abhay, I tried the form on the '+B.dataset.name+' demo website.\n':'Hi '+B.dataset.name+', I would like to order.\n')+rows().map(r=>r[0]+': '+r[1]).join('\n')+(d.get('note')?'\nNote: '+d.get('note'):'');
 if(WA){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank')}else{navigator.clipboard&&navigator.clipboard.writeText(t);window.open('https://ig.me/m/'+IG,'_blank')}})}
 const hl=document.querySelectorAll('#hours li');if(hl.length===7){const n=(new Date().getDay()+6)%7;hl[n].classList.add('today')}
 </script>
