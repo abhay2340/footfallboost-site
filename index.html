@@ -852,6 +852,23 @@ footer{background:#07090D;border-top-color:#1A1F29}
 @keyframes reveal{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
 @keyframes rise{from{opacity:.4;transform:translateY(80px) scale(.88)}to{opacity:1;transform:none}}
 @keyframes widen{from{opacity:.3;transform:scale(.92)}to{opacity:1;transform:none}}
+
+.demos{display:grid;gap:22px;margin-top:48px;text-align:left}
+.demo{background:var(--white);border-radius:24px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.06),0 30px 60px -34px rgba(0,0,0,.7);display:flex;flex-direction:column}
+.demo-shot{display:block;background:#F5F5F7;text-decoration:none}
+.demo-bar{display:flex;gap:6px;padding:10px 14px;background:#F5F5F7;border-bottom:1px solid #E5E5EA}
+.demo-bar i{width:9px;height:9px;border-radius:50%;background:#D1D1D6}
+.demo-shot img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:top;transition:transform .5s var(--ease,ease)}
+.demo-shot:hover img{transform:scale(1.02)}
+.demo-cap{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px;flex:1}
+.demo-kind{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--link)}
+.demo-cap h3{font-size:21px;line-height:1.2;color:var(--ink);margin:0}
+.demo-cap p{color:var(--muted);font-size:16px;line-height:1.45;margin:0 0 10px}
+.demo-btn{align-self:flex-start;margin-top:auto}
+.demo-note{margin-top:34px;color:var(--muted);font-size:17px}
+.demo-note a{color:var(--link)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (min-width:760px){.demos{grid-template-columns:1fr 1fr}}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="4c4d28f9-8821-4f59-9bef-363aca82416a"></script>
 </head>
@@ -1112,21 +1129,58 @@ footer{background:#07090D;border-top-color:#1A1F29}
     <div class="work-glow" aria-hidden="true"></div>
     <div class="wrap center">
       <h2 id="work-title" class="headline reveal">See what yours could look like.</h2>
-      <p class="sub reveal">A sample homepage I built for a home bakery.</p>
-      <div class="browser" aria-hidden="true">
-        <div class="browser-bar"><i></i><i></i><i></i><span>the-cake-odyssey.vercel.app</span></div>
-        <div class="mock">
-          <div class="mock-title">The Cake Odyssey</div>
-          <div class="mock-sub">Custom cakes, baked to order</div>
-          <div class="mock-row"><div></div><div></div><div></div></div>
-          <span class="mock-btn">Order on WhatsApp</span>
-        </div>
+      <p class="sub reveal">Demo websites for a gym, a salon, a cake studio and a bakery. The businesses are made up, the features are real. Open one on your phone and try the booking form.</p>
+      <div class="demos">
+        <article class="demo reveal">
+          <a class="demo-shot" href="/v/demo-forge24-fitness" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-forge24-fitness" aria-label="Open the gym demo website in a new tab">
+            <span class="demo-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="/assets/work/gym-640.webp" srcset="/assets/work/gym-640.webp 640w, /assets/work/gym-1200.webp 1200w" sizes="(min-width:760px) 460px, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Homepage of the Forge 24 Fitness demo website">
+          </a>
+          <div class="demo-cap">
+            <span class="demo-kind">Gym</span>
+            <h3>Forge 24 Fitness</h3>
+            <p>Programs, free-trial booking, class timings and a WhatsApp booking form.</p>
+            <a class="pill demo-btn" href="/v/demo-forge24-fitness" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-forge24-fitness">Open demo<span aria-hidden="true"> ↗</span><span class="vh"> (opens in a new tab)</span></a>
+          </div>
+        </article>
+        <article class="demo reveal">
+          <a class="demo-shot" href="/v/demo-gloss-and-glow" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-gloss-and-glow" aria-label="Open the salon demo website in a new tab">
+            <span class="demo-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="/assets/work/salon-640.webp" srcset="/assets/work/salon-640.webp 640w, /assets/work/salon-1200.webp 1200w" sizes="(min-width:760px) 460px, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Homepage of the Gloss &amp; Glow Studio demo website">
+          </a>
+          <div class="demo-cap">
+            <span class="demo-kind">Salon</span>
+            <h3>Gloss &amp; Glow Studio</h3>
+            <p>Services, bridal packages, memberships and slot booking on WhatsApp.</p>
+            <a class="pill demo-btn" href="/v/demo-gloss-and-glow" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-gloss-and-glow">Open demo<span aria-hidden="true"> ↗</span><span class="vh"> (opens in a new tab)</span></a>
+          </div>
+        </article>
+        <article class="demo reveal">
+          <a class="demo-shot" href="/v/demo-sugar-bloom" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-sugar-bloom" aria-label="Open the cake studio demo website in a new tab">
+            <span class="demo-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="/assets/work/cakes-640.webp" srcset="/assets/work/cakes-640.webp 640w, /assets/work/cakes-1200.webp 1200w" sizes="(min-width:760px) 460px, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Homepage of the Sugar Bloom Cake Studio demo website">
+          </a>
+          <div class="demo-cap">
+            <span class="demo-kind">Cake studio</span>
+            <h3>Sugar Bloom Cake Studio</h3>
+            <p>A cake builder, occasions, gift boxes and delivery areas.</p>
+            <a class="pill demo-btn" href="/v/demo-sugar-bloom" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-sugar-bloom">Open demo<span aria-hidden="true"> ↗</span><span class="vh"> (opens in a new tab)</span></a>
+          </div>
+        </article>
+        <article class="demo reveal">
+          <a class="demo-shot" href="/v/demo-crumb-theory" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-crumb-theory" aria-label="Open the bakery demo website in a new tab">
+            <span class="demo-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="/assets/work/bakery-640.webp" srcset="/assets/work/bakery-640.webp 640w, /assets/work/bakery-1200.webp 1200w" sizes="(min-width:760px) 460px, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Homepage of the Crumb Theory Bakehouse demo website">
+          </a>
+          <div class="demo-cap">
+            <span class="demo-kind">Bakery</span>
+            <h3>Crumb Theory Bakehouse</h3>
+            <p>Daily menu, pre-orders for pickup and bulk orders for offices.</p>
+            <a class="pill demo-btn" href="/v/demo-crumb-theory" target="_blank" rel="noopener" data-umami-event="Demo open" data-umami-event-location="demo-crumb-theory">Open demo<span aria-hidden="true"> ↗</span><span class="vh"> (opens in a new tab)</span></a>
+          </div>
+        </article>
       </div>
-      <div class="work-cap">
-        <h3>The Cake Odyssey</h3>
-        <p>Their cakes up front and a WhatsApp button for orders.</p>
-        <a class="more" href="https://the-cake-odyssey.vercel.app" target="_blank" rel="noopener">Open the live site</a>
-      </div>
+      <p class="demo-note reveal">Your website is built around your own photos, services and offers. <a href="https://wa.me/919335694034?text=Hi%20Abhay%2C%20I%20saw%20your%20demo%20websites%20and%20I%27d%20like%20one%20for%20my%20business." rel="noopener" data-umami-event="WhatsApp click" data-umami-event-location="work">Ask for a free sample of yours</a></p>
     </div>
   </section>
 
