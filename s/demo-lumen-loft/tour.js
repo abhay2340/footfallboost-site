@@ -11,6 +11,8 @@ import { EffectComposer } from '/assets/vendor/three/addons/postprocessing/Effec
 import { RenderPass } from '/assets/vendor/three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from '/assets/vendor/three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from '/assets/vendor/three/addons/postprocessing/OutputPass.js';
+import { BokehPass } from '/assets/vendor/three/addons/postprocessing/BokehPass.js';
+import { ShaderPass } from '/assets/vendor/three/addons/postprocessing/ShaderPass.js';
 const ASSETS = '/s/demo-lumen-loft/assets/';
 
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -448,12 +450,25 @@ function start() {
   const rail = [...document.querySelectorAll('[data-rail]')];
 
   // soft glow on lamps and windows (desktop only)
-  let composer = null;
+  let composer = null, bokeh = null, film = null;
   if (!SMALL) {
     composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
     composer.addPass(new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), .32, .55, .92));
+    // lens blur that fades in when the camera settles in a room
+    bokeh = new BokehPass(scene, camera, { focus: 6, aperture: 0, maxblur: .006 });
+    composer.addPass(bokeh);
     composer.addPass(new OutputPass());
+    // soft vignette and fine film grain, after tone mapping
+    film = new ShaderPass({
+      uniforms: { tDiffuse: { value: null }, uTime: { value: 0 } },
+      vertexShader: 'varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+      fragmentShader: 'uniform sampler2D tDiffuse;uniform float uTime;varying vec2 vUv;' +
+        'float h(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}' +
+        'void main(){vec4 c=texture2D(tDiffuse,vUv);vec2 d=vUv-.5;float v=smoothstep(.85,.25,length(d*vec2(1.05,1.2)));' +
+        'c.rgb*=mix(.72,1.,v);c.rgb+=(h(vUv*vec2(1920.,1080.)+uTime)-.5)*.035;gl_FragColor=c;}'
+    });
+    composer.addPass(film);
   }
 
   // ---------- loop ----------
@@ -506,6 +521,11 @@ function start() {
       tmpP.set(Math.cos(a) * r, tmpP.y, Math.sin(a) * r);
     } else orbit = lerp(orbit, 0, kc);
     if (!REDUCED) { tmpP.x += mx * .7; tmpP.y -= my * .4; if (s < .3 && age > 2) tmpP.x += Math.sin(age * .25) * .6; }
+    if (!REDUCED && !SMALL) {
+      tmpP.x += Math.sin(age * .61) * .035 + Math.sin(age * 1.37) * .012;
+      tmpP.y += Math.sin(age * .83 + 1.3) * .025;
+      tmpL.x += Math.sin(age * .47 + .4) * .03; tmpL.y += Math.sin(age * .71 + 2.1) * .02;
+    }
     const kcam = REDUCED ? 1 : 1 - Math.exp(-dt * 3.2);
     camP.lerp(tmpP, kcam); camL.lerp(tmpL, kcam);
     camera.position.copy(camP); camera.lookAt(camL);
@@ -515,6 +535,12 @@ function start() {
     const ri = Math.min(4, Math.round(s));
     rail.forEach((a, i) => a.classList.toggle('on', i === ri));
 
+    if (bokeh) {
+      const r = Math.round(s), settle = (r >= 1 && r <= 3) ? clamp(1 - Math.abs(s - r) * 5) : 0;
+      bokeh.uniforms.focus.value = camera.position.distanceTo(camL);
+      bokeh.uniforms.aperture.value = lerp(bokeh.uniforms.aperture.value, settle * .0022, 1 - Math.exp(-dt * 3));
+    }
+    if (film) film.uniforms.uTime.value = (age * 60) % 1000;
     if (composer) composer.render(); else renderer.render(scene, camera);
     requestAnimationFrame(frame);
   }
