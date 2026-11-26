@@ -13,14 +13,22 @@ import { UnrealBloomPass } from '/assets/vendor/three/addons/postprocessing/Unre
 import { OutputPass } from '/assets/vendor/three/addons/postprocessing/OutputPass.js';
 import { BokehPass } from '/assets/vendor/three/addons/postprocessing/BokehPass.js';
 import { ShaderPass } from '/assets/vendor/three/addons/postprocessing/ShaderPass.js';
+import { GTAOPass } from '/assets/vendor/three/addons/postprocessing/GTAOPass.js';
 const ASSETS = '/s/demo-lumen-loft/assets/';
 
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const SMALL = Math.min(innerWidth, innerHeight) < 700;
 const canvas = document.getElementById('scene');
 
+// Data saver or a very slow connection: skip the 3D scene and keep the photo backdrop.
+const conn = navigator.connection || {};
+const SLOW = !!conn.saveData || /(^|-)2g$|^3g$/.test(conn.effectiveType || '');
+// Heavy files (models, light probe) wait until the first frames are on screen.
+const afterFirstPaint = new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 120))));
+
 let renderer;
 try {
+  if (SLOW) throw new Error('lite');
   renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
 } catch (e) {
   document.documentElement.classList.add('no-webgl');
@@ -41,10 +49,10 @@ function start() {
   scene.fog = new THREE.Fog(BG, 30, 70);
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-  // swap in a real interior light probe once it arrives
-  new RGBELoader().load(ASSETS + 'tex/lythwood_room_1k.hdr', hdr => {
+  // swap in a real interior light probe once the first frames are drawn (small 512 px file)
+  afterFirstPaint.then(() => new RGBELoader().load(ASSETS + 'tex/lythwood_room_1k.hdr', hdr => {
     const env = pmrem.fromEquirectangular(hdr).texture; hdr.dispose(); scene.environment = env;
-  });
+  }));
 
   const camera = new THREE.PerspectiveCamera(SMALL ? 58 : 42, innerWidth / innerHeight, 0.1, 200);
 
@@ -93,7 +101,9 @@ function start() {
   const std = (c, o = {}) => new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: .8, metalness: 0, envMapIntensity: .45 }, o));
   const M = {
     wall: std('#f4efe6', Object.assign(pbr('plastered_wall_04', 3, 1.2), { roughness: 1, normalScale: new THREE.Vector2(.6, .6) })),
-    floor: std('#efe4d6', Object.assign(pbr('wood_floor', 7, 4.3), { roughness: 1, envMapIntensity: .7 })),
+    // satin-lacquered floor: a clear coat gives the soft window reflections real wood has
+    floor: Object.assign(new THREE.MeshPhysicalMaterial(Object.assign({ color: '#e6dccf', roughness: .62, metalness: 0, envMapIntensity: .9, clearcoat: .45, clearcoatRoughness: .32 }, pbr('wood_floor', 7, 4.3))), {}),
+    trim: std('#efe9de', { roughness: .5 }),
     sofa: std('#d9d1c4', (({ normalMap, roughnessMap }) => ({ normalMap, roughnessMap, roughness: 1, normalScale: new THREE.Vector2(1.4, 1.4) }))(pbr('wool_boucle', 3, 3))),
     accent: std('#6f7d5c', { roughness: .95 }),
     wood: std('#5b4636', (({ map, roughnessMap }) => ({ map, roughnessMap, roughness: .9 }))(pbr('wood_floor', 1, 1))),
@@ -111,7 +121,7 @@ function start() {
     leaf: std('#5d7150', { roughness: .9, flatShading: true }),
     pot: std('#b4876a', { roughness: .9 }),
     black: std('#151311', { roughness: .5 }),
-    rug: std('#e8dccb', Object.assign(pbr('poly_wool_herringbone', 3, 2.2), { roughness: 1 })),
+    rug: std('#ffffff', Object.assign(pbr('poly_wool_herringbone', 3, 2.2), { roughness: 1 })),
     glass: new THREE.MeshBasicMaterial({ side: THREE.DoubleSide, map: canvasTex(256, 256, (g, W, H) => {
       const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#9fc0dc'); gr.addColorStop(.62, '#e9eef0'); gr.addColorStop(.7, '#f7e6cc'); gr.addColorStop(1, '#d9c6a8');
       g.fillStyle = gr; g.fillRect(0, 0, W, H);
@@ -120,9 +130,9 @@ function start() {
     }) }),
   };
   const STYLES = {
-    japandi: { wall: '#f4efe6', floor: '#efe4d6', sofa: '#d9d1c4', accent: '#6f7d5c', wood: '#5b4636', metal: '#1f1d1b', fluted: '#c9a27a', cabinet: '#cdb89a', bedding: '#ddd3c4' },
-    luxe:    { wall: '#e2dfda', floor: '#7d5a44', sofa: '#2e3d3c', accent: '#b08d57', wood: '#3b2a20', metal: '#c9a46a', fluted: '#3b2a20', cabinet: '#2e3d3c', bedding: '#9c8a76' },
-    earthy:  { wall: '#f2d3b8', floor: '#b8805c', sofa: '#b5523b', accent: '#2f5d50', wood: '#6a3e26', metal: '#b8860b', fluted: '#8c5a3c', cabinet: '#2f5d50', bedding: '#d08452' },
+    japandi: { wall: '#f4efe6', floor: '#e6dccf', sofa: '#d9d1c4', accent: '#6f7d5c', wood: '#5b4636', metal: '#1f1d1b', fluted: '#c9a27a', cabinet: '#cdb89a', bedding: '#ddd3c4', trim: '#efe9de' },
+    luxe:    { wall: '#e2dfda', floor: '#7d5a44', sofa: '#2e3d3c', accent: '#b08d57', wood: '#3b2a20', metal: '#c9a46a', fluted: '#3b2a20', cabinet: '#2e3d3c', bedding: '#9c8a76', trim: '#cfcac2' },
+    earthy:  { wall: '#f2d3b8', floor: '#b8805c', sofa: '#b5523b', accent: '#2f5d50', wood: '#6a3e26', metal: '#b8860b', fluted: '#8c5a3c', cabinet: '#2f5d50', bedding: '#d08452', trim: '#f6e6d4' },
   };
   const target = {}; for (const k in M) target[k] = M[k].color.clone();
   function setStyle(name) {
@@ -153,7 +163,7 @@ function start() {
   // real furniture: load each glTF once, place clones; items stay hidden until loaded
   const gltf = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const cache = {};
-  const getModel = name => cache[name] || (cache[name] = gltf.loadAsync(ASSETS + 'models/' + name + '.glb').then(g => {
+  const getModel = name => cache[name] || (cache[name] = afterFirstPaint.then(() => gltf.loadAsync(ASSETS + 'models/' + name + '.glb')).then(g => {
     g.scene.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; if (o.material) o.material.envMapIntensity = .9; } });
     return g.scene;
   }));
@@ -267,8 +277,45 @@ function start() {
     const f2 = new THREE.Mesh(new THREE.PlaneGeometry(len, .4), aoMat); f2.rotation.x = -Math.PI / 2; f2.rotation.z = n > 0 ? -Math.PI / 2 : Math.PI / 2; f2.position.set(x + n * .29, .018, mid); home.add(f2);
   }));
 
-  // skirting line on the back wall
-  box(18.2, .08, .04, M.wood, 0, .04, -5.39, walls);
+  // skirting boards on every wall face: the edge detail that makes a room read as built
+  const skirt = (w, d, x, z) => { const b = box(w, .12, d, M.trim, x, .06, z, walls); b.castShadow = false; };
+  skirt(18.0, .035, 0, -5.395);
+  skirt(.035, 8.0, -8.995, -1.4); skirt(.035, 8.0, 8.995, -1.4);
+  [-1, 1].forEach(n => { skirt(.035, 4.0, -2.5 + n * .105, -3.4); skirt(.035, 5.0, 3.5 + n * .105, -2.9); });
+
+  // sun shafts through the windows: soft additive ribbons that follow the sun direction and fade at dusk
+  const shaftTex = canvasTex(4, 128, (g, W, H) => { const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, 'rgba(255,236,200,.95)'); gr.addColorStop(.55, 'rgba(255,230,190,.25)'); gr.addColorStop(1, 'rgba(255,230,190,0)'); g.fillStyle = gr; g.fillRect(0, 0, W, H); });
+  shaftTex.wrapS = shaftTex.wrapT = THREE.ClampToEdgeWrapping;
+  const shaftMat = new THREE.MeshBasicMaterial({ map: shaftTex, transparent: true, opacity: .2, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, toneMapped: false });
+  const shafts = [];
+  function shaft(x, z0, z1, y0, y1, dx, dz) {
+    // parallelogram: top edge at the window, bottom edge dropped to the floor along the sun direction
+    const v = new Float32Array([x, y1, z0, x, y1, z1, x + dx, 0.03, z1 + dz, x + dx, 0.03, z0 + dz]);
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(v, 3));
+    g.setAttribute('uv', new THREE.BufferAttribute(new Float32Array([0, 1, 1, 1, 1, 0, 0, 0]), 2));
+    g.setIndex([0, 1, 2, 0, 2, 3]);
+    const m = new THREE.Mesh(g, shaftMat); m.renderOrder = 3; m.frustumCulled = false; walls.add(m); shafts.push(m); return m;
+  }
+  shaft(-9.0, -4.1, -2.5, .6, 2.6, 3.0, -1.5); shaft(-9.0, -2.4, -.7, .6, 2.6, 3.0, -1.5);
+
+  // a second rug under the bed, and a floating shelf with books in the living room
+  const rug2 = new THREE.Mesh(new THREE.PlaneGeometry(3.8, 2.7), FIX.rug);
+  rug2.rotation.x = -Math.PI / 2; rug2.position.set(6.3, .011, -3.3); rug2.receiveShadow = true; home.add(rug2);
+  items.push({ g: rug2, room: 3, i: items.length, flat: true });
+  const bookCols = ['#b5643f', '#2c2620', '#7e8a6a', '#d6a961', '#efe7da', '#4a5a6a', '#a9765a'];
+  function books(p, n, x0, y, z, seed) {
+    let x = x0;
+    for (let i = 0; i < n; i++) {
+      const w = .03 + ((seed * 7 + i * 13) % 5) * .008, h = .2 + ((seed * 5 + i * 11) % 6) * .02;
+      box(w, h, .2, std(bookCols[(seed + i * 3) % bookCols.length], { roughness: .8 }), x + w / 2, y + h / 2, z, p); x += w + .004;
+    }
+    return x;
+  }
+  const shelf = piece(1, -8.35, -5.3);
+  box(1.3, .04, .26, M.wood, 0, 1.45, .03, shelf); box(1.3, .04, .26, M.wood, 0, 1.95, .03, shelf);
+  books(shelf, 7, -.6, 1.47, .03, 1); books(shelf, 5, -.5, 1.97, .03, 4);
+  cyl(.05, .06, .13, FIX.pot, .48, 2.04, .03, shelf, 14);
 
   // LIVING (x -9 .. -2.5)
   const rug = new THREE.Mesh(new THREE.PlaneGeometry(4.4, 3.2), FIX.rug);
@@ -392,7 +439,8 @@ function start() {
   sun.position.set(-16, 13, 6); sun.target.position.set(0, 0, -2); scene.add(sun, sun.target);
   sun.castShadow = !SMALL;
   Object.assign(sun.shadow.camera, { left: -13, right: 13, top: 10, bottom: -10, near: 1, far: 50 });
-  sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -.0004; sun.shadow.normalBias = .03;
+  Object.assign(sun.shadow.camera, { left: -11, right: 11, top: 8, bottom: -8 });
+  sun.shadow.mapSize.set(4096, 4096); sun.shadow.bias = -.0003; sun.shadow.normalBias = .025; sun.shadow.radius = 4;
   const lamp = new THREE.PointLight('#ffc78a', 0, 6, 1.6); lamp.position.set(-3.75, 1.55, -4.85); home.add(lamp);
   const fill = new THREE.PointLight('#ffd9a8', 0, 9, 1.4); fill.position.set(6.3, 2.6, -2.5); home.add(fill);
 
@@ -450,11 +498,30 @@ function start() {
   const rail = [...document.querySelectorAll('[data-rail]')];
 
   // soft glow on lamps and windows (desktop only)
-  let composer = null, bokeh = null, film = null;
+  let composer = null, bokeh = null, film = null, gtao = null, bloom = null;
   if (!SMALL) {
     composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
-    composer.addPass(new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), .32, .55, .92));
+    // ambient occlusion: soft darkening in corners, under furniture and where walls meet the floor.
+    // Transparent decoration (glow, shafts, curtains, leaf cards) is hidden for this pass only.
+    gtao = new GTAOPass(scene, camera, innerWidth, innerHeight);
+    gtao.updateGtaoMaterial({ radius: .55, distanceExponent: 1.4, thickness: 1.2, scale: 1.1, samples: 14, distanceFallOff: 1, screenSpaceRadius: false });
+    gtao.updatePdMaterial({ lumaPhi: 10, depthPhi: 2, normalPhi: 3, radius: 5, radiusExponent: 1, rings: 2, samples: 16 });
+    gtao.blendIntensity = .85;
+    const aoRender = gtao.render.bind(gtao);
+    let aoHide = [], aoAge = -1;
+    gtao.render = function (...a) {
+      if (aoAge < 0 || performance.now() - aoAge > 2500) {
+        aoHide = []; aoAge = performance.now();
+        scene.traverse(o => { const m = o.material; if (o.isMesh && m && !Array.isArray(m) && ((m.transparent && m.depthWrite === false) || m.alphaTest > 0 || m.blending === THREE.AdditiveBlending)) aoHide.push(o); });
+      }
+      aoHide.forEach(o => { o.userData._v = o.visible; o.visible = false; });
+      aoRender(...a);
+      aoHide.forEach(o => { o.visible = o.userData._v; });
+    };
+    composer.addPass(gtao);
+    bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), .32, .55, .92);
+    composer.addPass(bloom);
     // lens blur that fades in when the camera settles in a room
     bokeh = new BokehPass(scene, camera, { focus: 6, aperture: 0, maxblur: .006 });
     composer.addPass(bokeh);
@@ -466,7 +533,10 @@ function start() {
       fragmentShader: 'uniform sampler2D tDiffuse;uniform float uTime;varying vec2 vUv;' +
         'float h(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}' +
         'void main(){vec4 c=texture2D(tDiffuse,vUv);vec2 d=vUv-.5;float v=smoothstep(.85,.25,length(d*vec2(1.05,1.2)));' +
-        'c.rgb*=mix(.72,1.,v);c.rgb+=(h(vUv*vec2(1920.,1080.)+uTime)-.5)*.035;gl_FragColor=c;}'
+        // gentle S-curve for contrast, warm highlights and cooler shadows, then vignette and fine grain
+        'float l=dot(c.rgb,vec3(.299,.587,.114));c.rgb=mix(c.rgb,c.rgb*c.rgb*(3.-2.*c.rgb),.28);' +
+        'c.rgb*=mix(vec3(.97,.99,1.03),vec3(1.035,1.,.95),smoothstep(.15,.85,l));' +
+        'c.rgb*=mix(.72,1.,v);c.rgb+=(h(vUv*vec2(1920.,1080.)+uTime)-.5)*.026;gl_FragColor=c;}'
     });
     composer.addPass(film);
   }
@@ -474,10 +544,29 @@ function start() {
   // ---------- loop ----------
   const t0 = performance.now();
   let last = t0, orbit = 0, sSmooth = storyS();
+  sun.shadow.camera.updateProjectionMatrix();
+  // quality governor: if the first seconds run slowly, drop the costly effects step by step
+  let gov = { n: 0, sum: 0, level: 0, wait: 0 };
+  function degrade() {
+    gov.level++;
+    if (gov.level === 1) { if (gtao) { gtao.enabled = false; } }
+    else if (gov.level === 2) { if (bokeh) bokeh.enabled = false; renderer.setPixelRatio(1); renderer.setSize(innerWidth, innerHeight, false); if (composer) composer.setPixelRatio(1); }
+    else if (gov.level === 3) { if (bloom) bloom.enabled = false; renderer.shadowMap.enabled = false; sun.castShadow = false; scene.traverse(o => { if (o.material) o.material.needsUpdate = true; }); }
+    else if (gov.level === 4) { composer = null; }
+  }
+  let tick = 0;
   const cSun = new THREE.Color(), cDay = new THREE.Color('#ffe9cf'), cDusk = new THREE.Color('#ff9f5a');
   function frame(now) {
-    const dt = Math.min(.05, (now - last) / 1000); last = now;
+    // nothing to see: tab hidden, or the full-screen video walkthrough is covering the canvas
+    if (document.hidden || document.body.classList.contains('in-walk')) { last = now; requestAnimationFrame(frame); return; }
+    const raw = now - last;
+    const dt = Math.min(.05, raw / 1000); last = now;
     const age = (now - t0) / 1000;
+    // governor: measure real frame time between 3 s and 6 s, once everything has loaded
+    if (age > 3 && gov.level < 4 && raw < 400) {
+      gov.n++; gov.sum += raw;
+      if (gov.n >= 45) { if (gov.sum / gov.n > 30) degrade(); gov.n = 0; gov.sum = 0; }
+    }
     const sRaw = storyS();
     sSmooth = REDUCED ? sRaw : lerp(sSmooth, sRaw, 1 - Math.exp(-dt * 6));
     const s = sSmooth;
@@ -508,6 +597,7 @@ function start() {
     const bOn = clamp((s - 2.35) / .5);
     bedside.forEach(b => { b.L.intensity = bOn * lerp(2.5, 5, dusk); b.sh.material.emissiveIntensity = bOn * 1.3; });
     fill.intensity = dusk * 6; coveGlow.opacity = lerp(.3, .75, dusk);
+    shaftMat.opacity = lerp(.2, 0, clamp(dusk * 1.6)) * clamp((age - 1.5) / 1.5);
 
     // style colours ease towards their target
     const kc = 1 - Math.exp(-dt * 5);
@@ -541,7 +631,10 @@ function start() {
       bokeh.uniforms.aperture.value = lerp(bokeh.uniforms.aperture.value, settle * .0022, 1 - Math.exp(-dt * 3));
     }
     if (film) film.uniforms.uTime.value = (age * 60) % 1000;
-    if (composer) composer.render(); else renderer.render(scene, camera);
+    // once the page has moved on to the plain business sections, the scene sits blurred behind them: draw it at half rate
+    tick++;
+    const passive = scrollY > centers[centers.length - 1];
+    if (!(passive && tick % 2)) { if (composer) composer.render(); else renderer.render(scene, camera); }
     requestAnimationFrame(frame);
   }
 

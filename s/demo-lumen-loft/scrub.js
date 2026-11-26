@@ -11,6 +11,7 @@
   var small = matchMedia('(max-width:759px)').matches;
   var dir = '/s/demo-lumen-loft/assets/frames/' + (small ? 'm' : 'd') + '/';
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var c = navigator.connection || {}, lite = !!c.saveData || /(^|-)2g$|^3g$/.test(c.effectiveType || '');
   var imgs = new Array(N), ready = 0, started = false;
   var cur = 0, target = 0, W = 0, H = 0, dpr = 1, raf = 0, lastDrawn = -1;
 
@@ -27,8 +28,11 @@
     if (started) return; started = true;
     var order = [], i;
     for (i = 0; i < N; i += 6) order.push(i);            // coarse pass
-    for (i = 0; i < N; i += 2) if (i % 6) order.push(i); // then every 2nd
-    for (i = 1; i < N; i += 2) if (i % 6) order.push(i); // then the rest
+    if (lite) order.push(N - 1);                         // data saver: coarse frames only
+    else {
+      for (i = 0; i < N; i += 2) if (i % 6) order.push(i); // then every 2nd
+      for (i = 1; i < N; i += 2) if (i % 6) order.push(i); // then the rest
+    }
     var p = 0, active = 0, MAX = 6;
     (function pump() {
       while (active < MAX && p < order.length) {

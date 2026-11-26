@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&q=70">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#15120e">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="importmap">{"imports":{"three":"/assets/vendor/three/three.module.min.js"}}</script><link rel="preconnect" href="https://images.unsplash.com"><link rel="modulepreload" href="/s/demo-lumen-loft/tour.js"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="4c4d28f9-8821-4f59-9bef-363aca82416a"></script>
 <style>
@@ -52,6 +52,8 @@ header.nav .wrap{display:flex;align-items:center;justify-content:space-between;g
 .brand b i{color:var(--brass)}
 .brand span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
 .links{display:none;gap:26px;font-size:14px;font-weight:500;color:var(--mute)}
+.links .x{display:none}
+@media (min-width:1000px){.links .x{display:inline}}
 .links a{text-decoration:none;transition:color .2s}.links a:hover{color:var(--ink)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 22px;border-radius:99px;background:var(--brass);color:var(--brass-ink);font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:transform .25s var(--ease),background .2s}
 .btn:hover{background:#dcc08f}.btn:active{transform:scale(.97)}
@@ -176,8 +178,50 @@ footer a{color:var(--mute)}
 .reveal{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .js .reveal.pre{opacity:0;transform:translateY(26px)}
 
+/* before / after */
+.ba{position:relative;margin-top:40px;border-radius:var(--r);overflow:hidden;background:var(--bg2);aspect-ratio:4/3;touch-action:pan-y;user-select:none;-webkit-user-select:none;border:1px solid var(--line)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .tag{position:absolute;top:14px;padding:6px 12px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(14,11,8,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ba .tag.b{left:14px}.ba .tag.a{right:14px;background:var(--brass);color:var(--brass-ink)}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;margin-left:-1px;background:var(--ink);pointer-events:none}
+.ba .bar::after{content:"";position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:var(--ink);box-shadow:0 6px 24px rgba(0,0,0,.5);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='44' fill='none' stroke='%232a2116' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M17 15l-6 7 6 7M27 15l6 7-6 7'/></svg>")}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba input:focus-visible+.bar::after{outline:2px solid var(--brass);outline-offset:3px}
+/* reviews */
+.revs{display:grid;gap:14px;margin-top:40px}
+.rev{padding:24px 22px;border-radius:var(--r);background:var(--bg2);border:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.rev .st{color:var(--brass);letter-spacing:.2em;font-size:15px}
+.rev blockquote{font:400 22px/1.3 var(--display);color:var(--ink)}
+.rev footer{all:unset;display:flex;align-items:center;gap:12px;margin-top:auto;font-size:14px;color:var(--mute)}
+.rev footer b{display:block;color:var(--ink);font-size:15px}
+.mono{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:400 19px var(--display);background:rgba(207,174,119,.14);border:1px solid rgba(207,174,119,.4);color:var(--brass)}
+/* team */
+.team{display:grid;gap:14px;margin-top:40px}
+.team article{display:flex;gap:16px;align-items:flex-start;padding:22px;border-radius:var(--r);border:1px solid var(--line);background:rgba(243,237,228,.02)}
+.team .mono{width:56px;height:56px;font-size:24px}
+.team h3{font-size:26px;margin-bottom:2px}
+.team .role{font-size:13px;font-weight:600;color:var(--brass);letter-spacing:.04em;margin-bottom:8px}
+.team p{color:var(--mute);font-size:15px}
+/* timeline estimator */
+.est{display:grid;gap:22px;margin-top:40px}
+.est .form{gap:18px}
+.est output{display:block;font:400 clamp(44px,9vw,76px)/1 var(--display);color:var(--brass)}
+.phases{list-style:none;display:grid;gap:8px;margin-top:6px}
+.phases li{display:grid;grid-template-columns:96px 1fr 52px;align-items:center;gap:10px;font-size:14px;color:var(--mute)}
+.phases i{display:block;height:8px;border-radius:99px;background:rgba(243,237,228,.1);overflow:hidden}
+.phases i::after{content:"";display:block;height:100%;width:var(--w,0%);margin-left:var(--l,0%);background:var(--brass);border-radius:99px;transition:width .5s var(--ease),margin .5s var(--ease)}
+.phases span:last-child{text-align:right;color:var(--ink);font-variant-numeric:tabular-nums}
+.res{padding:24px;border-radius:var(--r);background:var(--bg2);border:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.res .btn{width:100%}
+
 @media (min-width:760px){
   .links{display:flex}
+  .revs{grid-template-columns:repeat(3,1fr)}
+  .team{grid-template-columns:repeat(3,1fr)}
+  .est{grid-template-columns:1fr 1fr;align-items:start}
+  .ba{aspect-ratio:16/9}
+
   .panel{padding:34px 32px}
   .facts{grid-template-columns:repeat(4,1fr)}
   .svc{grid-template-columns:repeat(3,1fr)}
@@ -217,7 +261,7 @@ footer a{color:var(--mute)}
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top"><b>Lumen <i>&amp;</i> Loft</b><span>Interiors</span></a>
-    <nav class="links" aria-label="Sections"><a href="#living">Tour</a><a href="#styles">Styles</a><a href="#services">Services</a><a href="#work">Work</a><a href="#faq">FAQ</a></nav>
+    <nav class="links" aria-label="Sections"><a href="#living">Tour</a><a href="#styles">Styles</a><a href="#services">Services</a><a href="#work">Work</a><a class="x" href="#reviews">Reviews</a><a class="x" href="#timeline">Timeline</a><a href="#faq">FAQ</a></nav>
     <a class="btn sm" href="#consult" data-umami-event="Sample hero order"><span class="long">Free consultation</span><span class="short">Consult</span></a>
   </div>
 </header>
@@ -383,6 +427,81 @@ footer a{color:var(--mute)}
     </div>
   </section>
 
+  <section class="band" id="transform" aria-labelledby="tf-title">
+    <div class="wrap">
+      <span class="eyebrow reveal">Before and after</span>
+      <h2 id="tf-title" class="reveal">From bare shell to <em>home</em>.</h2>
+      <p class="lead reveal">Drag the handle to compare a Sector 150 flat when we got the keys with the day we handed it back.</p>
+      <div class="ba reveal" id="ba" style="--p:50%">
+        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&h=800&q=70" alt="The finished living room with sofa, rug and lighting" loading="lazy" decoding="async" width="1200" height="800">
+        <img src="https://images.unsplash.com/photo-1668910242969-bd2933e7a5cf?auto=format&fit=crop&w=1200&h=800&q=70" alt="The same flat before work: bare floor and walls" loading="lazy" decoding="async" width="1200" height="800" style="clip-path:inset(0 calc(100% - var(--p)) 0 0)">
+        <span class="tag b">Before</span><span class="tag a">After</span>
+        <input type="range" min="2" max="98" value="50" aria-label="Compare before and after" id="ba-r" data-umami-event="Before after drag">
+        <span class="bar" aria-hidden="true"></span>
+      </div>
+      <p class="credit reveal">Sample photos from Unsplash. Not the same room.</p>
+    </div>
+  </section>
+
+  <section class="band" id="reviews" aria-labelledby="rv-title">
+    <div class="wrap">
+      <span class="eyebrow reveal">Client words</span>
+      <h2 id="rv-title" class="reveal">Homes people <em>love</em> coming back to.</h2>
+      <div class="revs">
+        <article class="rev reveal"><span class="st" role="img" aria-label="5 out of 5 stars">★★★★★</span><blockquote>We walked through the 3D design on our phones in the car. Nothing changed on site, and that was the best surprise.</blockquote><footer><span class="mono" aria-hidden="true">RK</span><span><b>Riya &amp; Karan</b>3BHK, Sector 150, Noida</span></footer></article>
+        <article class="rev reveal"><span class="st" role="img" aria-label="5 out of 5 stars">★★★★★</span><blockquote>The kitchen was ready in 45 days, exactly as promised. Weekly photos on WhatsApp meant I never had to chase anyone.</blockquote><footer><span class="mono" aria-hidden="true">AV</span><span><b>Anjali Verma</b>Modular kitchen, Greater Noida West</span></footer></article>
+        <article class="rev reveal"><span class="st" role="img" aria-label="5 out of 5 stars">★★★★★</span><blockquote>They worked around our old sofa and the family’s sheesham table, and somehow it all looks like one idea.</blockquote><footer><span class="mono" aria-hidden="true">SG</span><span><b>Sameer Gupta</b>Villa, Sector 128, Noida</span></footer></article>
+      </div>
+      <div class="facts reveal">
+        <div><b>180+</b><span>Homes handed over</span></div>
+        <div><b>12 years</b><span>Designing across Delhi NCR</span></div>
+        <div><b>4.9 / 5</b><span>Average client rating</span></div>
+        <div><b>92%</b><span>Clients who refer a friend</span></div>
+      </div>
+      <p class="credit reveal">Sample reviews and figures written for this demo. Lumen &amp; Loft is a made-up studio.</p>
+    </div>
+  </section>
+
+  <section class="band" id="team" aria-labelledby="tm-title">
+    <div class="wrap">
+      <span class="eyebrow reveal">Your team</span>
+      <h2 id="tm-title" class="reveal">One team, <em>one</em> person to call.</h2>
+      <div class="team">
+        <article class="reveal"><span class="mono" aria-hidden="true">AM</span><div><h3>Aarav Mehta</h3><p class="role">Principal designer</p><p>Leads every concept. Plans the home around light, storage and how you actually live.</p></div></article>
+        <article class="reveal"><span class="mono" aria-hidden="true">RS</span><div><h3>Riya Sethi</h3><p class="role">3D visualiser</p><p>Builds the walkthrough you approve, and changes it until you stop asking for changes.</p></div></article>
+        <article class="reveal"><span class="mono" aria-hidden="true">NK</span><div><h3>Naveen Kapoor</h3><p class="role">Site supervisor</p><p>On site every day. Sends the weekly photo update and runs the final handover walk.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="timeline" aria-labelledby="tl-title">
+    <div class="wrap">
+      <span class="eyebrow reveal">Plan your project</span>
+      <h2 id="tl-title" class="reveal">How long will <em>your</em> home take?</h2>
+      <p class="lead reveal">Pick your home and what you want done. You get a realistic timeline, week by week.</p>
+      <div class="est">
+        <div class="form reveal" id="est" style="grid-template-columns:1fr">
+          <label>Home size<select id="e-size"><option value="1">1BHK apartment</option><option value="2">2BHK apartment</option><option value="3" selected>3BHK apartment</option><option value="4">4BHK / villa</option></select></label>
+          <fieldset><legend>What are we doing?</legend>
+            <div class="chips">
+              <label><input type="radio" name="e-scope" value="full" checked><span>Full home</span></label>
+              <label><input type="radio" name="e-scope" value="kitchen"><span>Kitchen only</span></label>
+              <label><input type="radio" name="e-scope" value="wardrobe"><span>Wardrobes only</span></label>
+            </div>
+          </fieldset>
+          <label class="chips" style="gap:0;position:relative"><input type="checkbox" id="e-reno"><span>Add civil work: flooring, false ceiling, painting</span></label>
+        </div>
+        <div class="res reveal" aria-live="polite">
+          <span class="note">Estimated time to handover</span>
+          <output id="e-out">10 to 12 weeks</output>
+          <ul class="phases" id="e-ph"></ul>
+          <a class="btn" id="e-wa" href="#consult" data-umami-event="Estimator cta">Plan this with us</a>
+          <p class="note">An estimate for a typical project. We confirm exact dates after the site visit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="band" id="consult" aria-labelledby="consult-title">
     <div class="wrap">
       <span class="eyebrow reveal">Free consultation</span>
@@ -436,7 +555,6 @@ footer a{color:var(--mute)}
   <div class="wrap">Demo website · Lumen &amp; Loft Interiors is fictional · Made by <a href="https://footfallboost.com">Footfall Boost</a></div>
 </footer>
 
-<script type="importmap">{"imports":{"three":"/assets/vendor/three/three.module.min.js"}}</script>
 <script type="module" src="/s/demo-lumen-loft/tour.js"></script>
 <script defer src="/s/demo-lumen-loft/scrub.js"></script>
 <script>
@@ -459,6 +577,30 @@ footer a{color:var(--mute)}
     window.open('https://wa.me/919335694034?text='+encodeURIComponent(t),'_blank','noopener');
   });
 })();
+// Before/after slider and project timeline estimator
+(function(){
+  var ba=document.getElementById('ba'),r=document.getElementById('ba-r');
+  if(ba&&r){var set=function(){ba.style.setProperty('--p',r.value+'%')};r.addEventListener('input',set);set();}
+  var size=document.getElementById('e-size'),reno=document.getElementById('e-reno'),out=document.getElementById('e-out'),ph=document.getElementById('e-ph'),wa=document.getElementById('e-wa');
+  if(!size)return;
+  var BASE={full:{1:7,2:9,3:11,4:14},kitchen:{1:5,2:6,3:6,4:7},wardrobe:{1:3,2:4,3:5,4:6}};
+  function calc(){
+    var sc=(document.querySelector('input[name=e-scope]:checked')||{}).value||'full',n=+size.value;
+    var w=BASE[sc][n],extra=reno.checked?(sc==='full'?3:2):0,total=w+extra;
+    // phases: design, materials, civil, build, handover (weeks)
+    var P=[['Design & 3D',sc==='full'?2:1],['Materials',1]];
+    if(extra)P.push(['Civil work',extra]);
+    P.push(['Build & fit',Math.max(1,total-P.reduce(function(a,b){return a+b[1]},0)-1)]);P.push(['Handover',1]);
+    var sum=P.reduce(function(a,b){return a+b[1]},0),at=0;
+    ph.innerHTML=P.map(function(p){var l=at/sum*100,wd=p[1]/sum*100;at+=p[1];return '<li><span>'+p[0]+'</span><i style="--l:'+l.toFixed(1)+'%;--w:'+wd.toFixed(1)+'%"></i><span>'+p[1]+' wk</span></li>'}).join('');
+    out.textContent=total+' to '+(total+2)+' weeks';
+    var names={full:'a full home',kitchen:'a modular kitchen',wardrobe:'wardrobes'};
+    var msg='Hi Abhay, I tried the timeline planner on the Lumen & Loft demo website. Home: '+size.options[size.selectedIndex].text+'. Scope: '+names[sc]+(reno.checked?' plus civil work':'')+'. Estimate shown: '+out.textContent+'.';
+    wa.href='https://wa.me/919335694034?text='+encodeURIComponent(msg);wa.target='_blank';wa.rel='noopener';
+  }
+  document.getElementById('est').addEventListener('change',calc);calc();
+})();
+
 </script>
 <script defer src="/assets/sample-cta.js"></script>
 </body>
